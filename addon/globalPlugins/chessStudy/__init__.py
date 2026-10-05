@@ -29,6 +29,7 @@ from .game_elements import GameInfo, ChessVariant
 from .graphical_interface.settings_panel import ChessboardSettingsDialog
 from .game_tree import GameTree, write_pgn
 from .lichess_import import fetch_game, imported_filename, parse_reference
+from .my_games import plays_black
 from .tactic.download import DownloadError
 from .pgn import PGNGame, PGNGameInfo, read_game_at
 from .virtual_chessboard import (
@@ -443,7 +444,12 @@ class ChessboardMenu(wx.Menu):
 			return
 		# A file with one game is saved back in place; a game out of a collection
 		# is saved as a new file, so the rest of the collection is never rewritten.
-		self.open_analysis_board(GameTree(game), source_path=game_info.filename if single_game_file else None)
+		# A game of the Lichess user opens from their side, as when it was imported.
+		self.open_analysis_board(
+			GameTree(game),
+			source_path=game_info.filename if single_game_file else None,
+			flipped=plays_black(game.headers, get_lichess_user()),
+		)
 
 	def onBoardEditor(self, event):
 		chess_new_game_info = GameInfo(
@@ -536,9 +542,11 @@ class ChessboardMenu(wx.Menu):
 					_("Import Lichess Game"),
 				)
 				return
-		user = get_lichess_user().lower()
-		flipped = bool(user) and game.headers.get("Black", "").lower() == user
-		self.open_analysis_board(GameTree(game), source_path=path, flipped=flipped)
+		self.open_analysis_board(
+			GameTree(game),
+			source_path=path,
+			flipped=plays_black(game.headers, get_lichess_user()),
+		)
 
 	def open_analysis_board(self, tree, source_path=None, flipped=False):
 		chess_new_game_info = GameInfo(

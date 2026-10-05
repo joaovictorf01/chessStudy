@@ -107,6 +107,12 @@ def _games_in(path: str) -> list[tuple[PGNGameInfo, Notes]]:
 	return games
 
 
+def plays_black(headers: t.Mapping[str, str], user: str) -> bool:
+	"""Whether the Lichess user is Black in a game, so the board opens from their side."""
+	user = user.strip().lower()
+	return bool(user) and headers.get("Black", "").strip().lower() == user
+
+
 def list_saved_games(folder: str) -> tuple[list[SavedGame], list[str]]:
 	"""Every game in the folder's PGN files, newest file first, and the files that could not be read.
 

@@ -9,7 +9,7 @@ import time
 import unittest
 from pathlib import Path
 
-from chessStudy.my_games import list_saved_games
+from chessStudy.my_games import list_saved_games, plays_black
 
 ANNOTATED = """[Event "rated rapid game"]
 [Date "2026.09.23"]
@@ -73,3 +73,14 @@ class TestMyGames(unittest.TestCase):
 		self.write("notes.txt", "not a game")
 		self.assertEqual(list_saved_games(str(self.folder)), ([], []))
 		self.assertEqual(list_saved_games(str(self.folder / "missing")), ([], []))
+
+
+class TestPlaysBlack(unittest.TestCase):
+	def test_the_users_black_game_opens_from_black(self):
+		headers = {"White": "Anwitv", "Black": "victorf01"}
+		self.assertTrue(plays_black(headers, "VictorF01"))
+		self.assertFalse(plays_black(headers, "Anwitv"))
+
+	def test_no_user_or_no_header_keeps_white(self):
+		self.assertFalse(plays_black({"Black": "victorf01"}, ""))
+		self.assertFalse(plays_black({}, "victorf01"))
