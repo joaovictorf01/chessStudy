@@ -59,6 +59,8 @@ class Evaluation:
 	depth: int
 	# The principal variation: the line the engine expects, best move first.
 	line: tuple["chess.Move", ...]
+	# The second best move's evaluation, when asked for: how much the best one mattered.
+	second: t.Optional[Assessment] = None
 
 	@property
 	def best_move(self) -> t.Optional["chess.Move"]:
@@ -115,6 +117,12 @@ class AnalysisEngine:
 
 	def _analyse(self, board: "chess.Board", seconds: float) -> Evaluation:
 		return self._analyse_lines(board, seconds, 1)[0]
+
+	def _evaluate_with_second(self, board: "chess.Board", seconds: float) -> Evaluation:
+		"""The best line, carrying the second best's evaluation (the review's only moves need it)."""
+		lines = self._analyse_lines(board, seconds, 2)
+		second = lines[1].assessment if len(lines) > 1 else None
+		return dataclasses.replace(lines[0], second=second)
 
 	def try_start(self) -> bool:
 		"""Claims the engine for one request; False if it is still thinking."""
@@ -189,7 +197,9 @@ class AnalysisEngine:
 			for done, board in enumerate(boards, start=1):
 				if cancel.is_set():
 					break
-				results.append(None if board.is_game_over() else self._analyse(board.copy(), seconds))
+				results.append(
+					None if board.is_game_over() else self._evaluate_with_second(board.copy(), seconds)
+				)
 				progress(done, len(boards))
 			return results
 		finally:

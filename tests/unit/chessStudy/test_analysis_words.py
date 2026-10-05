@@ -9,6 +9,7 @@ from chessStudy.analysis_words import (
 	MARK_KEYS,
 	spoken_accuracy,
 	spoken_assessment,
+	spoken_best_moves,
 	spoken_review_start,
 	spoken_clock_summary,
 	spoken_mark,
@@ -64,6 +65,11 @@ class AccuracyWordsTest(unittest.TestCase):
 
 	def test_unknown_says_nothing(self):
 		self.assertEqual(spoken_accuracy({chess.WHITE: None, chess.BLACK: 90.0}, chess.BLACK), "")
+
+	def test_engine_moves(self):
+		self.assertEqual(spoken_best_moves(12, 30), "The engine's move in 12 of your 30 moves.")
+		self.assertEqual(spoken_best_moves(1, 1), "The engine's move in 1 of your 1 move.")
+		self.assertEqual(spoken_best_moves(0, 0), "")
 
 
 class ClockTest(unittest.TestCase):

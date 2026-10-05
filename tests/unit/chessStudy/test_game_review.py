@@ -18,8 +18,10 @@ from chessStudy.game_review import (
 	ReviewProgress,
 	Side,
 	accuracy_by_color,
+	best_moves,
 	critical_moments,
 	mainline_nodes,
+	only_moves,
 	review_moves,
 	same_line,
 	still_in_game,
@@ -95,6 +97,65 @@ class ReviewTest(unittest.TestCase):
 		moments = review_moves(g, evaluations, ReviewOptions(side=Side.BOTH, skip_theory=False), chess.WHITE)
 		qh4 = next(moment for moment in moments if moment.node.san() == "Qh4#")
 		self.assertEqual(qh4.review.verdict, MoveVerdict.BEST)
+
+	def test_best_moves_counts_only_my_moves(self):
+		g = game()
+		options = ReviewOptions(side=Side.BOTH, skip_theory=False)
+		evaluations = evals_for(g, SCORES)
+		# White's 3. c3 becomes the engine's own choice; Black's 3... f6 too, which must not count.
+		for index in (4, 5):
+			following = mainline_nodes(g)[index + 1].move
+			evaluations[index] = PositionEval(evaluations[index].assessment, following)
+		moments = review_moves(g, evaluations, options, chess.WHITE)
+		self.assertEqual(best_moves(moments, chess.WHITE), (1, 4))
+		self.assertEqual(best_moves(moments, chess.BLACK), (1, 4))
+		self.assertEqual(best_moves([], chess.WHITE), (0, 0))
+
+
+def only_move_review(text: str, second_cp: "int | None", best_cp: int = 0) -> list:
+	"""Review of a game where every move is the engine's; the last position before the end gets `second_cp`."""
+	g = game(text)
+	nodes = mainline_nodes(g)
+	evaluations = []
+	for index, node in enumerate(nodes):
+		following = node.next()
+		best = following.move if following is not None else None
+		second = None
+		if index == len(nodes) - 2 and second_cp is not None:
+			second = Assessment(centipawns=second_cp, mate=None)
+		evaluations.append(PositionEval(Assessment(centipawns=best_cp, mate=None), best, second=second))
+	return review_moves(g, evaluations, ReviewOptions(side=Side.BOTH, skip_theory=False), chess.WHITE)
+
+
+class OnlyMoveTest(unittest.TestCase):
+	def test_the_engines_move_when_the_next_best_loses_a_lot(self):
+		# White's last move, 3. c3, was the only one: the next best was -400 for White.
+		moments = only_move_review("1. a3 h6 2. b3 g6 3. c3 *", second_cp=-400)
+		self.assertEqual([moment.node.san() for moment in only_moves(moments)], ["c3"])
+		self.assertEqual(only_moves(moments)[0].suggested_mark, chess.pgn.NAG_GOOD_MOVE)
+
+	def test_a_small_gap_is_not_an_only_move(self):
+		self.assertEqual(only_moves(only_move_review("1. a3 h6 2. b3 g6 3. c3 *", second_cp=-60)), [])
+
+	def test_without_the_second_line_nothing_is_an_only_move(self):
+		self.assertEqual(only_moves(only_move_review("1. a3 h6 2. b3 g6 3. c3 *", second_cp=None)), [])
+
+	def test_a_move_other_than_the_engines_is_not_one(self):
+		g = game("1. a3 h6 2. b3 g6 3. c3 *")
+		evaluations = evals_for(g, [0] * 6)
+		evaluations[4] = PositionEval(
+			evaluations[4].assessment, evaluations[4].best_move, second=Assessment(-400, None)
+		)
+		moments = review_moves(g, evaluations, ReviewOptions(side=Side.BOTH, skip_theory=False), chess.WHITE)
+		self.assertEqual(only_moves(moments), [])
+
+	def test_taking_back_is_not_an_only_move(self):
+		# 3. Qxd4 takes back the pawn that just took on d4.
+		self.assertEqual(only_moves(only_move_review("1. e4 e5 2. d4 exd4 3. Qxd4 *", second_cp=-400)), [])
+
+	def test_the_only_legal_move_is_not_an_only_move(self):
+		# 2... g6 is Black's only answer to the check.
+		self.assertEqual(only_moves(only_move_review("1. e4 f5 2. Qh5+ g6 *", second_cp=900)), [])
 
 
 class ChangedGameTest(unittest.TestCase):

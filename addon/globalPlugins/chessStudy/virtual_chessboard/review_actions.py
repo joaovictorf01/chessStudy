@@ -26,6 +26,7 @@ from ..addon_config import get_review_options, nvda_progress_bar_output
 from ..analysis_words import (
 	spoken_accuracy,
 	spoken_assessment,
+	spoken_best_moves,
 	spoken_mark,
 	spoken_review_start,
 	spoken_verdict,
@@ -36,8 +37,10 @@ from ..game_review import (
 	Reveal,
 	ReviewProgress,
 	accuracy_by_color,
+	best_moves,
 	critical_moments,
 	mainline_nodes,
+	only_moves,
 	review_moves,
 	same_line,
 	still_in_game,
@@ -150,16 +153,25 @@ class ReviewActionsMixin:
 		position_evals = [
 			None
 			if evaluation is None
-			else PositionEval(evaluation.assessment, evaluation.best_move, evaluation.line, evaluation.depth)
+			else PositionEval(
+				evaluation.assessment,
+				evaluation.best_move,
+				evaluation.line,
+				evaluation.depth,
+				evaluation.second,
+			)
 			for evaluation in evaluations
 		]
-		moments = critical_moments(review_moves(game, position_evals, options, my_color), options)
+		reviewed = review_moves(game, position_evals, options, my_color)
+		critical = critical_moments(reviewed, options)
+		only = only_moves(reviewed)
+		moments = sorted(critical + only, key=lambda moment: moment.ply)
 		self._moments = tuple(moments)
 		self._moment_index = -1
 		self._review_options = options
 		marked = 0
 		for moment in moments:
-			mark = moment.review.suggested_mark
+			mark = moment.suggested_mark
 			if mark is not None and not (moment.node.nags & MOVE_MARKS):
 				moment.node.nags.add(mark)
 				marked += 1
@@ -167,34 +179,50 @@ class ReviewActionsMixin:
 			self.unsaved = True
 			self._rebuild_score_sheet()
 		accuracy = spoken_accuracy(accuracy_by_color(game, position_evals), my_color)
+		engine_moves = spoken_best_moves(*best_moves(reviewed, my_color))
+		opening = [text for text in (accuracy, engine_moves) if text]
 		speak_next(
-			([accuracy, speech.commands.BreakCommand(200)] if accuracy else []) + self._summary(moments),
+			([" ".join(opening), speech.commands.BreakCommand(200)] if opening else [])
+			+ self._summary(critical, only),
 		)
 
-	def _summary(self, moments) -> list:
-		if not moments:
+	def _summary(self, critical, only) -> list:
+		spoken: list = []
+		if critical:
+			spoken += [
+				# Translators: Start of the review summary, e.g. "3 critical moments:".
+				ngettext("{count} critical moment:", "{count} critical moments:", len(critical)).format(
+					count=len(critical),
+				),
+				"; ".join(
+					# Translators: One critical moment in the review summary, e.g. "move 14, mistake".
+					_("move {move}, {verdict}").format(
+						move=moment.move_number,
+						verdict=spoken_verdict(moment.review.verdict),
+					)
+					for moment in critical
+				),
+			]
+		else:
 			# Translators: Spoken when the review found nothing at the chosen level.
-			return [_("No critical moments at this level. Settings choose what counts.")]
-		items = [
-			"; ".join(
-				# Translators: One critical moment in the review summary, e.g. "move 14, mistake".
-				_("move {move}, {verdict}").format(
-					move=moment.move_number,
-					verdict=spoken_verdict(moment.review.verdict),
-				)
-				for moment in moments
-			),
-		]
-		return [
-			# Translators: Start of the review summary, e.g. "3 critical moments:".
-			ngettext("{count} critical moment:", "{count} critical moments:", len(moments)).format(
-				count=len(moments),
-			),
-			*items,
-			speech.commands.BreakCommand(200),
-			# Translators: End of the review summary.
-			_("Alt+Page Down goes to the first."),
-		]
+			spoken.append(_("No critical moments at this level. Settings choose what counts."))
+		if only:
+			spoken += [
+				speech.commands.BreakCommand(200),
+				# Translators: In the review summary: moves where only the engine's move held, e.g. "2 only moves: move 18, move 27.".
+				ngettext("{count} only move: {moves}.", "{count} only moves: {moves}.", len(only)).format(
+					count=len(only),
+					# Translators: One only move in the review summary, e.g. "move 18".
+					moves=", ".join(_("move {move}").format(move=moment.move_number) for moment in only),
+				),
+			]
+		if critical or only:
+			spoken += [
+				speech.commands.BreakCommand(200),
+				# Translators: End of the review summary.
+				_("Alt+Page Down goes to the first."),
+			]
+		return spoken
 
 	def open_review_options(self):
 		"""The same options as in Settings, from the Tab bar; they apply to the next F7."""
@@ -246,9 +274,19 @@ class ReviewActionsMixin:
 				move=moment.move_number,
 				color=spoken_color_name(moment.mover),
 			),
+		]
+		if moment.only_move:
+			# Translators: At an only move, e.g. "Played Nd5: only move. Every other move gave away a lot.".
+			spoken.append(
+				_("Played {move}: only move. Every other move gave away a lot.").format(move=played)
+			)
+			self._speak_mark(moment, spoken)
+			speak_next(spoken)
+			return
+		spoken.append(
 			# Translators: What was played at a critical moment, e.g. "Played Bxe5: mistake.".
 			_("Played {move}: {verdict}.").format(move=played, verdict=spoken_verdict(moment.review.verdict)),
-		]
+		)
 		reveal = getattr(self, "_review_options", None)
 		reveal = reveal.reveal if reveal is not None else Reveal.NOTHING
 		best = moment.before.best_move
@@ -275,8 +313,11 @@ class ReviewActionsMixin:
 					self._rebuild_score_sheet()
 					# Translators: Said when the engine's line was added at a critical moment.
 					spoken.append(_("Its line is a variation here: Alt+Down lists it."))
-		mark = moment.review.suggested_mark
+		self._speak_mark(moment, spoken)
+		speak_next(spoken)
+
+	def _speak_mark(self, moment, spoken: list) -> None:
+		mark = moment.suggested_mark
 		if mark is not None and mark in moment.node.nags:
 			# Translators: Said at a critical moment that carries the mark, e.g. "Marked: mistake.".
 			spoken.append(_("Marked: {mark}.").format(mark=spoken_mark(mark)))
-		speak_next(spoken)

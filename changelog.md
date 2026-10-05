@@ -2,6 +2,16 @@
 
 Versioning follows [Semantic Versioning](https://semver.org/): a patch release (1.1.x) only fixes; a minor release (1.x.0) adds features; a major release changes what existing users rely on. The version is decided when the release is cut, from what this section holds.
 
+## Improvements
+
+- Game review (F7): after the accuracy, says how many of your moves were the engine's own choice ("The engine's move in 12 of your 30 moves."), so the review tells what went right as well as the critical moments.
+
+- Game review (F7): finds your only moves, where the engine's move was the one that held and every other gave away a lot (taking back a piece and forced moves do not count). The summary names them after the critical moments ("2 only moves: move 18, move 27."), Alt+Page Down visits them, and they get the "!" mark when the move has no mark of yours. The engine now looks at its two best moves in each position; in the same time, that costs almost nothing in depth.
+
+## Fixes
+
+- My Games: a game where your Lichess user played Black now opens from Black, as it does when imported; it always opened from White.
+
 ## To do
 
 - Puzzle download: accept a `.db.gz` downloaded by hand in the browser (for machines that cannot reach GitHub from the add-on); log the exact error when the manifest cannot be fetched. First report: 21-09-2026, "could not reach the download server".

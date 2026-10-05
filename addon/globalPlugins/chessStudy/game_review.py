@@ -66,6 +66,13 @@ class PositionEval:
 	best_move: t.Optional["chess.Move"]
 	line: tuple["chess.Move", ...] = ()
 	depth: int = 0
+	# The second best move's evaluation; None when not asked for or when only one move was legal.
+	second: t.Optional[Assessment] = None
+
+
+# An only move: the engine's move, when the next best would have given away this much
+# winning chance (0 to 100), a blunder's worth by Lichess's bands.
+ONLY_MOVE_GAP = 15
 
 
 @dataclasses.dataclass(frozen=True)
@@ -87,6 +94,27 @@ class Moment:
 	@property
 	def mover(self) -> bool:
 		return self.review.mover
+
+	@property
+	def only_move(self) -> bool:
+		"""The engine's move where every other lost a lot; recaptures and forced moves do not count."""
+		second = self.before.second
+		if not self.review.is_best or second is None:
+			return False
+		board = self.node.parent.board()
+		if board.legal_moves.count() == 1:
+			return False
+		if board.move_stack and board.is_capture(self.review.played_move):
+			earlier = board.copy()
+			last = earlier.pop()
+			if earlier.is_capture(last) and last.to_square == self.review.played_move.to_square:
+				return False  # taking back what was just taken
+		best = self.review.best.win_chance(self.mover)
+		return best - second.win_chance(self.mover) >= ONLY_MOVE_GAP
+
+	@property
+	def suggested_mark(self) -> t.Optional[int]:
+		return chess.pgn.NAG_GOOD_MOVE if self.only_move else self.review.suggested_mark
 
 
 def mainline_nodes(game: "chess.pgn.Game") -> list["chess.pgn.GameNode"]:
@@ -173,6 +201,17 @@ def critical_moments(moments: t.Sequence[Moment], options: ReviewOptions) -> lis
 		)
 		kept = kept[: options.max_moments]
 	return sorted(kept, key=lambda moment: moment.ply)
+
+
+def only_moves(moments: t.Sequence[Moment]) -> list[Moment]:
+	"""The only moves among the reviewed ones, in game order."""
+	return [moment for moment in moments if moment.only_move]
+
+
+def best_moves(moments: t.Sequence[Moment], my_color: bool) -> tuple[int, int]:
+	"""How many of the player's reviewed moves were the engine's own choice, and out of how many."""
+	mine = [moment for moment in moments if moment.mover == my_color]
+	return sum(moment.review.is_best for moment in mine), len(mine)
 
 
 def accuracy_by_color(

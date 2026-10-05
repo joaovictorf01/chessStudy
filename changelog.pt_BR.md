@@ -2,6 +2,16 @@
 
 O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): versão de correção (1.1.x) só corrige; versão menor (1.x.0) acrescenta recurso; versão maior muda o que quem já usa depende. O número é decidido na hora de lançar, pelo que esta seção contém.
 
+## Melhorias
+
+- Revisão da partida (F7): depois da precisão, diz quantos dos seus lances foram o escolhido pelo motor ("O lance do motor em 12 dos seus 30 lances."), para a revisão dizer também o que deu certo, e não só os momentos críticos.
+
+- Revisão da partida (F7): acha os seus lances únicos, em que o lance do motor era o que segurava e qualquer outro entregava muito (retomar peça e lance forçado não contam). O resumo diz quais são depois dos momentos críticos ("2 lances únicos: lance 18, lance 27."), o Alt+Page Down passa por eles, e eles recebem a marca "!" quando o lance não tem marca sua. O motor agora olha os dois melhores lances de cada posição; no mesmo tempo, isso quase não custa profundidade.
+
+## Correções
+
+- Minhas partidas: a partida em que o seu usuário do Lichess jogou de Pretas agora abre do lado das Pretas, como já abria ao importar; abria sempre do lado das Brancas.
+
 ## A fazer
 
 - Download de puzzles: aceitar um `.db.gz` baixado à mão no navegador (pra máquina que não alcança o GitHub pelo add-on); registrar o erro exato quando o manifesto não vem. Primeiro relato: 21-09-2026, "não foi possível alcançar o servidor de download".

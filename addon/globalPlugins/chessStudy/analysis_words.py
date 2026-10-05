@@ -168,6 +168,18 @@ def spoken_accuracy(accuracy: dict, my_color: bool) -> str:
 	)
 
 
+def spoken_best_moves(best: int, total: int) -> str:
+	"""After a review: how many of the player's moves were the engine's choice; empty when none was reviewed."""
+	if not total:
+		return ""
+	return ngettext(
+		# Translators: After a game review, e.g. "The engine's move in 12 of your 30 moves.".
+		"The engine's move in {best} of your {total} move.",
+		"The engine's move in {best} of your {total} moves.",
+		total,
+	).format(best=best, total=total)
+
+
 def spoken_review_start(positions: int, seconds: float) -> str:
 	"""What F7 says as the review starts: how many positions, and roughly how long, the way a person says it.
 

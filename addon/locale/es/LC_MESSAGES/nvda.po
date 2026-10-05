@@ -42,28 +42,28 @@ msgid "&Download"
 msgstr "&Descargar"
 
 #. Menu item that opens the endgame drills.
-#: addon/globalPlugins/chessStudy/__init__.py:66
+#: addon/globalPlugins/chessStudy/__init__.py:67
 msgid "&Endgames..."
 msgstr "&Finales..."
 
 #. Menu item that opens the study log.
-#: addon/globalPlugins/chessStudy/__init__.py:72
+#: addon/globalPlugins/chessStudy/__init__.py:73
 msgid "&My Study..."
 msgstr "&Mi estudio..."
 
 #. Menu item that opens the new game dialog, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:54
+#: addon/globalPlugins/chessStudy/__init__.py:55
 msgid "&New Game..."
 msgstr "&Nueva partida..."
 
 #. Menu item that starts a puzzle with the saved training setup, and its help
 #. text.
-#: addon/globalPlugins/chessStudy/__init__.py:62
+#: addon/globalPlugins/chessStudy/__init__.py:63
 msgid "&Random Puzzle"
 msgstr "&Problema al azar"
 
 #. Menu item that replays a PGN file, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:78
+#: addon/globalPlugins/chessStudy/__init__.py:79
 msgid "&Replay PGN File..."
 msgstr "&Reproducir archivo PGN..."
 
@@ -73,12 +73,12 @@ msgid "&Save training setup as default"
 msgstr "&Guardar la configuración de entrenamiento como predeterminada"
 
 #. Menu item that opens the add-on settings, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:126
+#: addon/globalPlugins/chessStudy/__init__.py:127
 msgid "&Settings..."
 msgstr "&Opciones..."
 
 #. Menu item that opens the tactics trainer, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:58
+#: addon/globalPlugins/chessStudy/__init__.py:59
 msgid "&Tactics..."
 msgstr "&Táctica..."
 
@@ -768,7 +768,7 @@ msgstr "Táctica en el tablero"
 
 #. Summary/title for this add-on Category of the add-on's scripts in the Input
 #. Gestures dialog. Title of the Chess Study settings dialog.
-#: buildVars.py:25 addon/globalPlugins/chessStudy/__init__.py:648
+#: buildVars.py:25 addon/globalPlugins/chessStudy/__init__.py:656
 #: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:37
 msgid "Chess Study"
 msgstr "Chess Study"
@@ -1431,7 +1431,7 @@ msgid "Horde"
 msgstr "Horda"
 
 #. Menu item that opens the study log.
-#: addon/globalPlugins/chessStudy/__init__.py:73
+#: addon/globalPlugins/chessStudy/__init__.py:74
 msgid ""
 "How much and how you studied, by day, and how far the endgame lessons go"
 msgstr ""
@@ -1898,7 +1898,7 @@ msgid "No tactics available"
 msgstr "No hay táctica disponible"
 
 #. Title of the warning shown when no puzzle matches the options.
-#: addon/globalPlugins/chessStudy/__init__.py:196
+#: addon/globalPlugins/chessStudy/__init__.py:197
 msgid "No Tactics Found"
 msgstr "No se encontró táctica"
 
@@ -2014,19 +2014,19 @@ msgid "Only move: {moves}"
 msgstr "Única jugada: {moves}"
 
 #. Help text of the add-on submenu.
-#: addon/globalPlugins/chessStudy/__init__.py:136
+#: addon/globalPlugins/chessStudy/__init__.py:137
 msgid "Open a chess game, tactics session, replay, or settings"
 msgstr ""
 "Abrir una partida de ajedrez, una sesión de táctica, una reproducción o las "
 "opciones"
 
 #. Title of the dialog that opens a PGN file.
-#: addon/globalPlugins/chessStudy/__init__.py:567
+#: addon/globalPlugins/chessStudy/__init__.py:575
 msgid "Open PGN File"
 msgstr "Abrir archivo PGN"
 
 #. Menu item that opens the tactics trainer, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:59
+#: addon/globalPlugins/chessStudy/__init__.py:60
 msgid "Open tactics from the Lichess tactics database"
 msgstr "Abrir táctica de la base de táctica de Lichess"
 
@@ -2142,7 +2142,7 @@ msgstr ""
 
 #. Menu item that starts a puzzle with the saved training setup, and its help
 #. text.
-#: addon/globalPlugins/chessStudy/__init__.py:62
+#: addon/globalPlugins/chessStudy/__init__.py:63
 msgid "Play a random puzzle"
 msgstr "Jugar un problema al azar"
 
@@ -2193,8 +2193,8 @@ msgstr "Popularidad: {popularity}."
 
 #. Title of the dialog that opens a PGN file on the analysis board. File type
 #. filter of the PGN open dialog.
-#: addon/globalPlugins/chessStudy/__init__.py:367
-#: addon/globalPlugins/chessStudy/__init__.py:570
+#: addon/globalPlugins/chessStudy/__init__.py:368
+#: addon/globalPlugins/chessStudy/__init__.py:578
 msgid "Portable Game Notation *.pgn | *.pgn"
 msgstr "Notación de partida portátil *.pgn | *.pgn"
 
@@ -2209,7 +2209,7 @@ msgid "Position"
 msgstr "Posición"
 
 #. Menu item that opens the endgame drills.
-#: addon/globalPlugins/chessStudy/__init__.py:67
+#: addon/globalPlugins/chessStudy/__init__.py:68
 msgid "Practice elementary endgames against the engine"
 msgstr "Practicar finales elementales contra el motor"
 
@@ -2297,7 +2297,7 @@ msgstr ""
 
 #. Title of the message about the puzzle database. Title of the puzzle
 #. database download dialog.
-#: addon/globalPlugins/chessStudy/__init__.py:210
+#: addon/globalPlugins/chessStudy/__init__.py:211
 #: addon/globalPlugins/chessStudy/graphical_interface/download_dialog.py:49
 #: addon/globalPlugins/chessStudy/graphical_interface/download_dialog.py:332
 #: addon/globalPlugins/chessStudy/graphical_interface/download_dialog.py:355
@@ -2657,8 +2657,8 @@ msgid "Select &themes..."
 msgstr "Seleccionar &temas..."
 
 #. Title of the list of games in a PGN file.
-#: addon/globalPlugins/chessStudy/__init__.py:428
-#: addon/globalPlugins/chessStudy/__init__.py:604
+#: addon/globalPlugins/chessStudy/__init__.py:429
+#: addon/globalPlugins/chessStudy/__init__.py:612
 msgid "Select Game"
 msgstr "Seleccionar partida"
 
@@ -2808,7 +2808,7 @@ msgstr ""
 "para abrir un ejercicio exacto de Lichess."
 
 #. Menu item that opens the new game dialog, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:54
+#: addon/globalPlugins/chessStudy/__init__.py:55
 msgid "Start a new chess game"
 msgstr "Empezar una nueva partida de ajedrez"
 
@@ -2875,7 +2875,7 @@ msgid "Tactics database"
 msgstr "Base de táctica"
 
 #. Title of the error shown when the puzzle database is missing.
-#: addon/globalPlugins/chessStudy/__init__.py:192
+#: addon/globalPlugins/chessStudy/__init__.py:193
 msgid "Tactics Database Not Found"
 msgstr "Base de táctica no encontrada"
 
@@ -2977,14 +2977,14 @@ msgstr ""
 "casilla a la que volver, y cae. Perdido para el caballo."
 
 #. Spoken when the chosen PGN file has no games.
-#: addon/globalPlugins/chessStudy/__init__.py:418
-#: addon/globalPlugins/chessStudy/__init__.py:594
+#: addon/globalPlugins/chessStudy/__init__.py:419
+#: addon/globalPlugins/chessStudy/__init__.py:602
 msgid "The file contains no games"
 msgstr "El archivo no contiene partidas"
 
 #. Prompt of the list of games in a PGN file.
-#: addon/globalPlugins/chessStudy/__init__.py:426
-#: addon/globalPlugins/chessStudy/__init__.py:602
+#: addon/globalPlugins/chessStudy/__init__.py:427
+#: addon/globalPlugins/chessStudy/__init__.py:610
 msgid "The file contains the following games"
 msgstr "El archivo contiene las siguientes partidas"
 
@@ -3200,7 +3200,7 @@ msgstr "La táctica incluye una captura al paso."
 
 #. Error when the tactics dialog finds no puzzle database. Keep "puzzles.db"
 #. as is.
-#: addon/globalPlugins/chessStudy/__init__.py:180
+#: addon/globalPlugins/chessStudy/__init__.py:181
 msgid ""
 "The tactics database was not found. Use Browse in the tactics dialog to "
 "point at your puzzle database, or place it in the add-on's data folder as "
@@ -4154,32 +4154,32 @@ msgstr ""
 " el rey hasta el peón y gana."
 
 #. Spoken when a shortcut is used while NVDA runs in secure mode.
-#: addon/globalPlugins/chessStudy/__init__.py:667
+#: addon/globalPlugins/chessStudy/__init__.py:675
 msgid "Chess Study is not available in secure mode."
 msgstr "Chess Study no está disponible en modo seguro."
 
 #. Description of the shortcut that opens the endgame lessons.
-#: addon/globalPlugins/chessStudy/__init__.py:688
+#: addon/globalPlugins/chessStudy/__init__.py:696
 msgid "Opens Chess Study endgames"
 msgstr "Abre los Finales de Chess Study"
 
 #. Description of the shortcut that opens the study log.
-#: addon/globalPlugins/chessStudy/__init__.py:695
+#: addon/globalPlugins/chessStudy/__init__.py:703
 msgid "Opens Chess Study My Study"
 msgstr "Abre Mi estudio de Chess Study"
 
 #. Description of the shortcut that opens the tactics trainer.
-#: addon/globalPlugins/chessStudy/__init__.py:673
+#: addon/globalPlugins/chessStudy/__init__.py:681
 msgid "Opens Chess Study tactics"
 msgstr "Abre la Táctica de Chess Study"
 
 #. Description of the shortcut that starts a new game.
-#: addon/globalPlugins/chessStudy/__init__.py:702
+#: addon/globalPlugins/chessStudy/__init__.py:710
 msgid "Starts a new Chess Study game"
 msgstr "Inicia una nueva partida de Chess Study"
 
 #. Description of the shortcut that starts a random puzzle.
-#: addon/globalPlugins/chessStudy/__init__.py:681
+#: addon/globalPlugins/chessStudy/__init__.py:689
 msgid "Starts a random Chess Study puzzle with the saved training setup"
 msgstr ""
 "Inicia un problema al azar de Chess Study con la configuración de "
@@ -4213,7 +4213,7 @@ msgstr ""
 "internet e inténtalo de nuevo. Detalle: {reason}"
 
 #. Spoken when the chosen PGN file cannot be read, followed by the error.
-#: addon/globalPlugins/chessStudy/__init__.py:623
+#: addon/globalPlugins/chessStudy/__init__.py:631
 msgid "Could not read the PGN file. Details: {error}"
 msgstr "No se pudo leer el archivo PGN. Detalle: {error}"
 
@@ -4286,7 +4286,7 @@ msgid "{white} versus {black}"
 msgstr "{white} contra {black}"
 
 #. Asked when tactics are opened and no puzzle database is installed yet.
-#: addon/globalPlugins/chessStudy/__init__.py:206
+#: addon/globalPlugins/chessStudy/__init__.py:207
 msgid ""
 "Tactics need a puzzle database, which is downloaded once. The next dialog "
 "gives the size of each. Download it now?"
@@ -4442,13 +4442,13 @@ msgid "Comments: {comments}, marks: {marks}, variations: {variations}."
 msgstr "Comentarios: {comments}, signos: {marks}, variantes: {variations}."
 
 #. Menu item that lists the games in the games folder.
-#: addon/globalPlugins/chessStudy/__init__.py:116
+#: addon/globalPlugins/chessStudy/__init__.py:117
 msgid "My &Games..."
 msgstr "Mis parti&das..."
 
 #. Title of the My Games list.
-#: addon/globalPlugins/chessStudy/__init__.py:386
-#: addon/globalPlugins/chessStudy/__init__.py:394
+#: addon/globalPlugins/chessStudy/__init__.py:387
+#: addon/globalPlugins/chessStudy/__init__.py:395
 msgid "My Games"
 msgstr "Mis partidas"
 
@@ -4458,7 +4458,7 @@ msgid "no date"
 msgstr "sin fecha"
 
 #. Shown by My Games when the games folder has no game; {folder} is its path.
-#: addon/globalPlugins/chessStudy/__init__.py:382
+#: addon/globalPlugins/chessStudy/__init__.py:383
 msgid ""
 "No games in {folder} yet. Games you save on the analysis board or import "
 "from Lichess go there."
@@ -4472,12 +4472,12 @@ msgid "No notes."
 msgstr "Sin anotaciones."
 
 #. Description of the shortcut that opens My Games.
-#: addon/globalPlugins/chessStudy/__init__.py:709
+#: addon/globalPlugins/chessStudy/__init__.py:717
 msgid "Opens Chess Study My Games"
 msgstr "Abre Mis partidas de Chess Study"
 
 #. Help text of the My Games menu item.
-#: addon/globalPlugins/chessStudy/__init__.py:118
+#: addon/globalPlugins/chessStudy/__init__.py:119
 msgid ""
 "The games in your games folder, the most recently changed first, to open on "
 "the analysis board"
@@ -4486,7 +4486,7 @@ msgstr ""
 "primero, para abrir en el tablero de análisis"
 
 #. Prompt of the My Games list.
-#: addon/globalPlugins/chessStudy/__init__.py:392
+#: addon/globalPlugins/chessStudy/__init__.py:393
 msgid ""
 "The most recently changed first. Enter opens the game on the analysis board."
 msgstr ""
@@ -4499,7 +4499,7 @@ msgstr ""
 msgid "{date}, {players}, {result}."
 msgstr "{date}, {players}, {result}."
 
-#: addon/globalPlugins/chessStudy/analysis_words.py:179
+#: addon/globalPlugins/chessStudy/analysis_words.py:191
 msgid "Reviewing {count} positions, about {seconds} second. F7 again stops."
 msgid_plural ""
 "Reviewing {count} positions, about {seconds} seconds. F7 again stops."
@@ -4508,7 +4508,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Revisando {count} posiciones, unos {seconds} segundos. F7 otra vez detiene."
 
-#: addon/globalPlugins/chessStudy/analysis_words.py:187
+#: addon/globalPlugins/chessStudy/analysis_words.py:199
 msgid "Reviewing {count} positions, about {minutes} minute. F7 again stops."
 msgid_plural ""
 "Reviewing {count} positions, about {minutes} minutes. F7 again stops."
@@ -4517,7 +4517,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Revisando {count} posiciones, unos {minutes} minutos. F7 otra vez detiene."
 
-#: addon/globalPlugins/chessStudy/analysis_words.py:193
+#: addon/globalPlugins/chessStudy/analysis_words.py:205
 msgid ""
 "Reviewing {count} positions, about {minutes} minute and {seconds} seconds. "
 "F7 again stops."
@@ -4560,12 +4560,12 @@ msgid "&Black"
 msgstr "&Negras"
 
 #. Menu item that opens the board editor.
-#: addon/globalPlugins/chessStudy/__init__.py:93
+#: addon/globalPlugins/chessStudy/__init__.py:94
 msgid "&Board Editor"
 msgstr "&Editor de tablero"
 
 #. Name of the add-on submenu under NVDA's Tools menu.
-#: addon/globalPlugins/chessStudy/__init__.py:134
+#: addon/globalPlugins/chessStudy/__init__.py:135
 msgid "&Chess Study"
 msgstr "&Chess Study"
 
@@ -4587,7 +4587,7 @@ msgstr "&Evento"
 
 #. Menu item that downloads a game from Lichess and opens it on the analysis
 #. board.
-#: addon/globalPlugins/chessStudy/__init__.py:100
+#: addon/globalPlugins/chessStudy/__init__.py:101
 msgid "&Import Lichess Game..."
 msgstr "&Importar partida de Lichess..."
 
@@ -4649,12 +4649,12 @@ msgid "Already empty"
 msgstr "Ya está vacía"
 
 #. Spoken when the Lichess game was imported before; its saved copy opens.
-#: addon/globalPlugins/chessStudy/__init__.py:526
+#: addon/globalPlugins/chessStudy/__init__.py:532
 msgid "Already imported: opening your copy, with your notes."
 msgstr "Ya importada: abriendo tu copia, con tus anotaciones."
 
 #. End of the review summary.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:196
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:223
 msgid "Alt+Page Down goes to the first."
 msgstr "Alt+Avance página va al primero."
 
@@ -4676,7 +4676,7 @@ msgstr ""
 "Lichess; y juega contra el motor o contra un amigo."
 
 #. Menu item that opens a PGN file on the analysis board.
-#: addon/globalPlugins/chessStudy/__init__.py:109
+#: addon/globalPlugins/chessStudy/__init__.py:110
 msgid "Analyse PGN &File..."
 msgstr "Analizar archivo &PGN..."
 
@@ -4886,13 +4886,13 @@ msgid "Copy as FEN, Control+C"
 msgstr "Copiar como FEN, Control+C"
 
 #. Shown when a Lichess game could not be downloaded; {error} is the reason.
-#: addon/globalPlugins/chessStudy/__init__.py:511
+#: addon/globalPlugins/chessStudy/__init__.py:517
 msgid "Could not get the game from Lichess: {error}"
 msgstr "No se pudo obtener la partida de Lichess: {error}"
 
 #. Shown when the imported game could not be written, followed by the error.
 #. Spoken when the game could not be written, followed by the error.
-#: addon/globalPlugins/chessStudy/__init__.py:534
+#: addon/globalPlugins/chessStudy/__init__.py:540
 #: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:614
 #: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:649
 msgid "Could not save the game. Details: {error}"
@@ -4909,7 +4909,7 @@ msgid "Deep, three seconds"
 msgstr "Profundo, tres segundos"
 
 #. Help text of the menu item that imports a Lichess game.
-#: addon/globalPlugins/chessStudy/__init__.py:102
+#: addon/globalPlugins/chessStudy/__init__.py:103
 msgid ""
 "Download a game from Lichess, with the clock of every move, and open it on "
 "the analysis board"
@@ -4918,7 +4918,7 @@ msgstr ""
 "el tablero de análisis"
 
 #. Spoken while the game is being downloaded from Lichess.
-#: addon/globalPlugins/chessStudy/__init__.py:499
+#: addon/globalPlugins/chessStudy/__init__.py:505
 msgid "Downloading from Lichess..."
 msgstr "Descargando de Lichess..."
 
@@ -4956,7 +4956,7 @@ msgstr[1] ""
 "lista."
 
 #. Help text of the menu item that opens an empty analysis board.
-#: addon/globalPlugins/chessStudy/__init__.py:86
+#: addon/globalPlugins/chessStudy/__init__.py:87
 msgid ""
 "Enter a game move by move, with variations, comments and marks, and save it "
 "in your games folder"
@@ -5001,7 +5001,7 @@ msgid "Flip the board"
 msgstr "Girar el tablero"
 
 #. Prompt of the Lichess import dialog.
-#: addon/globalPlugins/chessStudy/__init__.py:478
+#: addon/globalPlugins/chessStudy/__init__.py:484
 msgid "Game link or code, or a Lichess username for that player's last game:"
 msgstr ""
 "Enlace o código de la partida, o un usuario de Lichess para su última "
@@ -5036,10 +5036,10 @@ msgstr "buena, casi no pierde nada"
 #. import dialog is not a game or a username. Shown when a Lichess game could
 #. not be downloaded; {error} is the reason. Title of the Lichess import
 #. messages.
-#: addon/globalPlugins/chessStudy/__init__.py:480
-#: addon/globalPlugins/chessStudy/__init__.py:493
-#: addon/globalPlugins/chessStudy/__init__.py:512
-#: addon/globalPlugins/chessStudy/__init__.py:536
+#: addon/globalPlugins/chessStudy/__init__.py:486
+#: addon/globalPlugins/chessStudy/__init__.py:499
+#: addon/globalPlugins/chessStudy/__init__.py:518
+#: addon/globalPlugins/chessStudy/__init__.py:542
 msgid "Import Lichess Game"
 msgstr "Importar partida de Lichess"
 
@@ -5064,7 +5064,7 @@ msgid "Invalid Date"
 msgstr "Fecha no válida"
 
 #. Said when the engine's line was added at a critical moment.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:277
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:315
 msgid "Its line is a variation here: Alt+Down lists it."
 msgstr "Su línea quedó como variante aquí: Alt+Flecha abajo la lista."
 
@@ -5110,7 +5110,7 @@ msgstr ""
 "columna y siempre es una posición ganada."
 
 #. Menu item that replays a PGN file, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:79
+#: addon/globalPlugins/chessStudy/__init__.py:80
 msgid "Load and replay a portable game notation (.pgn) file"
 msgstr "Cargar y reproducir un archivo de notación de partida portátil (.pgn)"
 
@@ -5120,7 +5120,7 @@ msgid "longest think {move}, {spent}"
 msgstr "reflexión más larga {move}, {spent}"
 
 #. Said at a critical moment when the engine's move is kept hidden.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:257
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:295
 msgid "Look for a better move: play it, and Shift+E judges it."
 msgstr "Busca una jugada mejor: juégala y Shift+E la evalúa."
 
@@ -5150,7 +5150,7 @@ msgid "Mark {move}"
 msgstr "Marcar {move}"
 
 #. Said at a critical moment that carries the mark, e.g. "Marked: mistake.".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:281
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:323
 msgid "Marked: {mark}."
 msgstr "Marcada: {mark}."
 
@@ -5177,12 +5177,12 @@ msgstr "Errores y errores graves"
 
 #. Heading of a critical moment, e.g. "Moment 2 of 3, move 14, black to
 #. move.".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:243
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:271
 msgid "Moment {index} of {count}, move {move}, {color} to move."
 msgstr "Momento {index} de {count}, jugada {move}, mueven las {color}."
 
 #. One critical moment in the review summary, e.g. "move 14, mistake".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:181
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:199
 msgid "move {move}, {verdict}"
 msgstr "jugada {move}, {verdict}"
 
@@ -5207,13 +5207,13 @@ msgid "No comment"
 msgstr "Sin comentario"
 
 #. Spoken when the review found nothing at the chosen level.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:177
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:208
 msgid "No critical moments at this level. Settings choose what counts."
 msgstr ""
 "No hay momentos críticos en este nivel. Las opciones eligen qué cuenta."
 
 #. Spoken by Alt+Page Down before a review, or when it found nothing.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:221
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:249
 msgid "No critical moments. F7 reviews the game."
 msgstr "No hay momentos críticos. F7 revisa la partida."
 
@@ -5223,7 +5223,7 @@ msgid "No mark, Control+0"
 msgstr "Sin signo, Control+0"
 
 #. Spoken past the last or before the first critical moment.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:227
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:255
 msgid "No more critical moments that way."
 msgstr "No hay más momentos críticos en esa dirección."
 
@@ -5273,7 +5273,7 @@ msgid "Only where it went wrong: I look for the better move"
 msgstr "Solo dónde me equivoqué: yo busco la jugada mejor"
 
 #. Help text of the menu item that opens a PGN file on the analysis board.
-#: addon/globalPlugins/chessStudy/__init__.py:111
+#: addon/globalPlugins/chessStudy/__init__.py:112
 msgid ""
 "Open a saved game on the analysis board to go through it and add variations "
 "and comments"
@@ -5282,12 +5282,12 @@ msgstr ""
 " variantes y comentarios"
 
 #. Menu item that opens the add-on settings, and its help text.
-#: addon/globalPlugins/chessStudy/__init__.py:127
+#: addon/globalPlugins/chessStudy/__init__.py:128
 msgid "Open Chess Study settings"
 msgstr "Abrir las opciones de Chess Study"
 
 #. Title of the dialog that opens a PGN file on the analysis board.
-#: addon/globalPlugins/chessStudy/__init__.py:365
+#: addon/globalPlugins/chessStudy/__init__.py:366
 msgid "Open Game for Analysis"
 msgstr "Abrir partida para análisis"
 
@@ -5337,7 +5337,7 @@ msgid "Play or go to a move first; the mark belongs to a move."
 msgstr "Primero juega o ve a una jugada; el signo pertenece a una jugada."
 
 #. What was played at a critical moment, e.g. "Played Bxe5: mistake.".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:250
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:288
 msgid "Played {move}: {verdict}."
 msgstr "Se jugó {move}: {verdict}."
 
@@ -5386,7 +5386,7 @@ msgstr "Leer el comentario, Shift+C"
 
 #. Menu item that opens the analysis board at the starting position, to record
 #. a game.
-#: addon/globalPlugins/chessStudy/__init__.py:84
+#: addon/globalPlugins/chessStudy/__init__.py:85
 msgid "Record and &Analyse Game"
 msgstr "&Registrar y analizar partida"
 
@@ -5397,7 +5397,7 @@ msgid "removed {piece}"
 msgstr "eliminado: {piece}"
 
 #. Spoken after the review options were saved from the analysis board.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:210
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:238
 msgid "Review options saved. F7 reviews with them."
 msgstr "Opciones de la revisión guardadas. F7 revisa con ellas."
 
@@ -5407,7 +5407,7 @@ msgid "Review options..."
 msgstr "Opciones de la revisión..."
 
 #. Spoken when F7 stopped the game review.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:137
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:140
 msgid "Review stopped."
 msgstr "Revisión detenida."
 
@@ -5444,7 +5444,7 @@ msgid "Saved: {name}"
 msgstr "Guardado: {name}"
 
 #. Help text of the board editor menu item.
-#: addon/globalPlugins/chessStudy/__init__.py:95
+#: addon/globalPlugins/chessStudy/__init__.py:96
 msgid "Set up a position square by square, check it, and analyse it"
 msgstr "Coloca una posición casilla a casilla, verifícala y analízala"
 
@@ -5492,7 +5492,7 @@ msgstr "Tablebase:"
 
 #. Shown when the text in the Lichess import dialog is not a game or a
 #. username.
-#: addon/globalPlugins/chessStudy/__init__.py:492
+#: addon/globalPlugins/chessStudy/__init__.py:498
 msgid "That is not a Lichess game link, game code or username."
 msgstr ""
 "Eso no es un enlace de partida, un código de partida ni un usuario de "
@@ -5533,7 +5533,7 @@ msgstr "La casilla de captura al paso no es posible."
 #. Spoken when the engine failed, followed by the error. Spoken when the
 #. engine failed during the review, followed by the error.
 #: addon/globalPlugins/chessStudy/virtual_chessboard/engine_actions.py:373
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:141
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:144
 msgid "The engine could not answer. Details: {error}"
 msgstr "El motor no pudo responder. Detalles: {error}"
 
@@ -5568,7 +5568,7 @@ msgstr "El motor todavía está pensando"
 #. better, plus 0.5.". The engine's move at a critical moment, e.g. "The
 #. engine preferred Nf3, equal, plus 0.1.".
 #: addon/globalPlugins/chessStudy/virtual_chessboard/engine_actions.py:288
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:261
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:299
 msgid "The engine preferred {move}, {evaluation}."
 msgstr "El motor prefería {move}, {evaluation}."
 
@@ -5584,13 +5584,13 @@ msgid "the engine's move"
 msgstr "la jugada del motor"
 
 #. Spoken when moves were played, taken back or promoted while the review ran.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:148
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:151
 msgid "The game changed during the review. F7 reviews it again."
 msgstr "La partida cambió durante la revisión. F7 la revisa de nuevo."
 
 #. Spoken by Alt+Page Down when the reviewed moves were changed since the
 #. review.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:234
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:262
 msgid "The game changed since the review. F7 reviews it again."
 msgstr "La partida cambió desde la revisión. F7 la revisa de nuevo."
 
@@ -5610,7 +5610,7 @@ msgid "The side that is not to move is in check."
 msgstr "El bando que no tiene el turno está en jaque."
 
 #. Error when Random Puzzle finds no puzzle database.
-#: addon/globalPlugins/chessStudy/__init__.py:228
+#: addon/globalPlugins/chessStudy/__init__.py:229
 msgid ""
 "The tactics database was not found. Choose a valid database in Chess Study "
 "settings first."
@@ -5619,7 +5619,7 @@ msgstr ""
 "opciones de Chess Study."
 
 #. Spoken by F7 when the game has no moves to review.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:94
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:97
 msgid "There are no moves to review."
 msgstr "No hay jugadas que revisar."
 
@@ -5844,7 +5844,7 @@ msgid "{color}: under a minute from move {move}"
 msgstr "{color}: menos de un minuto desde la jugada {move}"
 
 #. Start of the review summary, e.g. "3 critical moments:".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:190
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:194
 msgid "{count} critical moment:"
 msgid_plural "{count} critical moments:"
 msgstr[0] "{count} momento crítico:"
@@ -5891,7 +5891,7 @@ msgid "{name}, {symbol}, Control+{key}"
 msgstr "{name}, {symbol}, Control+{key}"
 
 #. Game review progress, e.g. "50 percent reviewed".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:127
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:130
 msgid "{percent} percent reviewed"
 msgstr "{percent} por ciento revisado"
 
@@ -5992,6 +5992,31 @@ msgstr ""
 "de táctica Glicko-2 con dificultad adaptativa, planes de entrenamiento por "
 "tema, notación de jugadas configurable (descriptiva, SAN, UCI, literal, "
 "OTAN, anna) y traducción al portugués de Brasil."
+
+#: addon/globalPlugins/chessStudy/analysis_words.py:175
+msgid "The engine's move in {best} of your {total} move."
+msgid_plural "The engine's move in {best} of your {total} moves."
+msgstr[0] "La jugada del motor en {best} de tu {total} jugada."
+msgstr[1] "La jugada del motor en {best} de tus {total} jugadas."
+
+#. One only move in the review summary, e.g. "move 18".
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:216
+msgid "move {move}"
+msgstr "jugada {move}"
+
+#. At an only move, e.g. "Played Nd5: only move. Every other move gave away a
+#. lot.".
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:281
+msgid "Played {move}: only move. Every other move gave away a lot."
+msgstr "Se jugó {move}: jugada única. Cualquier otra jugada regalaba mucho."
+
+#. In the review summary: moves where only the engine's move held, e.g. "2
+#. only moves: move 18, move 27.".
+#: addon/globalPlugins/chessStudy/virtual_chessboard/review_actions.py:213
+msgid "{count} only move: {moves}."
+msgid_plural "{count} only moves: {moves}."
+msgstr[0] "{count} jugada única: {moves}."
+msgstr[1] "{count} jugadas únicas: {moves}."
 
 #~ msgid ""
 #~ "1.2.0: Analysis board: record a game with variations, comments and marks, or"
