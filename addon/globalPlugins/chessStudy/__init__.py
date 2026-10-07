@@ -136,19 +136,48 @@ class ChessboardMenu(wx.Menu):
 			# Translators: Help text of the add-on submenu.
 			_("Open a chess game, tactics session, replay, or settings"),
 		)
-		# Bind menu items to events
-		self.Bind(wx.EVT_MENU, self.onNewGame, new_game_item)
-		self.Bind(wx.EVT_MENU, self.onTactics, tactics_item)
-		self.Bind(wx.EVT_MENU, self.onRandomPuzzle, random_puzzle_item)
-		self.Bind(wx.EVT_MENU, self.onEndgames, endgames_item)
-		self.Bind(wx.EVT_MENU, self.onStudyLog, study_item)
-		self.Bind(wx.EVT_MENU, self.onReplayPGN, replay_pgn_file_item)
-		self.Bind(wx.EVT_MENU, self.onRecordGame, record_game_item)
-		self.Bind(wx.EVT_MENU, self.onAnalysePGN, analyse_pgn_item)
-		self.Bind(wx.EVT_MENU, self.onMyGames, my_games_item)
-		self.Bind(wx.EVT_MENU, self.onImportLichess, import_lichess_item)
-		self.Bind(wx.EVT_MENU, self.onBoardEditor, board_editor_item)
-		self.Bind(wx.EVT_MENU, self.onSettings, settings_item)
+		# Bind menu items to events; the shortcut's popup copy uses the same table.
+		self._handlers = {
+			new_game_item.GetId(): self.onNewGame,
+			tactics_item.GetId(): self.onTactics,
+			random_puzzle_item.GetId(): self.onRandomPuzzle,
+			endgames_item.GetId(): self.onEndgames,
+			study_item.GetId(): self.onStudyLog,
+			replay_pgn_file_item.GetId(): self.onReplayPGN,
+			record_game_item.GetId(): self.onRecordGame,
+			analyse_pgn_item.GetId(): self.onAnalysePGN,
+			my_games_item.GetId(): self.onMyGames,
+			import_lichess_item.GetId(): self.onImportLichess,
+			board_editor_item.GetId(): self.onBoardEditor,
+			settings_item.GetId(): self.onSettings,
+		}
+		for item_id, handler in self._handlers.items():
+			self.Bind(wx.EVT_MENU, handler, id=item_id)
+
+	def popup(self):
+		"""Shows a copy of this menu on its own, for the shortcut.
+
+		This menu is a submenu of Tools and cannot be popped up while attached
+		there, so the copy carries the same ids and the choice goes to the
+		same handlers.
+		"""
+		menu = wx.Menu()
+		for item in self.GetMenuItems():
+			if item.IsSeparator():
+				menu.AppendSeparator()
+			else:
+				menu.Append(item.GetId(), item.GetItemLabel(), item.GetHelp())
+		frame = gui.mainFrame
+		assert frame is not None
+		frame.prePopup()
+		try:
+			chosen = frame.GetPopupMenuSelectionFromUser(menu)
+		finally:
+			frame.postPopup()
+			menu.Destroy()
+		handler = self._handlers.get(chosen)
+		if handler is not None:
+			handler(None)
 
 	def onNewGame(self, event, fen=None):
 		from .graphical_interface.new_game_dialog import NewGameOptionsDialog
@@ -664,22 +693,36 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.chessboard_menu = ChessboardMenu(self)
 
 	# -- shortcuts ----------------------------------------------------------------
-	# The menu lives under NVDA > Tools > Chess Study; daily training shouldn't
-	# require three levels of menu. Only Tactics has a default key; the
-	# others the user enables in Input Gestures, under the Chess Study category.
+	# The menu lives under NVDA > Tools > Chess Study, three levels down. The
+	# default key shows the same menu from anywhere; the shortcuts straight to
+	# one item have no key, the user enables them in Input Gestures, under the
+	# Chess Study category.
 
-	def _menu_action(self, handler_name: str):
+	def _menu(self):
 		menu = getattr(self, "chessboard_menu", None)
 		if menu is None:
 			# Translators: Spoken when a shortcut is used while NVDA runs in secure mode.
 			ui.message(_("Chess Study is not available in secure mode."))
-			return
-		wx.CallAfter(getattr(menu, handler_name), None)
+		return menu
+
+	def _menu_action(self, handler_name: str):
+		menu = self._menu()
+		if menu is not None:
+			wx.CallAfter(getattr(menu, handler_name), None)
+
+	@script(
+		# Translators: Description of the shortcut that shows the Chess Study menu.
+		description=_("Shows the Chess Study menu"),
+		gesture="kb:NVDA+alt+x",
+	)
+	def script_show_menu(self, gesture):
+		menu = self._menu()
+		if menu is not None:
+			wx.CallAfter(menu.popup)
 
 	@script(
 		# Translators: Description of the shortcut that opens the tactics trainer.
 		description=_("Opens Chess Study tactics"),
-		gesture="kb:NVDA+alt+x",
 	)
 	def script_open_tactics(self, gesture):
 		self._menu_action("onTactics")

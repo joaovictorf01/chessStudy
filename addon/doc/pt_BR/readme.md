@@ -24,9 +24,8 @@ O que mudou em cada versão: [o changelog do Chess Study](https://github.com/joa
 ## Primeiros passos
 
 1. Instale o Chess Study pela Loja de Complementos do NVDA e reinicie o NVDA.
-2. Aperte **NVDA+Alt+X**: as Táticas abrem de qualquer lugar.
-3. Na primeira vez, o add-on oferece baixar a base de puzzles. A **Leve** (uns 90 MB) basta para começar. O download corre em segundo plano, falando o progresso, e o Escape cancela.
-4. Todo o resto fica no menu do NVDA (NVDA+N), em **Ferramentas**, submenu **Chess Study**.
+2. Aperte **NVDA+Alt+X** de qualquer lugar: o menu do Chess Study abre. Ele também fica no menu do NVDA (NVDA+N), em **Ferramentas**.
+3. Escolha o que você quer fazer: cada item está descrito logo abaixo, em "O menu Chess Study".
 
 ### O menu Chess Study
 
@@ -45,7 +44,7 @@ O que mudou em cada versão: [o changelog do Chess Study](https://github.com/joa
 
 ### Atalhos
 
-**NVDA+Alt+X** abre as Táticas de qualquer lugar. Puzzle aleatório, Finais, Meu estudo, Minhas partidas e Nova partida também têm atalhos, sem tecla de fábrica: atribua uma no diálogo Definir comandos do NVDA (menu Preferências), na categoria Chess Study.
+**NVDA+Alt+X** mostra o menu do Chess Study de qualquer lugar. Táticas, Puzzle aleatório, Finais, Meu estudo, Minhas partidas e Nova partida também têm atalhos, sem tecla de fábrica: atribua uma no diálogo Definir comandos do NVDA (menu Preferências), na categoria Chess Study.
 
 ### A base de puzzles
 

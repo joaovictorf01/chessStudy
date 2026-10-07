@@ -4,13 +4,15 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- **NVDA+Alt+X now shows the Chess Study menu** from anywhere, instead of opening Tactics: every part of the add-on is one key away. Tactics keeps its own shortcut, with no key by default; assign NVDA+Alt+X or another key to it in Input Gestures, Chess Study category, to have the old behaviour back.
+
 - Game review (F7): after the accuracy, says how many of your moves were the engine's own choice ("The engine's move in 12 of your 30 moves."), so the review tells what went right as well as the critical moments.
 
 - Game review (F7): finds your only moves, where the engine's move was the one that held and every other gave away a lot (taking back a piece and forced moves do not count). The summary names them after the critical moments ("2 only moves: move 18, move 27."), Alt+Page Down visits them, and they get the "!" mark when the move has no mark of yours. The engine now looks at its two best moves in each position; in the same time, that costs almost nothing in depth.
 
 - Add-on Store: a shorter description that says what each part is for, in English, Portuguese and Spanish.
 
-- Manual: Getting started now leads to the first puzzle (NVDA+Alt+X, then the puzzle database download), and the note for Chessmart users moved to the end.
+- Manual: Getting started says to install from the Add-on Store and opens the menu with NVDA+Alt+X, and the note for Chessmart users moved to the end.
 
 ## Fixes
 

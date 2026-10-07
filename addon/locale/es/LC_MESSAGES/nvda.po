@@ -4168,6 +4168,11 @@ msgstr "Abre los Finales de Chess Study"
 msgid "Opens Chess Study My Study"
 msgstr "Abre Mi estudio de Chess Study"
 
+#. Description of the shortcut that shows the Chess Study menu.
+#: addon/globalPlugins/chessStudy/__init__.py
+msgid "Shows the Chess Study menu"
+msgstr "Muestra el menú de Chess Study"
+
 #. Description of the shortcut that opens the tactics trainer.
 #: addon/globalPlugins/chessStudy/__init__.py:681
 msgid "Opens Chess Study tactics"

@@ -24,9 +24,8 @@ Qué cambió en cada versión: [el registro de cambios de Chess Study](https://g
 ## Primeros pasos
 
 1. Instala Chess Study desde la Tienda de Complementos de NVDA y reinicia NVDA.
-2. Pulsa **NVDA+Alt+X**: Táctica se abre desde cualquier lugar.
-3. La primera vez, el complemento ofrece descargar la base de problemas. La **Ligera** (unos 90 MB) basta para empezar. La descarga sigue en segundo plano, anunciando el progreso, y Escape la cancela.
-4. Todo lo demás está en el menú de NVDA (NVDA+N), en **Herramientas**, submenú **Chess Study**.
+2. Pulsa **NVDA+Alt+X** desde cualquier lugar: se abre el menú de Chess Study. También está en el menú de NVDA (NVDA+N), en **Herramientas**.
+3. Elige lo que quieres hacer: cada elemento se describe justo debajo, en "El menú Chess Study".
 
 ### El menú Chess Study
 
@@ -45,7 +44,7 @@ Qué cambió en cada versión: [el registro de cambios de Chess Study](https://g
 
 ### Atajos
 
-**NVDA+Alt+X** abre Táctica desde cualquier lugar. Problema al azar, Finales, Mi estudio, Mis partidas y Nueva partida también tienen atajos, sin tecla asignada por defecto: asigna una en el diálogo Gestos de Entrada de NVDA (menú Preferencias), categoría Chess Study.
+**NVDA+Alt+X** muestra el menú de Chess Study desde cualquier lugar. Táctica, Problema al azar, Finales, Mi estudio, Mis partidas y Nueva partida también tienen atajos, sin tecla asignada por defecto: asigna una en el diálogo Gestos de Entrada de NVDA (menú Preferencias), categoría Chess Study.
 
 ### La base de problemas
 
