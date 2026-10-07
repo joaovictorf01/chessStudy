@@ -4669,11 +4669,11 @@ msgid ""
 "move was. Set up any position and play against the computer from it."
 msgstr ""
 "Ajedrez completo en NVDA. Entrena táctica con los problemas de Lichess: el "
-"nivel te acompaña, y los problemas que fallaste vuelven para repaso. Aprende"
-" finales con ejercicios de mate y lecciones. Registra y analiza tus "
+"nivel se adapta a ti, y los problemas que fallaste vuelven para repaso. "
+"Aprende finales con ejercicios de mate y lecciones. Registra y analiza tus "
 "partidas, importa partidas de Lichess, y Stockfish te muestra dónde te "
-"equivocaste y cuál era la mejor jugada. Prepara cualquier posición y juega "
-"contra la computadora desde ella."
+"equivocaste y cuál era la mejor jugada. Coloca cualquier posición en el "
+"tablero y juega contra la computadora desde ella."
 
 #. Menu item that opens a PGN file on the analysis board.
 #: addon/globalPlugins/chessStudy/__init__.py:110
