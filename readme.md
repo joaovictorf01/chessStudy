@@ -2,7 +2,7 @@
 
 * Author: João Victor, building on Chessmart by Musharraf Omer
 * Compatibility: NVDA 2026.1 or later
-* Download: [Chess Study releases on GitHub](https://github.com/joaovictorf01/chessStudy/releases) (the NVDA Add-on Store once it is published there)
+* Download: [Chess Study releases on GitHub](https://github.com/joaovictorf01/chessStudy/releases) or the NVDA Add-on Store
 * Source code: [the Chess Study repository on GitHub](https://github.com/joaovictorf01/chessStudy)
 * License: GNU GPL v2
 
@@ -23,13 +23,10 @@ What changed in each version: [the Chess Study changelog](https://github.com/joa
 
 ## Getting started
 
-1. Install the add-on and restart NVDA.
-2. Open the NVDA menu (NVDA+N), go to **Tools** and find the **Chess Study** submenu.
-3. Choose what you want to do.
-
-### Coming from Chessmart
-
-If you used Chessmart 1.x, NVDA sees Chess Study as a different add-on and does not update one into the other. Remove Chessmart in the Add-on Store, install Chess Study and restart NVDA. The first time it starts, Chess Study takes over what was Chessmart's: your rating and history, the missed puzzles waiting for review, the puzzle database and the tablebases (the folder is renamed, nothing is downloaded again), and your settings. Your games stay in `Documents\Chessmart`, which keeps being the games folder.
+1. Install Chess Study from the NVDA Add-on Store and restart NVDA.
+2. Press **NVDA+Alt+X**: Tactics opens from anywhere.
+3. The first time, the add-on offers to download the puzzle database. **Light** (about 90 MB) is enough to start. The download runs in the background with spoken progress; Escape cancels it.
+4. Everything else is in the NVDA menu (NVDA+N), under **Tools**, in the **Chess Study** submenu.
 
 ### The Chess Study menu
 
@@ -296,3 +293,7 @@ To build the add-on or change its code, read [the Chess Study contributing guide
 * [Stockfish](https://stockfishchess.org) and [Fairy-Stockfish](https://fairy-stockfish.github.io) — the engines.
 * [python-chess](https://python-chess.readthedocs.io) — the chess library.
 * João Victor — the tactics trainer and its database tooling, the review of missed puzzles, the endgame drills and lessons, the tablebase judge, My Study, the analysis board, engine analysis, opening names, game review, Lichess import, the Board Editor, My Games, the move notation, the update to Stockfish 16 and to the current python-chess, the cleanup of the old online-play code, and the Portuguese translation.
+
+## Coming from Chessmart
+
+If you used Chessmart 1.x, NVDA sees Chess Study as a different add-on and does not update one into the other. Remove Chessmart in the Add-on Store, install Chess Study and restart NVDA. The first time it starts, Chess Study takes over what was Chessmart's: your rating and history, the missed puzzles waiting for review, the puzzle database and the tablebases (the folder is renamed, nothing is downloaded again), and your settings. Your games stay in `Documents\Chessmart`, which keeps being the games folder.

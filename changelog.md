@@ -10,6 +10,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 - Add-on Store: a shorter description that says what each part is for, in English, Portuguese and Spanish.
 
+- Manual: Getting started now leads to the first puzzle (NVDA+Alt+X, then the puzzle database download), and the note for Chessmart users moved to the end.
+
 ## Fixes
 
 - My Games: a game where your Lichess user played Black now opens from Black, as it does when imported; it always opened from White.

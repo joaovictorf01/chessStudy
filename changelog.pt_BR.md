@@ -10,6 +10,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 - Loja de complementos: uma descrição mais curta, que diz para que serve cada parte, em inglês, português e espanhol.
 
+- Manual: os Primeiros passos agora levam até o primeiro puzzle (NVDA+Alt+X e depois o download da base de puzzles), e o aviso para quem vinha do Chessmart foi para o final.
+
 ## Correções
 
 - Minhas partidas: a partida em que o seu usuário do Lichess jogou de Pretas agora abre do lado das Pretas, como já abria ao importar; abria sempre do lado das Brancas.

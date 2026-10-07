@@ -2,7 +2,7 @@
 
 * Autor: João Victor, a partir do Chessmart de Musharraf Omer
 * Compatibilidade: NVDA 2026.1 ou posterior
-* Download: [versões do Chess Study no GitHub](https://github.com/joaovictorf01/chessStudy/releases) (e a Loja de Complementos do NVDA, quando for publicado lá)
+* Download: [versões do Chess Study no GitHub](https://github.com/joaovictorf01/chessStudy/releases) ou a Loja de Complementos do NVDA
 * Código-fonte: [o repositório do Chess Study no GitHub](https://github.com/joaovictorf01/chessStudy)
 * Licença: GNU GPL v2
 
@@ -23,13 +23,10 @@ O que mudou em cada versão: [o changelog do Chess Study](https://github.com/joa
 
 ## Primeiros passos
 
-1. Instale o add-on e reinicie o NVDA.
-2. Abra o menu do NVDA (NVDA+N), vá até **Ferramentas** e encontre o submenu **Chess Study**.
-3. Escolha o que você quer fazer.
-
-### Vindo do Chessmart
-
-Se você usava o Chessmart 1.x, o NVDA vê o Chess Study como outro add-on e não atualiza um no outro. Remova o Chessmart na Loja de Complementos, instale o Chess Study e reinicie o NVDA. Na primeira vez que abre, o Chess Study assume o que era do Chessmart: o seu rating e histórico, os puzzles errados esperando revisão, a base de puzzles e as tablebases (a pasta é renomeada, nada é baixado de novo) e as suas configurações. As suas partidas continuam em `Documents\Chessmart`, que segue sendo a pasta de partidas.
+1. Instale o Chess Study pela Loja de Complementos do NVDA e reinicie o NVDA.
+2. Aperte **NVDA+Alt+X**: as Táticas abrem de qualquer lugar.
+3. Na primeira vez, o add-on oferece baixar a base de puzzles. A **Leve** (uns 90 MB) basta para começar. O download corre em segundo plano, falando o progresso, e o Escape cancela.
+4. Todo o resto fica no menu do NVDA (NVDA+N), em **Ferramentas**, submenu **Chess Study**.
 
 ### O menu Chess Study
 
@@ -296,3 +293,7 @@ Para compilar o add-on ou mexer no código, leia [o guia de contribuição do Ch
 * [Stockfish](https://stockfishchess.org) e [Fairy-Stockfish](https://fairy-stockfish.github.io) — os motores.
 * [python-chess](https://python-chess.readthedocs.io) — a biblioteca de xadrez.
 * João Victor — o treinador de táticas e as ferramentas da base dele, a revisão dos puzzles errados, os treinos e as lições de finais, o juiz das tablebases, o Meu estudo, o tabuleiro de análise, a análise com o motor, os nomes de abertura, a revisão da partida, a importação do Lichess, o Editor de tabuleiro, o Minhas partidas, a notação dos lances, a atualização para o Stockfish 16 e para o python-chess atual, a limpeza do código antigo de jogo online, e a tradução para o português.
+
+## Vindo do Chessmart
+
+Se você usava o Chessmart 1.x, o NVDA vê o Chess Study como outro add-on e não atualiza um no outro. Remova o Chessmart na Loja de Complementos, instale o Chess Study e reinicie o NVDA. Na primeira vez que abre, o Chess Study assume o que era do Chessmart: o seu rating e histórico, os puzzles errados esperando revisão, a base de puzzles e as tablebases (a pasta é renomeada, nada é baixado de novo) e as suas configurações. As suas partidas continuam em `Documents\Chessmart`, que segue sendo a pasta de partidas.
