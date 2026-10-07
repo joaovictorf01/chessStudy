@@ -8,6 +8,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 - Game review (F7): finds your only moves, where the engine's move was the one that held and every other gave away a lot (taking back a piece and forced moves do not count). The summary names them after the critical moments ("2 only moves: move 18, move 27."), Alt+Page Down visits them, and they get the "!" mark when the move has no mark of yours. The engine now looks at its two best moves in each position; in the same time, that costs almost nothing in depth.
 
+- Add-on Store: a shorter description that says what each part is for, in English, Portuguese and Spanish.
+
 ## Fixes
 
 - My Games: a game where your Lichess user played Black now opens from Black, as it does when imported; it always opened from White.

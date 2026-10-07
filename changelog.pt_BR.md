@@ -8,6 +8,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 - Revisão da partida (F7): acha os seus lances únicos, em que o lance do motor era o que segurava e qualquer outro entregava muito (retomar peça e lance forçado não contam). O resumo diz quais são depois dos momentos críticos ("2 lances únicos: lance 18, lance 27."), o Alt+Page Down passa por eles, e eles recebem a marca "!" quando o lance não tem marca sua. O motor agora olha os dois melhores lances de cada posição; no mesmo tempo, isso quase não custa profundidade.
 
+- Loja de complementos: uma descrição mais curta, que diz para que serve cada parte, em inglês, português e espanhol.
+
 ## Correções
 
 - Minhas partidas: a partida em que o seu usuário do Lichess jogou de Pretas agora abre do lado das Pretas, como já abria ao importar; abria sempre do lado das Brancas.

@@ -26,7 +26,7 @@ addon_info = AddonInfo(
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description=_(
-		"An accessible chess environment for NVDA. Train tactics from the Lichess puzzle database with a rating that follows you and missed puzzles that come back for review; learn endgames with mate drills and lessons judged by the Syzygy tablebases; record and analyse your games with Stockfish 16, a full game review and Lichess import; and play against the engine or a friend.",
+		"Complete chess in NVDA. Train tactics with Lichess puzzles: the level follows you, and the puzzles you missed come back for review. Learn endgames with mate drills and lessons. Record and analyse your games, import games from Lichess, and Stockfish shows where you went wrong and what the best move was. Set up any position and play against the computer from it.",
 	),
 	# version
 	addon_version="2.0.0",
