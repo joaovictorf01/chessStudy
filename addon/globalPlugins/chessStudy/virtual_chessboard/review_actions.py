@@ -278,7 +278,7 @@ class ReviewActionsMixin:
 		if moment.only_move:
 			# Translators: At an only move, e.g. "Played Nd5: only move. Every other move gave away a lot.".
 			spoken.append(
-				_("Played {move}: only move. Every other move gave away a lot.").format(move=played)
+				_("Played {move}: only move. Every other move gave away a lot.").format(move=played),
 			)
 			self._speak_mark(moment, spoken)
 			speak_next(spoken)

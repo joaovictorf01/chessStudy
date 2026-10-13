@@ -198,7 +198,7 @@ class AnalysisEngine:
 				if cancel.is_set():
 					break
 				results.append(
-					None if board.is_game_over() else self._evaluate_with_second(board.copy(), seconds)
+					None if board.is_game_over() else self._evaluate_with_second(board.copy(), seconds),
 				)
 				progress(done, len(boards))
 			return results

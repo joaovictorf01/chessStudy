@@ -144,7 +144,9 @@ class OnlyMoveTest(unittest.TestCase):
 		g = game("1. a3 h6 2. b3 g6 3. c3 *")
 		evaluations = evals_for(g, [0] * 6)
 		evaluations[4] = PositionEval(
-			evaluations[4].assessment, evaluations[4].best_move, second=Assessment(-400, None)
+			evaluations[4].assessment,
+			evaluations[4].best_move,
+			second=Assessment(-400, None),
 		)
 		moments = review_moves(g, evaluations, ReviewOptions(side=Side.BOTH, skip_theory=False), chess.WHITE)
 		self.assertEqual(only_moves(moments), [])
