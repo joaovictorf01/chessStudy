@@ -26,7 +26,7 @@ from ..i18n import _, ngettext
 from ..openings import lookup
 from ..paths import import_bundled
 from ..sounds import GameSound
-from ..speaking import speak_next
+from ..speaking import speak_and_show
 from ..spoken_messages import spoken_color_name
 from .analysis_engine import DEEP_SECONDS, QUICK_SECONDS, result_of
 
@@ -148,7 +148,7 @@ class EngineActionsMixin:
 		sequence: list = [speech.commands.BreakCommand(100)]
 		for sentence in spoken:
 			sequence.extend([sentence, speech.commands.BreakCommand(150)])
-		speak_next(sequence)
+		speak_and_show(sequence)
 
 	# -- the tablebase: exact answers with few pieces ------------------------------------
 
@@ -192,7 +192,7 @@ class EngineActionsMixin:
 			spoken.append(
 				_("Best: {moves}.").format(moves=", ".join(self._san_text(board, move) for move in best[:4])),
 			)
-		speak_next(spoken)
+		speak_and_show(spoken)
 		return True
 
 	def show_threat(self):
@@ -238,7 +238,7 @@ class EngineActionsMixin:
 		line = self._spoken_line(threat.board, threat.line[1 : 1 + SPOKEN_LINE_MOVES], after=threat.best_move)
 		if line:
 			spoken.append(_("Line: {line}.").format(line=line))
-		speak_next(spoken)
+		speak_and_show(spoken)
 
 	def review_move(self):
 		node = self.tree.node
@@ -306,7 +306,7 @@ class EngineActionsMixin:
 					key=MARK_KEYS.index(mark) + 1,
 				),
 			)
-		speak_next(spoken)
+		speak_and_show(spoken)
 
 	def add_engine_line(self):
 		node = self.tree.node

@@ -4,6 +4,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
+- Tabuleiro de análise: as respostas do motor (E, X, Shift+E e a revisão do F7) agora aparecem também na linha braille, e não só na fala, para ler as linhas no seu ritmo. A opção de braille do NVDA "Mostrar mensagens" decide quanto tempo ficam. Sugestão de Neil Graham.
+
 - **O NVDA+Alt+X agora mostra o menu do Chess Study** de qualquer lugar, em vez de abrir as Táticas: todas as partes do add-on ficam a uma tecla. As Táticas continuam com atalho próprio, sem tecla de fábrica; para voltar ao jeito antigo, atribua o NVDA+Alt+X ou outra tecla a ele em Definir comandos, categoria Chess Study.
 
 - Revisão da partida (F7): depois da precisão, diz quantos dos seus lances foram o escolhido pelo motor ("O lance do motor em 12 dos seus 30 lances."), para a revisão dizer também o que deu certo, e não só os momentos críticos.

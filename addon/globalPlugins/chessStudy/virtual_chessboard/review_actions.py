@@ -48,7 +48,7 @@ from ..game_review import (
 from ..i18n import _, ngettext
 from ..paths import import_bundled
 from ..sounds import GameSound
-from ..speaking import speak_next
+from ..speaking import speak_and_show
 from ..spoken_messages import spoken_color_name
 from .analysis_engine import result_of
 
@@ -181,7 +181,7 @@ class ReviewActionsMixin:
 		accuracy = spoken_accuracy(accuracy_by_color(game, position_evals), my_color)
 		engine_moves = spoken_best_moves(*best_moves(reviewed, my_color))
 		opening = [text for text in (accuracy, engine_moves) if text]
-		speak_next(
+		speak_and_show(
 			([" ".join(opening), speech.commands.BreakCommand(200)] if opening else [])
 			+ self._summary(critical, only),
 		)
@@ -281,7 +281,7 @@ class ReviewActionsMixin:
 				_("Played {move}: only move. Every other move gave away a lot.").format(move=played),
 			)
 			self._speak_mark(moment, spoken)
-			speak_next(spoken)
+			speak_and_show(spoken)
 			return
 		spoken.append(
 			# Translators: What was played at a critical moment, e.g. "Played Bxe5: mistake.".
@@ -314,7 +314,7 @@ class ReviewActionsMixin:
 					# Translators: Said when the engine's line was added at a critical moment.
 					spoken.append(_("Its line is a variation here: Alt+Down lists it."))
 		self._speak_mark(moment, spoken)
-		speak_next(spoken)
+		speak_and_show(spoken)
 
 	def _speak_mark(self, moment, spoken: list) -> None:
 		mark = moment.suggested_mark

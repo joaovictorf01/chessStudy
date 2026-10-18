@@ -4,6 +4,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- Analysis board: the engine's answers (E, X, Shift+E and the F7 review) now also appear on the braille display, not only in speech, so the lines can be read at your own pace. NVDA's braille setting "Show messages" decides how long they stay. Suggested by Neil Graham.
+
 - **NVDA+Alt+X now shows the Chess Study menu** from anywhere, instead of opening Tactics: every part of the add-on is one key away. Tactics keeps its own shortcut, with no key by default; assign NVDA+Alt+X or another key to it in Input Gestures, Chess Study category, to have the old behaviour back.
 
 - Game review (F7): after the accuracy, says how many of your moves were the engine's own choice ("The engine's move in 12 of your 30 moves."), so the review tells what went right as well as the critical moments.

@@ -6,7 +6,10 @@
 
 """Speaking through NVDA: the add-on's speech queue and a helper for building sequences."""
 
+import braille
 import speech
+
+from .braille_text import braille_text
 
 
 def intersperse(lst, item) -> speech.SpeechSequence:
@@ -23,3 +26,15 @@ def intersperse(lst, item) -> speech.SpeechSequence:
 def speak_next(speech_sequence: speech.SpeechSequence, priority=speech.priorities.Spri.NEXT) -> None:
 	"""Speaks after what's already queued, without interrupting what NVDA is currently saying."""
 	speech.speak(speech_sequence, priority=priority)
+
+
+def speak_and_show(speech_sequence: speech.SpeechSequence) -> None:
+	"""Speaks like `speak_next`, and shows the words on the braille display.
+
+	For the engine's answers: long enough that a braille user wants to read them
+	at their own pace. How long they stay is NVDA's "Show messages" braille setting.
+	"""
+	speak_next(speech_sequence)
+	text = braille_text(speech_sequence)
+	if text and braille.handler is not None:
+		braille.handler.message(text)

@@ -211,6 +211,8 @@ Cada jugada lleva su reloj: al recorrer la partida se dice el tiempo que quedaba
 
 El motor es Stockfish 16. Una evaluación se dice como la dicen los jugadores: "ligera ventaja de las blancas, más 0,4" (un peón vale 1,0). Shift+E juzga una jugada como lo hace Lichess: la evaluación se convierte en una probabilidad de ganar de 0 a 100, y la jugada es una imprecisión cuando regala 5 puntos de ella, un error con 10, un error grave con 15. Por eso perder un peón en una posición igualada es una imprecisión, mientras que perder uno con una torre de ventaja no es nada. El signo sugerido es solo una sugerencia: el signo sigue siendo tuyo.
 
+Las respuestas del motor (E, X, Shift+E y la revisión de F7) también aparecen en la línea braille, para leer las líneas a su ritmo. Cuánto tiempo quedan lo decide la opción de braille de NVDA "Mostrar mensajes": elija "Mostrar indefinidamente" para que cada respuesta quede hasta pulsar una tecla.
+
 Los nombres de apertura vienen de Lichess ([lichess-org/chess-openings](https://github.com/lichess-org/chess-openings), dominio público) y se buscan por posición, así que también se reconoce una transposición. Una jugada que llega a una nueva apertura con nombre dice su nombre, la primera jugada fuera de la tabla dice "fuera de la teoría", Shift+E sobre una jugada de teoría lo dice en lugar de preguntar al motor, y al guardar se escriben las etiquetas ECO y Opening.
 
 Tus propias variantes no tienen límite: calcula hasta poder decir cómo está la posición, y detente ahí. La línea del motor añadida con Control+E se detiene en 8 medias jugadas, suficiente para ver la idea.

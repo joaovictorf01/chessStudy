@@ -211,6 +211,8 @@ Every move carries its clock: moving through the game says the time left and the
 
 The engine is Stockfish 16. An evaluation is said the way players say it: "white slightly better, plus 0.4" (a pawn is 1.0). Shift+E judges a move the way Lichess does: the evaluation becomes a winning chance from 0 to 100, and the move is an inaccuracy when it gives away 5 points of it, a mistake at 10, a blunder at 15. That is why losing a pawn in a level position is an inaccuracy, while losing one with a rook up is nothing. The suggested mark is only a suggestion: the mark stays yours.
 
+The engine's answers (E, X, Shift+E, and the F7 review) are also shown on the braille display, so the lines can be read at your own pace. How long they stay is NVDA's braille setting "Show messages": choose "Show indefinitely" to keep each answer until you press a key.
+
 Opening names come from Lichess ([lichess-org/chess-openings](https://github.com/lichess-org/chess-openings), public domain), looked up by position, so a transposition is recognised too. A move that reaches a new named opening says its name, the first move out of the table says "out of theory", Shift+E on a theory move says so instead of asking the engine, and saving writes the ECO and Opening tags.
 
 Your own variations have no limit: calculate until you can say how the position stands, and stop there. The engine's line added with Control+E stops at 8 half-moves, enough to see the idea.

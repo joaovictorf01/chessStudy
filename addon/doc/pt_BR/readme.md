@@ -211,6 +211,8 @@ Cada lance leva o seu relógio: andar pela partida diz o tempo que restava e o t
 
 O motor é o Stockfish 16. Uma avaliação é dita como os jogadores dizem: "brancas um pouco melhores, mais 0,4" (um peão vale 1,0). O Shift+E julga um lance como o Lichess julga: a avaliação vira uma chance de vitória de 0 a 100, e o lance é uma imprecisão quando entrega 5 pontos dela, um erro com 10, um erro grave com 15. Por isso perder um peão numa posição igual é uma imprecisão, enquanto perder um com uma torre a mais não é nada. A marca sugerida é só uma sugestão: a marca continua sendo sua.
 
+As respostas do motor (E, X, Shift+E e a revisão do F7) também aparecem na linha braille, para ler as linhas no seu ritmo. Quanto tempo ficam é a opção de braille do NVDA "Mostrar mensagens": escolha "Mostrar indefinidamente" para cada resposta ficar até você apertar uma tecla.
+
 Os nomes de abertura vêm do Lichess ([lichess-org/chess-openings](https://github.com/lichess-org/chess-openings), domínio público), buscados pela posição, então uma transposição também é reconhecida. Um lance que chega a uma nova abertura com nome diz o nome, o primeiro lance fora da tabela diz "fora da teoria", o Shift+E num lance de teoria diz isso em vez de perguntar ao motor, e salvar grava as tags ECO e Opening.
 
 As suas próprias variantes não têm limite: calcule até conseguir dizer como a posição está, e pare ali. A linha do motor acrescentada com Control+E para em 8 meios-lances, o bastante para ver a ideia.

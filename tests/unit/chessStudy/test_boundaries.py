@@ -19,6 +19,7 @@ PURE_MODULES = (
 	"accuracy",
 	"analysis_words",
 	"board_geometry",
+	"braille_text",
 	"concurrency",
 	"endgame.drills",
 	"endgame.judge",
