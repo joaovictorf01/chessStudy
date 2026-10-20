@@ -4,6 +4,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
+- **Digitar o lance**, como no modo para cegos do Lichess: em SAN (Nf3, exd5, O-O, e8=Q) ou pelas duas casas (g1f3). No tabuleiro de partida, o Tab abre o campo; nos tabuleiros de puzzle, de finais e de análise, é a primeira ação da barra do Tab ("Digitar lance..."). Maiúscula ou minúscula tanto faz, 0-0 é roque, e um b minúsculo é o peão da coluna b quando esse lance é legal. As setas e o Enter continuam como antes. O manual, em "Digitar o lance", tem os detalhes.
+
 - Tabuleiro de análise: as respostas do motor (E, X, Shift+E e a revisão do F7) agora aparecem também na linha braille, e não só na fala, para ler as linhas no seu ritmo. A opção de braille do NVDA "Mostrar mensagens" decide quanto tempo ficam. Sugestão de Neil Graham.
 
 - **O NVDA+Alt+X agora mostra o menu do Chess Study** de qualquer lugar, em vez de abrir as Táticas: todas as partes do add-on ficam a uma tecla. As Táticas continuam com atalho próprio, sem tecla de fábrica; para voltar ao jeito antigo, atribua o NVDA+Alt+X ou outra tecla a ele em Definir comandos, categoria Chess Study.

@@ -10,6 +10,15 @@ What the unit tests cannot see. After a change, run the parts it touches, with t
 - Escape on the board asks first when something would be lost, and closes the window.
 - The board picture follows the focus after a fast run of arrows.
 
+## Typing a move
+
+- Game against the computer: Tab opens "Type a move"; Nf3 and Enter plays it, the move is spoken and the focus is back on the board. Escape closes the field without playing.
+- Tab while the computer is thinking, then a move: "It is not your turn."
+- A move that is not legal ("e5" on move 1, or "knight"): the invalid sound and the sentence; the board keeps the focus.
+- e7e8 with a pawn on the seventh: the promotion menu asks for the piece.
+- Puzzle, endgame and analysis boards: Tab, Enter on "Type a move..." opens the field; a typed move counts as on the arrows (puzzle right or wrong, endgame judge, a new variation on the analysis board).
+- Endgame lesson, during the win/draw/loss question: "Type a move..." only gives the invalid sound.
+
 ## Game against the computer
 
 - The engine answers; at the chosen strength it does not play instantly perfect moves.

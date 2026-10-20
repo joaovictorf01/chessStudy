@@ -6,7 +6,9 @@ import functools
 import typing
 
 import controlTypes
+import globalVars
 import ui
+import wx
 import speech
 import speech.commands
 import queueHandler
@@ -22,6 +24,7 @@ from ..speaking import speak_next
 from ..i18n import _, ngettext
 from ..board_geometry import pocket_contents
 from ..spoken_messages import spoken_piece_name
+from ..typed_move import read_typed_move
 from .base import BaseChessboardCell, BaseVirtualChessboard, Color
 from .ui_components import SimpleList
 
@@ -97,6 +100,12 @@ class UserDrivenCell(BaseChessboardCell):
 		if announce:
 			eventHandler.executeEvent("stateChange", self)
 		self.update_visual_highlight()
+
+	# The game boards have no actions bar: Tab opens the move field itself.
+	# The boards that have one (puzzles, endgames, analysis) bind Tab in their own cell class.
+	@script(gesture="kb:tab")
+	def script_type_move(self, gesture):
+		self.parent.type_move()
 
 	@script(gesture="kb:control+d")
 	def script_make_draw_offer(self, gesture):
@@ -218,6 +227,55 @@ class UserDrivenChessboard(BaseVirtualChessboard):
 			eventHandler.queueEvent("gainFocus", p_menu)
 		else:
 			self.move_piece_and_check_game_status(move)
+
+	# -- a move typed as text ----------------------------------------------------
+
+	def typed_moves_allowed(self):
+		"""Whether the move field may open now; the endgame lesson says no while its question is asked."""
+		return not self.is_game_over
+
+	def type_move(self):
+		if globalVars.appArgs.secure:
+			return
+		if not self.typed_moves_allowed():
+			GameSound.invalid.play()
+			return
+		from ..graphical_interface.messages import run_modal
+
+		dialog = wx.TextEntryDialog(
+			self.dialog,
+			# Translators: Prompt of the field that takes a move typed as text.
+			_("Your move, such as Nf3, exd5, O-O, or the two squares, g1f3:"),
+			# Translators: Title of the field that takes a move typed as text.
+			_("Type a move"),
+		)
+		run_modal(dialog, functools.partial(self._on_typed_move_dialog, dialog))
+
+	def _on_typed_move_dialog(self, dialog, result):
+		text = dialog.GetValue()
+		queueHandler.queueFunction(queueHandler.eventQueue, self.set_focus_to_cell, self._focused_cell)
+		if result == wx.ID_OK:
+			queueHandler.queueFunction(queueHandler.eventQueue, self.play_typed_move, text)
+
+	def play_typed_move(self, text):
+		if not self.typed_moves_allowed():
+			GameSound.invalid.play()
+			return
+		if self.board.turn != self.prospective:
+			# Translators: Spoken when a move was typed while it is the other side's turn.
+			speak_next(
+				[speech.commands.WaveFileCommand(GameSound.invalid.filename), _("It is not your turn.")]
+			)
+			return
+		typed = read_typed_move(self.board, text)
+		if typed.move is None:
+			speak_next([speech.commands.WaveFileCommand(GameSound.invalid.filename), typed.problem])
+			return
+		if typed.needs_promotion:
+			# Only the squares were typed: the promotion menu asks for the piece, as with the arrows.
+			self.user_play(typed.move.from_square, typed.move.to_square)
+			return
+		self.move_piece_and_check_game_status(typed.move)
 
 	def try_make_drop_move(self, index):
 		if not self._is_drop_move_drop_target(index):

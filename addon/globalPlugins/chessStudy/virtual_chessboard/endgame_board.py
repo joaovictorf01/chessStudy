@@ -73,6 +73,7 @@ class TablebaseJudgeMixin(ActionsBarMixin):
 	board: chess.Board
 	prospective: chess.Color
 	game_announcer: typing.Any
+	type_move: typing.Callable[[], None]
 	tablebase: typing.Any = None
 	spoiled_moves: int = 0
 	hints_used: int = 0
@@ -83,7 +84,8 @@ class TablebaseJudgeMixin(ActionsBarMixin):
 		self.install_actions_bar(
 			# Translators: Name of the toolbar reached with Tab on the endgame board.
 			name=_("Endgame actions"),
-			items=items,
+			# Translators: Button of the actions bars: opens the field that takes a move typed as text.
+			items=[(_("Type a move..."), self._from_actions(self.type_move)), *items],
 		)
 
 	def hints_note(self):
@@ -550,6 +552,9 @@ class EndgameLessonChessboard(TablebaseJudgeMixin, UserEngineChessboard):
 			GameSound.invalid.play()
 			return
 		super().activate_cell(cell)
+
+	def typed_moves_allowed(self):
+		return self.playing and super().typed_moves_allowed()
 
 	def move_piece_and_check_game_status(self, move, pre_speech=(), post_speech=()):
 		extra = []

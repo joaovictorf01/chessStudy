@@ -54,6 +54,12 @@ Na primeira vez que você abre as Táticas ou o Puzzle aleatório, o add-on ofer
 
 O tabuleiro de puzzle, os tabuleiros de finais, o tabuleiro de análise e o Editor de tabuleiro têm cada um uma barra de ações, aberta com **Tab** a partir do tabuleiro. O **Tab** cai na primeira ação e o **Shift+Tab** na última. Dentro da barra, **Tab** e **Seta direita** vão para a próxima ação, **Shift+Tab** e **Seta esquerda** para a anterior, e **Enter** executa a ação em foco. **Escape**, a ação "Voltar ao tabuleiro" ou passar de qualquer uma das pontas da barra volta ao tabuleiro. As ações de cada barra estão listadas junto com os comandos do seu tabuleiro.
 
+### Digitar o lance
+
+Além de ir até a peça e apertar Enter na casa dela e depois na de destino, dá para digitar o lance, como no modo para cegos do Lichess. No tabuleiro de partida (contra o computador ou entre duas pessoas), o **Tab** abre o campo direto; nos tabuleiros de puzzle, de finais e de análise, "Digitar lance..." é a primeira ação da barra do Tab, então **Tab, Enter** abre o campo. Digite o lance e aperte **Enter**; **Escape** fecha o campo sem jogar.
+
+O campo aceita o lance em SAN, como se anota numa súmula: **Nf3**, **exd5**, **Qxf7#**, **O-O**, **e8=Q**; ou pelas duas casas: **g1f3**, **e7e8q**. Maiúscula e minúscula tanto faz ("nf3" funciona), os sinais de xeque e de comentário podem ficar de fora, **0-0** é roque, e o sinal de promoção é opcional ("e8q"). Um **b** minúsculo é o peão da coluna b quando esse lance é legal, e o bispo quando não é; **Bxc4** com B maiúsculo é sempre o bispo. As letras das peças são as do inglês (K rei, Q dama, R torre, B bispo, N cavalo), qualquer que seja o idioma do NVDA. Quando duas peças podem fazer o lance, ele pede a coluna ou a fileira, como em **Nbd2**; quando só as duas casas de uma promoção são digitadas, o menu de promoção pergunta a peça. Um lance que não é legal é repetido com o que foi digitado: "e5 não é um lance legal aqui."
+
 ## Treino de táticas
 
 O diálogo **Táticas** monta uma sessão:
@@ -95,7 +101,7 @@ Control+N ou Próximo puzzle durante uma revisão pergunta se você quer pular a
 | Control+F1 | Detalhes do puzzle: o id do puzzle, rating, popularidade, número de jogadas, temas, tags de abertura, e se a partida de origem está disponível no Lichess |
 | Control+F2 | Estado da sessão: resolvidos, erros, dicas |
 | Control+Shift+R | O seu rating de táticas atual |
-| Tab / Shift+Tab | As ações de treino: Repetir a instrução, Objetivo do puzzle, Dica, Detalhes do puzzle, Estado da sessão, Reiniciar o puzzle, Próximo puzzle, Voltar ao tabuleiro |
+| Tab / Shift+Tab | As ações de treino: Digitar lance..., Repetir a instrução, Objetivo do puzzle, Dica, Detalhes do puzzle, Estado da sessão, Reiniciar o puzzle, Próximo puzzle, Voltar ao tabuleiro |
 | Escape | Sair do treino. Pergunta antes; um puzzle em que você não mexeu não é contado |
 
 Os comandos do tabuleiro de partida (veja "Comandos de teclado no tabuleiro") também funcionam no tabuleiro de puzzle, menos o Control+D, que aqui não faz nada, e o F2 / Shift+F2, que dizem "Sem controle de tempo".
@@ -130,7 +136,7 @@ Cada tentativa fica registrada no seu histórico (`tactic.db`): a posição de p
 
 | Tecla | Ação |
 |---|---|
-| Tab / Shift+Tab | A barra de ações. Num treino: Repetir meta, Veredito da tablebase, Melhores lances, Nova posição, Voltar ao tabuleiro. Numa lição: Repetir regra, Veredito da tablebase, Melhores lances, Desfazer lance, Recomeçar posição, Próxima posição, Voltar ao tabuleiro |
+| Tab / Shift+Tab | A barra de ações, que começa com Digitar lance... Num treino: Repetir meta, Veredito da tablebase, Melhores lances, Nova posição, Voltar ao tabuleiro. Numa lição: Repetir regra, Veredito da tablebase, Melhores lances, Desfazer lance, Recomeçar posição, Próxima posição, Voltar ao tabuleiro |
 | Control+F1 | Repetir a meta (treino) ou a regra (lição) |
 | Control+N | Outra posição do treino, ou a próxima posição da lição |
 | Control+R | A mesma posição da lição de novo (só nas lições) |
@@ -167,6 +173,7 @@ Os comandos do tabuleiro de partida (veja "Comandos de teclado no tabuleiro") ta
 |---|---|
 | Setas | Andar pelas casas; cada casa anuncia a peça e o nome |
 | Enter, Enter do teclado numérico ou Espaço | Selecionar a peça a mover, depois a casa de destino |
+| Tab | Digitar o lance em vez disso (veja "Digitar o lance") |
 | R, N, B, Q, K, P | Ir para a sua próxima torre, cavalo, bispo, dama, rei ou peão. Quando você não é dono de um lado (humano contra humano, tabuleiro de análise), vão para as peças do lado que tem a vez. No Editor de tabuleiro, elas colocam peças |
 | Shift + letra | Ir para a próxima peça daquele tipo do adversário (ou, quando você não é dono de um lado, do outro lado) |
 | A | Quais peças atacam a casa em foco |
@@ -242,7 +249,7 @@ Os comandos do tabuleiro de partida também funcionam aqui (setas, Enter, A, M, 
 | Alt+Page Down / Alt+Page Up | Próximo / anterior momento crítico da revisão |
 | T | O relógio da partida, dos dois lados (partidas importadas) |
 | O | A abertura em que a linha está, com o código ECO, e se a posição ainda é teoria |
-| Tab / Shift+Tab | Todas essas ações como uma barra, cada uma com a sua tecla: para quando você esquecer uma tecla. A barra também tem Opções da revisão..., Marcar o lance, Jogar daqui contra o computador..., Virar o tabuleiro e Voltar ao tabuleiro |
+| Tab / Shift+Tab | Todas essas ações como uma barra, cada uma com a sua tecla: para quando você esquecer uma tecla. A barra começa com Digitar lance... e também tem Opções da revisão..., Marcar o lance, Jogar daqui contra o computador..., Virar o tabuleiro e Voltar ao tabuleiro |
 | Escape | Fechar o tabuleiro; se algo mudou desde a última vez que você salvou, pergunta antes |
 
 "Jogar daqui contra o computador...", na barra do Tab, abre o diálogo Nova partida com esta posição como início e o lado que tem a vez como o seu: escolha ali a força do motor e o relógio.

@@ -54,6 +54,12 @@ La primera vez que abres Táctica o Problema al azar, el complemento ofrece desc
 
 El tablero de problemas, los tableros de finales, el tablero de análisis y el Editor de tablero tienen cada uno una barra de acciones, que se abre con **Tab** desde el tablero. **Tab** cae en su primera acción y **Shift+Tab** en la última. Dentro de la barra, **Tab** y **Flecha derecha** van a la acción siguiente, **Shift+Tab** y **Flecha izquierda** a la anterior, e **Intro** ejecuta la acción enfocada. **Escape**, la acción "Volver al tablero" o pasar de cualquiera de los extremos de la barra devuelven al tablero. Las acciones de cada barra aparecen junto con los comandos de su tablero.
 
+### Escribir la jugada
+
+Además de ir hasta la pieza y pulsar Intro en su casilla y luego en la de destino, se puede escribir la jugada, como en el modo para ciegos de Lichess. En el tablero de partida (contra la computadora o entre dos personas), **Tab** abre el campo directamente; en los tableros de problemas, de finales y de análisis, "Escribir jugada..." es la primera acción de la barra de Tab, así que **Tab, Intro** lo abre. Escribe la jugada y pulsa **Intro**; **Escape** cierra el campo sin jugar.
+
+El campo acepta la jugada en SAN, como se anota en una planilla: **Nf3**, **exd5**, **Qxf7#**, **O-O**, **e8=Q**; o por sus dos casillas: **g1f3**, **e7e8q**. Mayúsculas y minúsculas dan igual ("nf3" funciona), los signos de jaque y de comentario se pueden omitir, **0-0** es enroque, y el signo de coronación es opcional ("e8q"). Una **b** minúscula es el peón de la columna b cuando esa jugada es legal, y el alfil cuando no; **Bxc4** con B mayúscula es siempre el alfil. Las letras de las piezas son las del inglés (K rey, Q dama, R torre, B alfil, N caballo), sea cual sea el idioma de NVDA. Cuando dos piezas pueden hacer la jugada, pide la columna o la fila, como en **Nbd2**; cuando solo se escriben las dos casillas de una coronación, el menú de coronación pregunta la pieza. Una jugada que no es legal se repite con lo que se escribió: "e5 no es una jugada legal aquí."
+
 ## Entrenamiento de táctica
 
 El diálogo **Táctica** prepara una sesión:
@@ -95,7 +101,7 @@ Control+N o Siguiente problema durante un repaso pregunta si quieres saltar los 
 | Control+F1 | Detalles del problema: el id del problema, el rating, la popularidad, el número de veces jugado, los temas, las etiquetas de apertura y si la partida de origen está disponible en Lichess |
 | Control+F2 | Estado de la sesión: resueltos, errores, pistas |
 | Control+Shift+R | Tu rating de táctica actual |
-| Tab / Shift+Tab | Las acciones de entrenamiento: Repetir instrucción, Objetivo del problema, Pista, Detalles del problema, Estado de la sesión, Reiniciar problema, Siguiente problema, Volver al tablero |
+| Tab / Shift+Tab | Las acciones de entrenamiento: Escribir jugada..., Repetir instrucción, Objetivo del problema, Pista, Detalles del problema, Estado de la sesión, Reiniciar problema, Siguiente problema, Volver al tablero |
 | Escape | Salir del entrenamiento. Pregunta antes; un problema que no has tocado no se cuenta |
 
 Los comandos del tablero de partida (consulta "Comandos de teclado en el tablero") también funcionan en el tablero de problemas, salvo Control+D, que aquí no hace nada, y F2 / Shift+F2, que dicen "Sin control de tiempo".
@@ -130,7 +136,7 @@ Cada intento queda registrado en tu historial (`tactic.db`): la posición inicia
 
 | Tecla | Acción |
 |---|---|
-| Tab / Shift+Tab | La barra de acciones. En un ejercicio: Repetir objetivo, Veredicto de la tablebase, Mejores jugadas, Nueva posición, Volver al tablero. En una lección: Repetir regla, Veredicto de la tablebase, Mejores jugadas, Deshacer jugada, Reiniciar posición, Siguiente posición, Volver al tablero |
+| Tab / Shift+Tab | La barra de acciones, que empieza con Escribir jugada... En un ejercicio: Repetir objetivo, Veredicto de la tablebase, Mejores jugadas, Nueva posición, Volver al tablero. En una lección: Repetir regla, Veredicto de la tablebase, Mejores jugadas, Deshacer jugada, Reiniciar posición, Siguiente posición, Volver al tablero |
 | Control+F1 | Repetir el objetivo (ejercicio) o la regla (lección) |
 | Control+N | Otra posición del ejercicio, o la siguiente posición de la lección |
 | Control+R | La misma posición de la lección otra vez (solo en las lecciones) |
@@ -167,6 +173,7 @@ Los comandos del tablero de partida (consulta "Comandos de teclado en el tablero
 |---|---|
 | Flechas | Moverse entre casillas; cada casilla anuncia su pieza y su nombre |
 | Intro, Intro del teclado numérico o Barra espaciadora | Seleccionar la pieza que se va a mover, y luego la casilla de destino |
+| Tab | Escribir la jugada en su lugar (ver "Escribir la jugada") |
 | R, N, B, Q, K, P | Saltar a tu siguiente torre, caballo, alfil, dama, rey o peón. Cuando no llevas un bando (humano contra humano, el tablero de análisis) saltan a las piezas del bando que mueve. En el Editor de tablero, en cambio, colocan piezas |
 | Shift + letra | Saltar a la siguiente pieza de ese tipo del rival (o, cuando no llevas un bando, del otro bando) |
 | A | Qué piezas atacan la casilla enfocada |
@@ -242,7 +249,7 @@ Los comandos del tablero de partida también funcionan aquí (flechas, Intro, A,
 | Alt+Avance página / Alt+Retroceso página | Momento crítico siguiente / anterior de la revisión |
 | T | El reloj de la partida, de ambos bandos (partidas importadas) |
 | O | La apertura en la que está la línea, con su código ECO, y si la posición todavía es teoría |
-| Tab / Shift+Tab | Todas estas acciones como una barra, cada una con su tecla: para cuando se olvida una tecla. La barra también tiene Opciones de la revisión..., Marcar la jugada, Jugar desde aquí contra la computadora..., Girar el tablero y Volver al tablero |
+| Tab / Shift+Tab | Todas estas acciones como una barra, cada una con su tecla: para cuando se olvida una tecla. La barra empieza con Escribir jugada... y también tiene Opciones de la revisión..., Marcar la jugada, Jugar desde aquí contra la computadora..., Girar el tablero y Volver al tablero |
 | Escape | Cerrar el tablero; si algo cambió desde la última vez que guardaste, pregunta antes |
 
 "Jugar desde aquí contra la computadora...", en la barra de Tab, abre el diálogo Nueva partida con esta posición como inicio y con el bando que mueve como el tuyo: elige allí la fuerza del motor y el reloj.

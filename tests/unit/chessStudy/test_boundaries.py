@@ -48,6 +48,7 @@ PURE_MODULES = (
 	"theme_names",
 	"trainer",
 	"training_session",
+	"typed_move",
 )
 
 NVDA_MODULES = (
