@@ -4,6 +4,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- **The position as text**: D on any board opens the whole position in a window read line by line (whose move, the last move, each side's pieces, castling, en passant, material, the board rank by rank and the FEN), with a Copy button. Control+C copies the FEN on every board, not only in the Board Editor. On the puzzle, endgame and analysis boards it is also in the Tab bar.
+
 - **Copy details** when a download fails: the error message of the puzzle database and tablebase downloads, and the puzzle dialog when the list of databases cannot be fetched, have a button that copies what went wrong (the versions of Chess Study, NVDA and Windows, and every cause of the error, such as a certificate or a proxy), to paste in a report instead of copying it by ear. The NVDA log also keeps the full error now, and an unexpected error no longer leaves the dialog waiting forever.
 
 - **Type a move**, as in Lichess's blind mode: in SAN (Nf3, exd5, O-O, e8=Q) or as its two squares (g1f3). Tab opens the field on a game board; on the puzzle, endgame and analysis boards it is the first action of the Tab bar ("Type a move..."). Case does not matter, 0-0 is castling, and a lowercase b is the b pawn when that move is legal. The arrows and Enter work as before. The manual's "Typing a move" has the details.

@@ -60,6 +60,10 @@ Besides walking to a piece and pressing Enter on its square and then on the dest
 
 The field takes the move in SAN, as written on a score sheet: **Nf3**, **exd5**, **Qxf7#**, **O-O**, **e8=Q**; or as its two squares: **g1f3**, **e7e8q**. Case does not matter ("nf3" works), the check and annotation signs can be left out, **0-0** is castling, and the promotion sign is optional ("e8q"). A lowercase **b** is the b pawn when that move is legal and the bishop otherwise; **Bxc4** with a capital B is always the bishop. The piece letters are the English ones (K, Q, R, B, N), whatever the language of NVDA. When two pieces can make the move, it asks for the file or rank, as in **Nbd2**; when only the two squares of a promotion are typed, the promotion menu asks for the piece. A move that is not legal is said back with what was typed: "e5 is not a legal move here."
 
+### The position as text
+
+**D** on any board opens the whole position in a window you read line by line with the arrows, as a web page: whose move it is and whether it is check, the last move, each side's pieces by type ("Rook: a1, f1"), who can still castle, en passant, the material balance, the board rank by rank from the 8th ("Rank 8: a8 black rook, e8 black king."), and the FEN. The window's **Copy** button copies all of it; **Escape** closes it. **Control+C** on the board copies just the FEN. On the puzzle, endgame and analysis boards, "Position as text, D" is also in the Tab bar.
+
 ## Tactics training
 
 The **Tactics** dialog sets up a session:
@@ -101,7 +105,7 @@ Control+N or Next puzzle during a review asks whether to skip the reviews, with 
 | Control+F1 | Puzzle details: the puzzle id, rating, popularity, number of plays, themes, opening tags, and whether the source game is available on Lichess |
 | Control+F2 | Session status: solved, mistakes, hints |
 | Control+Shift+R | Your current tactics rating |
-| Tab / Shift+Tab | The training actions: Type a move..., Repeat instruction, Puzzle goal, Hint, Puzzle details, Session status, Restart puzzle, Next puzzle, Back to board |
+| Tab / Shift+Tab | The training actions: Type a move..., Position as text, Repeat instruction, Puzzle goal, Hint, Puzzle details, Session status, Restart puzzle, Next puzzle, Back to board |
 | Escape | Leave training. It asks first; a puzzle you have not touched is not counted |
 
 The commands of the game board (see "Keyboard commands on the board") work on the puzzle board too, except Control+D, which does nothing here, and F2 / Shift+F2, which say "No Time Control".
@@ -136,7 +140,7 @@ Every attempt is recorded in your history (`tactic.db`): the starting position a
 
 | Key | Action |
 |---|---|
-| Tab / Shift+Tab | The actions bar, which starts with Type a move... In a drill: Repeat goal, Tablebase verdict, Best moves, New position, Back to board. In a lesson: Repeat rule, Tablebase verdict, Best moves, Take back, Restart position, Next position, Back to board |
+| Tab / Shift+Tab | The actions bar, which starts with Type a move... and Position as text. In a drill: Repeat goal, Tablebase verdict, Best moves, New position, Back to board. In a lesson: Repeat rule, Tablebase verdict, Best moves, Take back, Restart position, Next position, Back to board |
 | Control+F1 | Repeat the goal (drill) or the rule (lesson) |
 | Control+N | Another position of the drill, or the next position of the lesson |
 | Control+R | The same lesson position again (lessons only) |
@@ -174,6 +178,8 @@ The commands of the game board (see "Keyboard commands on the board") work here 
 | Arrow keys | Move between squares; each square announces its piece and name |
 | Enter, Numpad Enter or Space | Select the piece to move, then the destination square |
 | Tab | Type the move instead (see "Typing a move") |
+| D | The whole position as text, in a window (see "The position as text") |
+| Control+C | Copy the position as FEN |
 | R, N, B, Q, K, P | Jump to your next rook, knight, bishop, queen, king or pawn. When you do not own a side (human versus human, the analysis board) they jump to the pieces of the side to move. In the Board Editor they place pieces instead |
 | Shift + letter | Jump to the opponent's next piece of that type (or, when you do not own a side, the other side's) |
 | A | Which pieces attack the focused square |
@@ -249,7 +255,7 @@ The commands of the game board work here too (arrows, Enter, A, M, F1, F4...), w
 | Alt+Page Down / Alt+Page Up | Next / previous critical moment of the review |
 | T | The clock of the game, for both sides (imported games) |
 | O | The opening the line is in, with its ECO code, and whether the position is still theory |
-| Tab / Shift+Tab | All these actions as a bar, each with its key: for when a key is forgotten. The bar starts with Type a move..., and also has Review options..., Mark the move, Play from here against the computer..., Flip the board and Back to board |
+| Tab / Shift+Tab | All these actions as a bar, each with its key: for when a key is forgotten. The bar starts with Type a move... and Position as text, and also has Review options..., Mark the move, Play from here against the computer..., Flip the board and Back to board |
 | Escape | Close the board; if something changed since the last save, it asks first |
 
 "Play from here against the computer..." in the Tab bar opens the New Game dialog with this position as the start and its side to move as yours: choose the engine strength and the clock there.

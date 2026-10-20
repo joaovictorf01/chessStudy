@@ -19,6 +19,11 @@ What the unit tests cannot see. After a change, run the parts it touches, with t
 - Puzzle, endgame and analysis boards: Tab, Enter on "Type a move..." opens the field; a typed move counts as on the arrows (puzzle right or wrong, endgame judge, a new variation on the analysis board).
 - Endgame lesson, during the win/draw/loss question: "Type a move..." only gives the invalid sound.
 
+## The position as text
+
+- D on a game, a puzzle and the analysis board opens "Position" in browse mode; the arrows read it line by line; Copy copies it; Escape closes it and the focus is back on the board square.
+- Control+C on any board says "FEN copied" and the clipboard has the FEN; in the Board Editor it still copies the editor's position.
+
 ## Game against the computer
 
 - The engine answers; at the chosen strength it does not play instantly perfect moves.

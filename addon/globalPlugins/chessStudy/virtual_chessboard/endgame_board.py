@@ -74,6 +74,7 @@ class TablebaseJudgeMixin(ActionsBarMixin):
 	prospective: chess.Color
 	game_announcer: typing.Any
 	type_move: typing.Callable[[], None]
+	show_position_text: typing.Callable[[], None]
 	tablebase: typing.Any = None
 	spoiled_moves: int = 0
 	hints_used: int = 0
@@ -84,8 +85,13 @@ class TablebaseJudgeMixin(ActionsBarMixin):
 		self.install_actions_bar(
 			# Translators: Name of the toolbar reached with Tab on the endgame board.
 			name=_("Endgame actions"),
-			# Translators: Button of the actions bars: opens the field that takes a move typed as text.
-			items=[(_("Type a move..."), self._from_actions(self.type_move)), *items],
+			items=[
+				# Translators: Button of the actions bars: opens the field that takes a move typed as text.
+				(_("Type a move..."), self._from_actions(self.type_move)),
+				# Translators: Button of the actions bars: opens the position as text, with its key.
+				(_("Position as text, D"), self._from_actions(self.show_position_text)),
+				*items,
+			],
 		)
 
 	def hints_note(self):

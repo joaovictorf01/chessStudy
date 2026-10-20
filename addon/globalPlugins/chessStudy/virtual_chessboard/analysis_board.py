@@ -251,6 +251,8 @@ class AnalysisChessboard(ReviewActionsMixin, EngineActionsMixin, ActionsBarMixin
 			items=[
 				# Translators: Button of the actions bars: opens the field that takes a move typed as text.
 				(_("Type a move..."), self._from_actions(self.type_move)),
+				# Translators: Button of the actions bars: opens the position as text, with its key.
+				(_("Position as text, D"), self._from_actions(self.show_position_text)),
 				# Translators: Tab bar action on the analysis board, with its key.
 				(_("Evaluate the position, E"), self._from_actions(self.evaluate_position)),
 				# Translators: Tab bar action on the analysis board, with its key.

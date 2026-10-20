@@ -39,6 +39,7 @@ from ..addon_config import get_move_notation
 from ..board_geometry import DOWN, LEFT, RIGHT, UP, neighbour, square_color
 from ..paths import import_bundled
 from ..played_move import PlayedMove
+from ..position_text import describe_position
 from ..sounds import GameSound
 from ..speaking import intersperse, speak_next
 from ..signals import (
@@ -230,6 +231,14 @@ class BaseChessboardCell(KeyboardNavigableNVDAObjectMixin, NVDAObject):
 		color = not self.parent.board.turn
 		remaining = self.get_remaining_time(color)
 		ui.message(remaining)
+
+	@script(gesture="kb:d")
+	def script_position_text(self, gesture):
+		self.parent.show_position_text()
+
+	@script(gesture="kb:control+c")
+	def script_copy_fen(self, gesture):
+		self.parent.copy_fen()
 
 	@script(gesture="kb:a")
 	def script_announce_attackers(self, gesture):
@@ -578,6 +587,30 @@ class BaseVirtualChessboard(
 			self.game_announcer.normal_move(move, moved_piece, move_maker=played.mover),
 			speech.commands.BreakCommand(50),
 		)
+
+	def show_position_text(self):
+		"""The whole position in a window read line by line, with a button that copies it."""
+		last_move = None
+		if self.board.move_stack:
+			before = self.board.copy()
+			move = before.pop()
+			number = (
+				f"{before.fullmove_number}." if before.turn == chess.WHITE else f"{before.fullmove_number}..."
+			)
+			last_move = f"{number} {render_san(before.san(move), move.uci(), get_move_notation())}"
+		ui.browseableMessage(
+			describe_position(self.board, last_move),
+			# Translators: Title of the window with the position as text.
+			_("Position"),
+			closeButton=True,
+			copyButton=True,
+		)
+
+	def copy_fen(self):
+		fen = self.board.fen()
+		if api.copyToClip(fen):
+			# Translators: Spoken after the position was copied as FEN.
+			ui.message(_("FEN copied: {fen}").format(fen=fen))
 
 	def jump_to_piece(self, piece_type, piece_color):
 		target_squares = tuple(self.board.pieces(piece_type, piece_color))

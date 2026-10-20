@@ -39,6 +39,7 @@ PURE_MODULES = (
 	"pgn",
 	"played_move",
 	"position_editor",
+	"position_text",
 	"puzzle_attempt",
 	"study_log",
 	"my_games",

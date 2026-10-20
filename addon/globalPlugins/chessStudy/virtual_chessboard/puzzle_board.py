@@ -140,6 +140,8 @@ class PuzzleChessboard(ActionsBarMixin, UserDrivenChessboard):
 			items=[
 				# Translators: Button of the actions bars: opens the field that takes a move typed as text.
 				(_("Type a move..."), self._from_actions(self.type_move)),
+				# Translators: Button of the actions bars: opens the position as text, with its key.
+				(_("Position as text, D"), self._from_actions(self.show_position_text)),
 				# Translators: Button of the tactics actions bar.
 				(_("Repeat instruction"), self.repeat_current_instruction),
 				# Translators: Button of the tactics actions bar.
