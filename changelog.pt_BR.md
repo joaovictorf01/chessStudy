@@ -4,6 +4,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
+- **Copiar detalhes** quando um download falha: a mensagem de erro dos downloads da base de puzzles e das tablebases, e o diálogo dos puzzles quando a lista de bases não pode ser obtida, têm um botão que copia o que deu errado (as versões do Chess Study, do NVDA e do Windows, e cada causa do erro, como um certificado ou um proxy), para colar num relato em vez de copiar de ouvido. O log do NVDA agora também guarda o erro completo, e um erro inesperado não deixa mais o diálogo esperando para sempre.
+
 - **Digitar o lance**, como no modo para cegos do Lichess: em SAN (Nf3, exd5, O-O, e8=Q) ou pelas duas casas (g1f3). No tabuleiro de partida, o Tab abre o campo; nos tabuleiros de puzzle, de finais e de análise, é a primeira ação da barra do Tab ("Digitar lance..."). Maiúscula ou minúscula tanto faz, 0-0 é roque, e um b minúsculo é o peão da coluna b quando esse lance é legal. As setas e o Enter continuam como antes. O manual, em "Digitar o lance", tem os detalhes.
 
 - Tabuleiro de análise: as respostas do motor (E, X, Shift+E e a revisão do F7) agora aparecem também na linha braille, e não só na fala, para ler as linhas no seu ritmo. A opção de braille do NVDA "Mostrar mensagens" decide quanto tempo ficam. Sugestão de Neil Graham.
@@ -24,7 +26,7 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## A fazer
 
-- Download de puzzles: aceitar um `.db.gz` baixado à mão no navegador (pra máquina que não alcança o GitHub pelo add-on); registrar o erro exato quando o manifesto não vem. Primeiro relato: 21-09-2026, "não foi possível alcançar o servidor de download".
+- Download de puzzles: aceitar um `.db.gz` baixado à mão no navegador (pra máquina que não alcança o GitHub pelo add-on). Primeiro relato: 21-09-2026, "não foi possível alcançar o servidor de download".
 
 # Chess Study 2.0.0
 

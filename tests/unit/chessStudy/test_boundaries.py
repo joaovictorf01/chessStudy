@@ -26,6 +26,7 @@ PURE_MODULES = (
 	"endgame.lessons",
 	"endgame.tablebase",
 	"engine_eval",
+	"error_details",
 	"former_name",
 	"game_clock",
 	"game_review",

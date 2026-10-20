@@ -48,7 +48,7 @@ What changed in each version: [the Chess Study changelog](https://github.com/joa
 
 ### The puzzle database
 
-The first time you open Tactics or Random Puzzle, the add-on offers to download the puzzle database. Pick **Light** (about 90 MB, the puzzles many players have solved and approved -- around 880,000 of them) or **Complete** (about 600 MB, the whole Lichess base, over 6 million). These figures are approximate: the download dialog gives the exact ones for each database, the puzzle count, the size to download and the size on disk, which grow a little every month as Lichess publishes a new base. The download runs in the background with spoken progress; you can cancel with Escape. The database is stored in your NVDA configuration folder, under `chessStudy`, together with your training history.
+The first time you open Tactics or Random Puzzle, the add-on offers to download the puzzle database. Pick **Light** (about 90 MB, the puzzles many players have solved and approved -- around 880,000 of them) or **Complete** (about 600 MB, the whole Lichess base, over 6 million). These figures are approximate: the download dialog gives the exact ones for each database, the puzzle count, the size to download and the size on disk, which grow a little every month as Lichess publishes a new base. The download runs in the background with spoken progress; you can cancel with Escape. The database is stored in your NVDA configuration folder, under `chessStudy`, together with your training history. If a download fails, the error message, here and for the tablebases, has a **Copy details** button: it copies what went wrong, with the versions of Chess Study, NVDA and Windows, to paste when you report it.
 
 ### The Tab bar
 

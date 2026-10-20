@@ -25,7 +25,7 @@ from ..i18n import _
 from ..tactic import download as puzzle_download
 from ..tactic.db import ADDON_DATA_DIRECTORY, PUZZLES_DB_NAME
 from .download_base import DownloadDialogBase, format_megabytes
-from .messages import show_error, show_message
+from .messages import copy_details, failure_details, show_error, show_message
 
 # Order in which the tiers appear; light comes first because it's the right
 # choice for someone installing for the first time.
@@ -99,11 +99,17 @@ class PuzzleDownloadDialog(DownloadDialogBase):
 		# Translators: Button that starts the download of the puzzle database.
 		self.downloadButton = buttons.addButton(self, wx.ID_OK, _("&Download"))
 		self.downloadButton.Disable()
+		# Translators: Button that copies the technical details after the list of databases could not be fetched.
+		self.copyDetailsButton = buttons.addButton(self, wx.ID_ANY, _("&Copy details"))
+		# Shown only after a failure to fetch the list: until then there is nothing to copy.
+		self.copyDetailsButton.Hide()
+		self._failure_details = ""
 		# Translators: Button that cancels the download or closes the dialog.
 		self.cancelButton = buttons.addButton(self, wx.ID_CANCEL, _("&Cancel"))
 		helper.addDialogDismissButtons(buttons)
 
 		self.Bind(wx.EVT_BUTTON, self.onDownload, self.downloadButton)
+		self.Bind(wx.EVT_BUTTON, lambda event: copy_details(self._failure_details), self.copyDetailsButton)
 		self.Bind(wx.EVT_BUTTON, self.onCancel, self.cancelButton)
 		self.Bind(wx.EVT_RADIOBOX, self.onTierChanged, self.tierRadio)
 		self.Bind(wx.EVT_CLOSE, self.onCancel)
@@ -136,16 +142,23 @@ class PuzzleDownloadDialog(DownloadDialogBase):
 			try:
 				manifest = puzzle_download.fetch_manifest()
 			except puzzle_download.DownloadError as error:
-				log.warning("chessStudy: could not fetch the puzzle manifest: %s", error)
-				wx.CallAfter(self._manifest_failed, str(error))
+				log.warning("chessStudy: could not fetch the puzzle manifest: %s", error, exc_info=True)
+				wx.CallAfter(self._manifest_failed, error)
+				return
+			except Exception as error:  # a bug: the dialog must not stay waiting forever
+				log.error("chessStudy: puzzle manifest fetch failed unexpectedly", exc_info=True)
+				wx.CallAfter(self._manifest_failed, error)
 				return
 			wx.CallAfter(self._manifest_ready, manifest)
 
 		threading.Thread(target=work, name="chessStudy.manifest", daemon=True).start()
 
-	def _manifest_failed(self, reason: str = ""):
+	def _manifest_failed(self, error: Exception):
 		if not self:
 			return
+		reason = str(error)
+		self._failure_details = failure_details("puzzle manifest fetch", error)
+		self.copyDetailsButton.Show()
 		# The reason goes right into the message: someone reporting "it didn't
 		# work" rarely opens the log, and the reason is what tells whether it
 		# was the network, a proxy, or a certificate.
@@ -170,6 +183,7 @@ class PuzzleDownloadDialog(DownloadDialogBase):
 	def _manifest_ready(self, manifest):
 		if not self:
 			return
+		self.copyDetailsButton.Hide()
 		self.manifest = manifest
 		# Translators: Button that starts the download of the puzzle database.
 		self.downloadButton.SetLabel(_("&Download"))
@@ -266,8 +280,12 @@ class PuzzleDownloadDialog(DownloadDialogBase):
 				wx.CallAfter(self._finished_cancelled)
 				return
 			except puzzle_download.DownloadError as error:
-				log.error("chessStudy: puzzle database download failed: %s", error)
-				wx.CallAfter(self._finished_failed, str(error))
+				log.error("chessStudy: puzzle database download failed: %s", error, exc_info=True)
+				wx.CallAfter(self._finished_failed, error)
+				return
+			except Exception as error:  # a bug or the disk: the dialog must not stay waiting forever
+				log.error("chessStudy: puzzle database download failed unexpectedly", exc_info=True)
+				wx.CallAfter(self._finished_failed, error)
 				return
 			wx.CallAfter(self._finished_ok, info)
 
@@ -346,13 +364,19 @@ class PuzzleDownloadDialog(DownloadDialogBase):
 		self.tierRadio.Enable()
 		self.downloadButton.Enable()
 
-	def _finished_failed(self, reason: str):
+	def _finished_failed(self, error: Exception):
 		self._worker = None
 		if not self:
 			return
 		# Translators: Message shown when the puzzle database download failed.
-		message = _("The download failed: {reason}").format(reason=reason)
-		show_error(message, _("Puzzle Database"), parent=self)
+		message = _("The download failed: {reason}").format(reason=error)
+		show_error(
+			message,
+			# Translators: Title of the puzzle database download dialog.
+			_("Puzzle Database"),
+			parent=self,
+			details=failure_details("puzzle database download", error),
+		)
 		self.progressText.SetLabel("")
 		self.gauge.SetValue(0)
 		self.tierRadio.Enable()

@@ -4,6 +4,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- **Copy details** when a download fails: the error message of the puzzle database and tablebase downloads, and the puzzle dialog when the list of databases cannot be fetched, have a button that copies what went wrong (the versions of Chess Study, NVDA and Windows, and every cause of the error, such as a certificate or a proxy), to paste in a report instead of copying it by ear. The NVDA log also keeps the full error now, and an unexpected error no longer leaves the dialog waiting forever.
+
 - **Type a move**, as in Lichess's blind mode: in SAN (Nf3, exd5, O-O, e8=Q) or as its two squares (g1f3). Tab opens the field on a game board; on the puzzle, endgame and analysis boards it is the first action of the Tab bar ("Type a move..."). Case does not matter, 0-0 is castling, and a lowercase b is the b pawn when that move is legal. The arrows and Enter work as before. The manual's "Typing a move" has the details.
 
 - Analysis board: the engine's answers (E, X, Shift+E and the F7 review) now also appear on the braille display, not only in speech, so the lines can be read at your own pace. NVDA's braille setting "Show messages" decides how long they stay. Suggested by Neil Graham.
@@ -24,7 +26,7 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## To do
 
-- Puzzle download: accept a `.db.gz` downloaded by hand in the browser (for machines that cannot reach GitHub from the add-on); log the exact error when the manifest cannot be fetched. First report: 21-09-2026, "could not reach the download server".
+- Puzzle download: accept a `.db.gz` downloaded by hand in the browser (for machines that cannot reach GitHub from the add-on). First report: 21-09-2026, "could not reach the download server".
 
 # Chess Study 2.0.0
 

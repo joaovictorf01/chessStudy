@@ -6073,6 +6073,19 @@ msgstr ""
 "{move}: dos piezas pueden hacer esa jugada. Añade la columna o la fila, como"
 " Nbd2."
 
+#. Button that copies the technical details after the list of databases could
+#. not be fetched. Button of an error message: copies the technical details to
+#. paste in a report.
+#: addon/globalPlugins/chessStudy/graphical_interface/download_dialog.py:103
+#: addon/globalPlugins/chessStudy/graphical_interface/messages.py:60
+msgid "&Copy details"
+msgstr "&Copiar detalles"
+
+#. Spoken after the technical details of an error were copied.
+#: addon/globalPlugins/chessStudy/graphical_interface/messages.py:70
+msgid "Details copied. Paste them in your message."
+msgstr "Detalles copiados. Pégalos en tu mensaje."
+
 #~ msgid ""
 #~ "1.2.0: Analysis board: record a game with variations, comments and marks, or"
 #~ " open a PGN; Stockfish 16 evaluation (E), the threat (X), move review "

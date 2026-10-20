@@ -76,4 +76,6 @@ What the unit tests cannot see. After a change, run the parts it touches, with t
 
 ## Downloads
 
+- With the network off, open the puzzle download: the status says it could not reach the server, and "Copy details" appears; pressing it says "Details copied" and the clipboard has the versions and the error.
+- With the network off, start a tablebase download: the error message has "Copy details", which copies without closing the message; OK closes it.
 - Progress is spoken every ten percent; Escape cancels; the next download resumes.

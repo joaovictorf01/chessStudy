@@ -23,7 +23,7 @@ from ..endgame import tablebase
 from ..i18n import _
 from ..tactic import download as puzzle_download
 from .download_base import DownloadDialogBase, format_megabytes
-from .messages import show_error, show_message
+from .messages import failure_details, show_error, show_message
 
 
 def installed_sentence() -> str:
@@ -147,8 +147,12 @@ class TablebaseDownloadDialog(DownloadDialogBase):
 				wx.CallAfter(self._finished_cancelled)
 				return
 			except puzzle_download.DownloadError as error:
-				log.error("chessStudy: tablebase download failed: %s", error)
-				wx.CallAfter(self._finished_failed, str(error))
+				log.error("chessStudy: tablebase download failed: %s", error, exc_info=True)
+				wx.CallAfter(self._finished_failed, error)
+				return
+			except Exception as error:  # a bug or the disk: the dialog must not stay waiting forever
+				log.error("chessStudy: tablebase download failed unexpectedly", exc_info=True)
+				wx.CallAfter(self._finished_failed, error)
 				return
 			wx.CallAfter(self._finished_ok, table_set)
 
@@ -179,13 +183,19 @@ class TablebaseDownloadDialog(DownloadDialogBase):
 		self.downloadButton.Enable()
 		self.statusText.SetLabel(installed_sentence())
 
-	def _finished_failed(self, reason: str):
+	def _finished_failed(self, error: Exception):
 		self._worker = None
 		if not self:
 			return
 		# Translators: Message shown when the tablebase download failed.
-		message = _("The download failed: {reason}").format(reason=reason)
-		show_error(message, _("Endgame Tablebases"), parent=self)
+		message = _("The download failed: {reason}").format(reason=error)
+		show_error(
+			message,
+			# Translators: Title of the message about the tablebases.
+			_("Endgame Tablebases"),
+			parent=self,
+			details=failure_details("tablebase download", error),
+		)
 		self.progressText.SetLabel("")
 		self.setRadio.Enable()
 		self.downloadButton.Enable()
