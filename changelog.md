@@ -24,7 +24,7 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Fixes
 
-- Tactics, Select Themes: NVDA now says whether each theme is checked or not checked. The list drew its checkboxes itself and never reported their state, so it was impossible to know by ear what was selected.
+- Tactics, Select Themes: NVDA now says whether each theme is checked or not checked. The list drew its checkboxes itself and never reported their state, so it was impossible to know by ear what was selected. With one theme, the Themes field now says "1 selected" in the singular in Portuguese and Spanish.
 
 - My Games: a game where your Lichess user played Black now opens from Black, as it does when imported; it always opened from White.
 

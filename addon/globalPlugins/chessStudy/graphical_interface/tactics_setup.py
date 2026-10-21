@@ -20,7 +20,7 @@ import gui
 import ui
 from gui import guiHelper, nvdaControls
 
-from ..i18n import _
+from ..i18n import _, ngettext
 from ..training_session import default_db_path, usable_db_path
 from ..theme_catalog import (
 	ensure_theme_catalog_async,
@@ -247,8 +247,12 @@ class TacticsSetupMixin(_MixinBase):
 			if not theme_slugs:
 				# Translators: Shown when no theme filter is applied.
 				return _("All themes")
-			# Translators: {count} is a number of themes, {themes} their names.
-			return _("{count} selected: {themes}").format(
+			return ngettext(
+				# Translators: {count} is a number of themes, {themes} their names.
+				"{count} selected: {themes}",
+				"{count} selected: {themes}",
+				len(theme_slugs),
+			).format(
 				count=len(theme_slugs),
 				themes=describe_theme_filter(self._theme_filter_text),
 			)

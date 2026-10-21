@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Button that opens a file picker for the tactics database.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:79
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:102
 msgid "&Browse..."
 msgstr "&Procurar..."
 
@@ -80,8 +80,8 @@ msgid "Adaptive"
 msgstr "Adaptativo"
 
 #. Shown when no theme filter is applied.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:226
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:234
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:249
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:261
 msgid "All themes"
 msgstr "Todos os temas"
 
@@ -186,7 +186,7 @@ msgid "Bullet (2+2)"
 msgstr "Bullet (2+2)"
 
 #. Button that clears the selected themes.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:149
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:172
 msgid "C&lear themes"
 msgstr "&Limpar temas"
 
@@ -263,7 +263,7 @@ msgid "Chess Study"
 msgstr "Chess Study"
 
 #. Error shown when no database is set yet.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:328
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:355
 msgid "Choose a tactics database before selecting themes."
 msgstr "Escolha uma base de táticas antes de selecionar temas."
 
@@ -276,7 +276,7 @@ msgstr ""
 "padrão."
 
 #. Prompt in the theme picker dialog.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:215
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:238
 msgid "Choose one or more Lichess themes to use in the custom training plan."
 msgstr ""
 "Escolha um ou mais temas do Lichess para o plano de treino personalizado."
@@ -337,7 +337,7 @@ msgid "Control+R to restart this puzzle."
 msgstr "Control+R para reiniciar este puzzle."
 
 #. Title of the error shown when themes cannot be read.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:346
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:373
 msgid "Could Not Load Themes"
 msgstr "Não foi possível carregar os temas"
 
@@ -397,7 +397,7 @@ msgid "Descriptive: white knight from g1 to f3"
 msgstr "Descritiva: cavalo das brancas de g1 para f3"
 
 #. Button that opens the dialog to download or update the puzzle database.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:81
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:104
 msgid "Do&wnload or update..."
 msgstr "Bai&xar ou atualizar..."
 
@@ -709,7 +709,7 @@ msgid "Next puzzle"
 msgstr "Próximo puzzle"
 
 #. Title of the no-database error.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:330
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:357
 msgid "No Database Selected"
 msgstr "Nenhuma base selecionada"
 
@@ -779,7 +779,7 @@ msgid "No themes"
 msgstr "Sem temas"
 
 #. Shown when the database has no themes at all.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:352
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:379
 msgid "No themes were found in the selected database."
 msgstr "Nenhum tema foi encontrado na base selecionada."
 
@@ -903,7 +903,7 @@ msgstr "Portable Network Graphics *.png | *.png"
 
 #. Shown the first time themes are requested for a database, while the catalog
 #. is built in the background.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:335
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:362
 msgid ""
 "Preparing the theme catalog for this database. This can take up to a minute;"
 " you will hear a message when it is ready."
@@ -1149,7 +1149,7 @@ msgid "Score sheet is empty"
 msgstr "A planilha de lances está vazia"
 
 #. Button that opens the theme picker.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:147
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:170
 msgid "Select &themes..."
 msgstr "Selecionar &temas..."
 
@@ -1160,12 +1160,12 @@ msgid "Select Game"
 msgstr "Selecionar partida"
 
 #. Title of the file picker for the tactics database.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:278
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:305
 msgid "Select tactics database"
 msgstr "Selecionar a base de táticas"
 
 #. Title of the theme picker dialog.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:361
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:61
 msgid "Select Themes"
 msgstr "Selecionar temas"
 
@@ -1223,7 +1223,7 @@ msgstr ""
 "Modo de puzzle específico. Os filtros do plano de treino são ignorados."
 
 #. File type filter in the tactics database picker.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:280
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:307
 msgid "SQLite databases (*.db;*.sqlite)|*.db;*.sqlite|All files|*.*"
 msgstr "Bases SQLite (*.db;*.sqlite)|*.db;*.sqlite|Todos os arquivos|*.*"
 
@@ -1277,7 +1277,7 @@ msgid "Tactics"
 msgstr "Táticas"
 
 #. Label for the tactics database path field.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:75
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:98
 msgid "Tactics database"
 msgstr "Base de táticas"
 
@@ -1334,7 +1334,7 @@ msgstr ""
 "complemento como puzzles.db."
 
 #. Announced when the theme catalog could not be built.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:393
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:416
 msgid "The theme catalog could not be built."
 msgstr "Não foi possível montar o catálogo de temas."
 
@@ -1344,7 +1344,7 @@ msgid "The {name} puzzle database is installed: {count:,} puzzles."
 msgstr "A base de puzzles {name} está instalada: {count:,} puzzles."
 
 #. Announced when the theme catalog finished building in the background.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:390
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:413
 msgid "Theme catalog ready. You can select themes now."
 msgstr "Catálogo de temas pronto. Já dá para selecionar temas."
 
@@ -1354,17 +1354,17 @@ msgid "Themes"
 msgstr "Temas"
 
 #. Title of the no-themes warning.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:354
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:381
 msgid "Themes Not Found"
 msgstr "Temas não encontrados"
 
 #. Part of the training summary when every theme is in play.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:248
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:275
 msgid "Themes: all of them."
 msgstr "Temas: todos."
 
 #. Part of the training summary. {count} is a number of themes.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:250
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:277
 msgid ""
 "Themes: {count} in play, chosen by the training plan and not by the level."
 msgstr ""
@@ -1427,7 +1427,7 @@ msgid "to {square}"
 msgstr "para {square}"
 
 #. Label for the read-only field summarising the training setup.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:128
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:151
 msgid "Trainer summary"
 msgstr "Resumo do treino"
 
@@ -1605,10 +1605,11 @@ msgstr "{color}, tempo esgotado"
 msgid "{count} of them revealed with Control+Enter."
 msgstr "{count} deles revelados com Control+Enter."
 
-#. {count} is a number of themes, {themes} their names.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:228
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:250
 msgid "{count} selected: {themes}"
-msgstr "{count} selecionados: {themes}"
+msgid_plural "{count} selected: {themes}"
+msgstr[0] "{count} selecionado: {themes}"
+msgstr[1] "{count} selecionados: {themes}"
 
 #. One entry of the Crazyhouse pocket, e.g. "1 knight" / "2 knights".
 #: addon/globalPlugins/chessStudy/virtual_chessboard/user_driven.py:345
@@ -2589,7 +2590,7 @@ msgid "Zugzwang"
 msgstr "Zugzwang"
 
 #. One theme in the picker. {label} is its name, {description} what it means,
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:365
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:391
 msgid "{label}: {description} ({count:,} puzzles)"
 msgstr "{label}: {description} ({count:,} puzzles)"
 
@@ -2606,7 +2607,7 @@ msgid "No {piece}"
 msgstr "Sem {piece}"
 
 #. Summary of the training setup: plan, level and themes, one per line.
-#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:258
+#: addon/globalPlugins/chessStudy/graphical_interface/tactics_setup.py:285
 msgid ""
 "{plan}. {plan_desc}\n"
 "{challenge}. {challenge_desc}\n"
