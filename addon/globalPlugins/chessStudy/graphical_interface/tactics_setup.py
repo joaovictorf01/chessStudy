@@ -18,7 +18,7 @@ from typing import TYPE_CHECKING
 import wx
 import gui
 import ui
-from gui import guiHelper
+from gui import guiHelper, nvdaControls
 
 from ..i18n import _
 from ..training_session import default_db_path, usable_db_path
@@ -49,6 +49,29 @@ if TYPE_CHECKING:
 	_MixinBase = gui.SettingsDialog
 else:
 	_MixinBase = object
+
+
+class ThemePickerDialog(wx.Dialog):
+	"""Checklist of themes. wx.MultiChoiceDialog draws its checkboxes itself and
+	never reports their state, so NVDA read neither "checked" nor "not checked";
+	NVDA's own CustomCheckListBox exposes the state through MSAA."""
+
+	def __init__(self, parent, prompt, choices, checked):
+		# Translators: Title of the theme picker dialog.
+		super().__init__(parent, title=_("Select Themes"))
+		mainSizer = wx.BoxSizer(wx.VERTICAL)
+		helper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		self.themeList = helper.addLabeledControl(prompt, nvdaControls.CustomCheckListBox, choices=choices)
+		self.themeList.SetCheckedItems(checked)
+		self.themeList.SetSelection(checked[0] if checked else 0)
+		helper.addDialogDismissButtons(wx.OK | wx.CANCEL)
+		mainSizer.Add(helper.sizer, border=guiHelper.BORDER_FOR_DIALOGS, flag=wx.ALL)
+		self.SetSizer(mainSizer)
+		mainSizer.Fit(self)
+		self.themeList.SetFocus()
+
+	def checked_items(self):
+		return [index for index in range(self.themeList.GetCount()) if self.themeList.IsChecked(index)]
 
 
 class TacticsSetupMixin(_MixinBase):
@@ -354,12 +377,11 @@ class TacticsSetupMixin(_MixinBase):
 				_("Themes Not Found"),
 			)
 			return
-		dialog = wx.MultiChoiceDialog(
+		selected_slugs = set(parse_theme_filter(self._theme_filter_text))
+		dialog = ThemePickerDialog(
 			self,
 			self._theme_picker_prompt(),
-			# Translators: Title of the theme picker dialog.
-			_("Select Themes"),
-			choices=[
+			[
 				# Translators: One theme in the picker. {label} is its name, {description} what it means,
 				# {count} how many puzzles have it.
 				_("{label}: {description} ({count:,} puzzles)").format(
@@ -369,14 +391,11 @@ class TacticsSetupMixin(_MixinBase):
 				)
 				for entry in entries
 			],
+			[index for index, entry in enumerate(entries) if entry.slug in selected_slugs],
 		)
-		selected_slugs = set(parse_theme_filter(self._theme_filter_text))
-		selections = [index for index, entry in enumerate(entries) if entry.slug in selected_slugs]
-		if selections:
-			dialog.SetSelections(selections)
 		if dialog.ShowModal() == wx.ID_OK:
 			self._theme_filter_text = format_theme_filter(
-				[entries[index].slug for index in dialog.GetSelections()],
+				[entries[index].slug for index in dialog.checked_items()],
 			)
 			self._update_theme_summary()
 			self._refresh_theme_controls()

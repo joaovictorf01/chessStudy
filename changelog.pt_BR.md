@@ -24,6 +24,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Correções
 
+- Táticas, Selecionar temas: o NVDA agora diz se cada tema está marcado ou não marcado. A lista desenhava as próprias caixas de seleção e nunca informava o estado delas, então era impossível saber de ouvido o que estava selecionado.
+
 - Minhas partidas: a partida em que o seu usuário do Lichess jogou de Pretas agora abre do lado das Pretas, como já abria ao importar; abria sempre do lado das Brancas.
 
 ## A fazer
