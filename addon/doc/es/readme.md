@@ -84,7 +84,7 @@ Cada problema aparece en el tablero con la última jugada del rival ya hecha. En
 
 Cada problema que intentas cuenta como una partida puntuada contra ese problema, con el sistema Glicko-2 (de la misma familia que usa Lichess). Tu rating empieza en 1500, con una incertidumbre grande, y se asienta a medida que juegas. Como en Lichess, la primera jugada equivocada ya cuenta como fallo: resolver el problema después te enseña la solución pero no cambia el rating, y reintentar un problema nunca puntúa.
 
-El rating, los intentos y su historial se guardan en `tactic.db`, en la carpeta de configuración de NVDA. Las actualizaciones de la base nunca tocan ese archivo.
+El rating, los intentos y su historial se guardan en `tactic.db`, en la carpeta de configuración de NVDA. Las actualizaciones de la base nunca tocan ese archivo. Para empezar de nuevo, usa **Reiniciar progreso de táctica...** en las opciones.
 
 ### Repasar los problemas que fallaste
 
@@ -274,6 +274,7 @@ Los comandos del tablero de partida también funcionan aquí (flechas, Intro, A,
 
 * **Base de táctica**, con **Examinar...** para indicar una base en otro lugar y **Descargar o actualizar...**.
 * **Plan de entrenamiento predeterminado**, **Nivel de desafío predeterminado**, el resumen del entrenador y **Temas predeterminados**, para las nuevas sesiones de táctica y para Problema al azar.
+* **Reiniciar progreso de táctica...**: borra, después de preguntar, todos los intentos de problemas, el rating y la cola de repaso, y el rating vuelve a empezar en 1500. El progreso de los finales y las opciones se mantienen. Antes se guarda una copia del historial anterior junto a `tactic.db`, con el nombre `tactic.before-reset-` seguido de la fecha y la hora.
 * **Notación de jugadas**: cómo se dicen las jugadas y las casillas.
 * **Carpeta de partidas**: dónde guarda las partidas el tablero de análisis, con **Examinar carpeta...**.
 * **Guardar las partidas analizadas automáticamente, cuando ya tengan archivo**: activada por defecto (consulta "Registrar y analizar una partida").

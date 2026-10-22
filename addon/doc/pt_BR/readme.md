@@ -84,7 +84,7 @@ O **Puzzle aleatório** no menu pula o diálogo e abre uma sessão com a configu
 
 Cada puzzle que você tenta conta como uma partida valendo rating contra aquele puzzle, pelo sistema Glicko-2 (da mesma família que o Lichess usa). O seu rating começa em 1500, com uma incerteza grande, e se acomoda conforme você joga. Como no Lichess, o primeiro lance errado já conta como falha: resolver o puzzle depois ensina a solução, mas não muda o rating, e tentar um puzzle de novo nunca vale rating.
 
-O rating, as tentativas e o histórico delas ficam em `tactic.db`, na pasta de configuração do NVDA. As atualizações da base nunca tocam nesse arquivo.
+O rating, as tentativas e o histórico delas ficam em `tactic.db`, na pasta de configuração do NVDA. As atualizações da base nunca tocam nesse arquivo. Para começar de novo, use **Zerar progresso de táticas...** nas configurações.
 
 ### Revisão dos puzzles que você errou
 
@@ -274,6 +274,7 @@ O **Escape** fecha o editor; quando há peças no tabuleiro, ele pergunta antes,
 
 * **Base de táticas**, com **Procurar...** para apontar uma base em outro lugar e **Baixar ou atualizar...**.
 * **Plano de treino padrão**, **Nível de desafio padrão**, o resumo do treino e **Temas padrão**, para as novas sessões de táticas e para o Puzzle aleatório.
+* **Zerar progresso de táticas...**: apaga, depois de perguntar, todas as tentativas de puzzle, o rating e a fila de revisão, e o rating recomeça de 1500. O progresso dos finais e as configurações continuam. Antes, uma cópia do histórico antigo é salva ao lado do `tactic.db`, com o nome `tactic.before-reset-` seguido da data e da hora.
 * **Notação dos lances**: como os lances e as casas são falados.
 * **Pasta de partidas**: onde o tabuleiro de análise salva as partidas, com **Procurar pasta...**.
 * **Salvar partidas analisadas automaticamente, depois que tiverem arquivo**: ligada por padrão (veja "Gravar e analisar uma partida").

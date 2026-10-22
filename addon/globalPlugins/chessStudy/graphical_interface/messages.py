@@ -85,9 +85,23 @@ def failure_details(what: str, error: BaseException) -> str:
 	)
 
 
-def ask_yes_no(message: str, caption: str, *, parent: wx.Window | None = None) -> bool:
-	"""A modal question with Yes and No buttons; True when the user chose Yes."""
-	dialog = MessageDialog(_parent(parent), message, caption, buttons=DefaultButtonSet.YES_NO)
+def ask_yes_no(
+	message: str,
+	caption: str,
+	*,
+	parent: wx.Window | None = None,
+	default_no: bool = False,
+) -> bool:
+	"""A modal question with Yes and No buttons; True when the user chose Yes.
+
+	With `default_no`, No has the focus and answers Escape: for questions that
+	guard something that cannot be undone from the dialog itself.
+	"""
+	if default_no:
+		dialog = MessageDialog(_parent(parent), message, caption, DialogType.WARNING, buttons=None)
+		dialog.addYesButton().addNoButton(defaultFocus=True, fallbackAction=True)
+	else:
+		dialog = MessageDialog(_parent(parent), message, caption, buttons=DefaultButtonSet.YES_NO)
 	return dialog.ShowModal() == ReturnCode.YES
 
 

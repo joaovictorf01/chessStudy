@@ -4,6 +4,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
+- **Zerar progresso de táticas...** nas configurações: recomeça as táticas, apagando todas as tentativas de puzzle, o rating e a fila de revisão, depois de uma pergunta cuja resposta padrão é Não. O progresso dos finais e as configurações continuam, e antes uma cópia do histórico antigo é salva ao lado do `tactic.db`. Apagar o `tactic.db` à mão apaga também as lições de finais, que ficam no mesmo arquivo. Sugestão de um usuário.
+
 - **A posição em texto**: D em qualquer tabuleiro abre a posição inteira numa janela lida linha por linha (de quem é a vez, o último lance, as peças de cada lado, roque, en passant, material, o tabuleiro fileira por fileira e o FEN), com um botão Copiar. O Control+C copia o FEN em todos os tabuleiros, não só no Editor de tabuleiro. Nos tabuleiros de puzzle, de finais e de análise também está na barra do Tab.
 
 - **Copiar detalhes** quando um download falha: a mensagem de erro dos downloads da base de puzzles e das tablebases, e o diálogo dos puzzles quando a lista de bases não pode ser obtida, têm um botão que copia o que deu errado (as versões do Chess Study, do NVDA e do Windows, e cada causa do erro, como um certificado ou um proxy), para colar num relato em vez de copiar de ouvido. O log do NVDA agora também guarda o erro completo, e um erro inesperado não deixa mais o diálogo esperando para sempre.

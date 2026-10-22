@@ -183,6 +183,14 @@ def load_store():
 	return store
 
 
+def reset_tactics_progress() -> Path | None:
+	"""Start the player's tactics history over; see `store.reset_tactics_history`."""
+	backup = load_store().reset_tactics_history(HISTORY_DB_PATH)
+	if backup is not None:
+		_log(f"chessStudy: tactics history reset; backup at {backup.name}")
+	return backup
+
+
 def is_puzzles_database(db_path: Path) -> bool:
 	"""Say whether the file is a puzzle database (has the `puzzles` table)."""
 	return load_store().has_puzzles_table(db_path)

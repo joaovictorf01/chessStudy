@@ -769,7 +769,7 @@ msgstr "Táctica en el tablero"
 #. Summary/title for this add-on Category of the add-on's scripts in the Input
 #. Gestures dialog. Title of the Chess Study settings dialog.
 #: buildVars.py:25 addon/globalPlugins/chessStudy/__init__.py:685
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:37
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:39
 msgid "Chess Study"
 msgstr "Chess Study"
 
@@ -779,7 +779,7 @@ msgid "Choose a tactics database before selecting themes."
 msgstr "Elige una base de táctica antes de seleccionar temas."
 
 #. Prompt in the theme picker, when choosing the saved default themes.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:116
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:123
 msgid ""
 "Choose one or more Lichess themes to use in the custom default trainer plan."
 msgstr ""
@@ -985,17 +985,17 @@ msgid "Decisive advantage"
 msgstr "Ventaja decisiva"
 
 #. Label for the default challenge level combo box.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:67
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:69
 msgid "Default challenge level"
 msgstr "Nivel de desafío predeterminado"
 
 #. Label for the default themes field.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:71
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:73
 msgid "Default themes"
 msgstr "Temas predeterminados"
 
 #. Label for the default training plan combo box.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:65
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:67
 msgid "Default training plan"
 msgstr "Plan de entrenamiento predeterminado"
 
@@ -1794,7 +1794,7 @@ msgid "Morphy's mate"
 msgstr "Mate de Morphy"
 
 #. Label of the combo box that chooses how moves are spoken.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:74
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:81
 msgid "Move &notation"
 msgstr "&Notación de jugadas"
 
@@ -4438,7 +4438,7 @@ msgid "Game details and save, Control+Alt+S"
 msgstr "Datos de la partida y guardar, Control+Alt+S"
 
 #. Checkbox in the settings: the analysis board saves every change by itself.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:102
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:109
 msgid "Save analysed games &automatically, once they have a file"
 msgstr ""
 "Guardar las partidas analizadas &automáticamente, cuando ya tengan archivo"
@@ -4802,7 +4802,7 @@ msgid "brilliant move"
 msgstr "jugada brillante"
 
 #. Button that browses for the games folder.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:93
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:100
 msgid "Browse &folder..."
 msgstr "Examinar &carpeta..."
 
@@ -4813,7 +4813,7 @@ msgid "Check the position"
 msgstr "Verificar la posición"
 
 #. Title of the dialog that chooses the games folder.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:95
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:102
 msgid "Choose the folder for your games"
 msgstr "Elige la carpeta para tus partidas"
 
@@ -4870,7 +4870,7 @@ msgid "Comment saved"
 msgstr "Comentario guardado"
 
 #. Intro text of the Chess Study settings dialog.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:54
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:56
 msgid ""
 "Configure the default trainer plan used when you open Chess Study tactics."
 msgstr ""
@@ -5027,7 +5027,7 @@ msgid "Game Review Options"
 msgstr "Opciones de la revisión de la partida"
 
 #. Label of the group with the folder where the analysis board saves games.
-#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:87
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:94
 msgid "Games folder"
 msgstr "Carpeta de partidas"
 
@@ -6245,6 +6245,50 @@ msgstr "{square} {piece} de las negras"
 #: addon/globalPlugins/chessStudy/position_text.py:159
 msgid "{square} white {piece}"
 msgstr "{square} {piece} de las blancas"
+
+#. Shown when resetting the tactics progress failed; nothing was erased.
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:150
+msgid "Could not reset the tactics progress. Your history was not changed."
+msgstr ""
+"No se pudo reiniciar el progreso de táctica. Tu historial no se modificó."
+
+#. Button in the settings that erases the tactics history (attempts, rating,
+#. reviews).
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:76
+msgid "R&eset tactics progress..."
+msgstr "Reiniciar &progreso de táctica..."
+
+#. Title of the question and messages about resetting the tactics progress.
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:132
+msgid "Reset tactics progress"
+msgstr "Reiniciar progreso de táctica"
+
+#. Shown after the tactics progress was reset. {name} is the backup file,
+#. {folder} its folder.
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:161
+msgid ""
+"Tactics progress reset. Your rating starts again from 1500. The previous "
+"history was saved as {name} in {folder}."
+msgstr ""
+"Progreso de táctica reiniciado. Tu rating vuelve a empezar en 1500. El "
+"historial anterior se guardó como {name} en {folder}."
+
+#. Shown after a reset when there was no tactics history yet.
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:158
+msgid "There was no tactics history yet. Nothing was erased."
+msgstr "Todavía no había historial de táctica. No se borró nada."
+
+#. Question before resetting the tactics progress.
+#: addon/globalPlugins/chessStudy/graphical_interface/settings_panel.py:135
+msgid ""
+"This erases your tactics history now: every puzzle attempt, your rating and "
+"the review queue. Endgame progress and these settings are kept, and a copy "
+"of the history is saved first. Reset tactics progress?"
+msgstr ""
+"Esto borra ahora tu historial de táctica: todos los intentos de problemas, "
+"tu rating y la cola de repaso. El progreso de los finales y estas opciones "
+"se mantienen, y antes se guarda una copia del historial. ¿Reiniciar el "
+"progreso de táctica?"
 
 #~ msgid "Material: {color} is up {points} point."
 #~ msgid_plural "Material: {color} is up {points} points."

@@ -13,7 +13,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from chessStudy.tactic import glicko2
+from chessStudy.endgame import log as endgame_log
+from chessStudy.tactic import glicko2, store
 from chessStudy.tactic.models import AttemptResult, AttemptStats, PuzzleFilters, RatingSummary
 from chessStudy.tactic.repository import PuzzleRepository
 
@@ -165,6 +166,48 @@ class TestHistory(StoreTestCase):
 		self.assertEqual(result.rating_delta, 0)
 		self.assertEqual(self.repository.rating().rated_attempts, 0)
 		self.assertEqual(self.repository.attempt_stats().total, 1)
+
+
+class TestReset(StoreTestCase):
+	def test_reset_erases_tactics_keeps_endgames_and_saves_a_backup(self):
+		history_path = self.repository.history_path
+		self.repository.record_attempt("hard1", solved=True, mistakes=0, hints_used=0, elapsed_ms=1200)
+		self.repository.record_attempt("easy1", solved=False, mistakes=1, hints_used=0, elapsed_ms=800)
+		self.assertTrue(self.repository.review_queue().items)
+		connection = endgame_log.open_log(history_path)
+		endgame_log.record(
+			connection,
+			"kpk",
+			"kpk-1",
+			answer_correct=True,
+			kept_result=True,
+			moves=9,
+			elapsed_ms=1,
+			outcome="held",
+		)
+		connection.close()
+
+		backup = store.reset_tactics_history(history_path)
+
+		self.assertEqual(self.repository.attempt_stats(), AttemptStats())
+		summary = self.repository.rating()
+		self.assertEqual((summary.rating, summary.rated_attempts), (1500, 0))
+		self.assertEqual(self.repository.review_queue().items, ())
+		connection = endgame_log.open_log(history_path)
+		self.assertEqual(endgame_log.position_stats(connection, "kpk-1").attempts, 1)
+		connection.close()
+		# The backup is the history as it was, tactics included.
+		self.assertIsNotNone(backup)
+		self.assertNotEqual(backup, history_path)
+		self.assertEqual(PuzzleRepository(self.puzzles_path, backup).attempt_stats().total, 2)
+		# The new history counts from the start again.
+		result = self.repository.record_attempt("easy1", solved=True, mistakes=0, hints_used=0, elapsed_ms=10)
+		self.assertEqual(result.attempt_id, 1)
+
+	def test_reset_without_history_does_nothing(self):
+		missing = Path(self.history_dir.name) / "none.db"
+		self.assertIsNone(store.reset_tactics_history(missing))
+		self.assertFalse(missing.exists())
 
 
 class TestGlicko2(unittest.TestCase):

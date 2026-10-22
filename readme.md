@@ -84,7 +84,7 @@ Each puzzle is presented on the board with the opponent's last move already play
 
 Every puzzle you attempt counts as a rated game against that puzzle, using the Glicko-2 system (the same family Lichess uses). Your rating starts at 1500 with a large uncertainty and settles as you play. As on Lichess, the first wrong move already counts as a failure: solving the puzzle afterwards teaches you the solution but does not change the rating, and retrying a puzzle is never rated.
 
-The rating, the attempts and their history live in `tactic.db` in your NVDA configuration folder. Database updates never touch that file.
+The rating, the attempts and their history live in `tactic.db` in your NVDA configuration folder. Database updates never touch that file. To start over, use **Reset tactics progress...** in the settings.
 
 ### Reviewing the puzzles you missed
 
@@ -274,6 +274,7 @@ The commands of the game board work here too (arrows, Enter, A, M, F1, F4...), w
 
 * **Tactics database**, with **Browse...** to point at a database elsewhere and **Download or update...**.
 * **Default training plan**, **Default challenge level**, the trainer summary and **Default themes** for new tactics sessions and Random Puzzle.
+* **Reset tactics progress...**: erases, after asking, every puzzle attempt, the rating and the review queue, so the rating starts again from 1500. Endgame progress and the settings stay. A copy of the old history is saved first next to `tactic.db`, named `tactic.before-reset-` followed by the date and time.
 * **Move notation**: how moves and squares are spoken.
 * **Games folder**: where the analysis board saves games, with **Browse folder...**.
 * **Save analysed games automatically, once they have a file**: on by default (see "Record and Analyse a Game").

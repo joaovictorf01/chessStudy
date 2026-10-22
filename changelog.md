@@ -4,6 +4,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- **Reset tactics progress...** in the settings: starts the tactics over, erasing every puzzle attempt, the rating and the review queue, after a question whose default answer is No. Endgame progress and the settings stay, and a copy of the old history is saved first next to `tactic.db`. Deleting `tactic.db` by hand erases the endgame lessons too, since they live in the same file. Suggested by a user.
+
 - **The position as text**: D on any board opens the whole position in a window read line by line (whose move, the last move, each side's pieces, castling, en passant, material, the board rank by rank and the FEN), with a Copy button. Control+C copies the FEN on every board, not only in the Board Editor. On the puzzle, endgame and analysis boards it is also in the Tab bar.
 
 - **Copy details** when a download fails: the error message of the puzzle database and tablebase downloads, and the puzzle dialog when the list of databases cannot be fetched, have a button that copies what went wrong (the versions of Chess Study, NVDA and Windows, and every cause of the error, such as a certificate or a proxy), to paste in a report instead of copying it by ear. The NVDA log also keeps the full error now, and an unexpected error no longer leaves the dialog waiting forever.

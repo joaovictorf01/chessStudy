@@ -26,8 +26,10 @@ from ..addon_config import (
 )
 from ..notation import NOTATION_STYLES
 from ..i18n import _
+from ..tactic.db import reset_tactics_progress
 from ..theme_catalog import parse_theme_filter
 from ..trainer import uses_custom_themes
+from .messages import ask_yes_no, failure_details, show_error, show_message
 from .review_dialog import build_review_controls, options_from
 from .tactics_setup import TacticsSetupMixin
 
@@ -69,6 +71,11 @@ class ChessboardSettingsDialog(TacticsSetupMixin, gui.SettingsDialog):
 		self._build_summary_row(helper)
 		# Translators: Label for the default themes field.
 		self._build_theme_rows(helper, _("Default themes"))
+		self.resetTacticsButton = helper.addItem(
+			# Translators: Button in the settings that erases the tactics history (attempts, rating, reviews).
+			wx.Button(self, -1, _("R&eset tactics progress...")),
+		)
+		self.Bind(wx.EVT_BUTTON, self.onResetTactics, self.resetTacticsButton)
 
 		# Translators: Label of the combo box that chooses how moves are spoken.
 		notationLabel = wx.StaticText(self, -1, _("Move &notation"))
@@ -119,6 +126,43 @@ class ChessboardSettingsDialog(TacticsSetupMixin, gui.SettingsDialog):
 		is_custom = uses_custom_themes(self._trainer_preset_id())
 		self.selectThemesButton.Enable(is_custom)
 		self.clearThemesButton.Enable(is_custom and bool(parse_theme_filter(self._theme_filter_text)))
+
+	def onResetTactics(self, event):
+		# Translators: Title of the question and messages about resetting the tactics progress.
+		caption = _("Reset tactics progress")
+		if not ask_yes_no(
+			# Translators: Question before resetting the tactics progress.
+			_(
+				"This erases your tactics history now: every puzzle attempt, your rating and the review "
+				"queue. Endgame progress and these settings are kept, and a copy of the history is saved "
+				"first. Reset tactics progress?",
+			),
+			caption,
+			parent=self,
+			default_no=True,
+		):
+			return
+		try:
+			backup = reset_tactics_progress()
+		except Exception as error:
+			show_error(
+				# Translators: Shown when resetting the tactics progress failed; nothing was erased.
+				_("Could not reset the tactics progress. Your history was not changed."),
+				caption,
+				parent=self,
+				details=failure_details("Reset tactics progress", error),
+			)
+			return
+		if backup is None:
+			# Translators: Shown after a reset when there was no tactics history yet.
+			message = _("There was no tactics history yet. Nothing was erased.")
+		else:
+			# Translators: Shown after the tactics progress was reset. {name} is the backup file, {folder} its folder.
+			message = _(
+				"Tactics progress reset. Your rating starts again from 1500. "
+				"The previous history was saved as {name} in {folder}.",
+			).format(name=backup.name, folder=backup.parent)
+		show_message(message, caption, parent=self)
 
 	def onOk(self, event):
 		save_tactics_defaults(

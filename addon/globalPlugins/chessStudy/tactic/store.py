@@ -234,6 +234,41 @@ def _backup_path(history_path: Path) -> Path:
 	return history_path.with_name(f"{history_path.stem}.backup-{stamp}{history_path.suffix}")
 
 
+# ---------------------------------------------------------------- reset
+
+
+def reset_tactics_history(history_path: Path) -> Path | None:
+	"""Erase the tactics history -- attempts, rating, reviews -- and keep everything else.
+
+	The endgame attempts live in the same file and are left alone. A full copy
+	of the file is saved first, with the time in its name so that two resets on
+	the same day never overwrite each other's backup; if the copy fails, nothing
+	is erased. Returns the backup path, or None when there was no history yet.
+	"""
+	history_path = Path(history_path)
+	if not history_path.is_file():
+		return None
+	stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+	backup_path = history_path.with_name(f"{history_path.stem}.before-reset-{stamp}{history_path.suffix}")
+	connection = sqlite3.connect(file_uri(history_path, "rw"), uri=True)
+	try:
+		target = sqlite3.connect(file_uri(backup_path, "rwc"), uri=True)
+		try:
+			connection.backup(target)
+		finally:
+			target.close()
+		prepare_history(connection)
+		with connection:
+			for table in HISTORY_TABLES:
+				connection.execute(f"DELETE FROM {table}")
+			# AUTOINCREMENT keeps counting after a DELETE; the new history starts at 1.
+			placeholders = ", ".join("?" for _table in HISTORY_TABLES)
+			connection.execute(f"DELETE FROM sqlite_sequence WHERE name IN ({placeholders})", HISTORY_TABLES)
+	finally:
+		connection.close()
+	return backup_path
+
+
 def _copy_history_tables(legacy_path: Path, target_path: Path) -> None:
 	connection = sqlite3.connect(file_uri(target_path, "rwc"), uri=True)
 	try:
