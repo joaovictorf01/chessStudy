@@ -4,7 +4,7 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
-- **Reset tactics progress...** in the settings: starts the tactics over, erasing every puzzle attempt, the rating and the review queue, after a question whose default answer is No. Endgame progress and the settings stay, and a copy of the old history is saved first next to `tactic.db`. Deleting `tactic.db` by hand erases the endgame lessons too, since they live in the same file. Suggested by a user.
+- **Reset tactics progress...** in the settings: starts the tactics over, erasing every puzzle attempt, the rating and the review queue, after a question whose default answer is No. Endgame progress and the settings stay, and a copy of the old history is saved first next to `tactic.db`. Deleting `tactic.db` by hand erases the endgame lessons too, since they live in the same file.
 
 - **The position as text**: D on any board opens the whole position in a window read line by line (whose move, the last move, each side's pieces, castling, en passant, material, the board rank by rank and the FEN), with a Copy button. Control+C copies the FEN on every board, not only in the Board Editor. On the puzzle, endgame and analysis boards it is also in the Tab bar.
 
@@ -12,7 +12,7 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 - **Type a move**, as in Lichess's blind mode: in SAN (Nf3, exd5, O-O, e8=Q) or as its two squares (g1f3). Tab opens the field on a game board; on the puzzle, endgame and analysis boards it is the first action of the Tab bar ("Type a move..."). Case does not matter, 0-0 is castling, and a lowercase b is the b pawn when that move is legal. The arrows and Enter work as before. The manual's "Typing a move" has the details.
 
-- Analysis board: the engine's answers (E, X, Shift+E and the F7 review) now also appear on the braille display, not only in speech, so the lines can be read at your own pace. NVDA's braille setting "Show messages" decides how long they stay. Suggested by Neil Graham.
+- Analysis board: the engine's answers (E, X, Shift+E and the F7 review) now also appear on the braille display, not only in speech, so the lines can be read at your own pace. NVDA's braille setting "Show messages" decides how long they stay.
 
 - **NVDA+Alt+X now shows the Chess Study menu** from anywhere, instead of opening Tactics: every part of the add-on is one key away. Tactics keeps its own shortcut, with no key by default; assign NVDA+Alt+X or another key to it in Input Gestures, Chess Study category, to have the old behaviour back.
 

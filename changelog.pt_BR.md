@@ -4,7 +4,7 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
-- **Zerar progresso de táticas...** nas configurações: recomeça as táticas, apagando todas as tentativas de puzzle, o rating e a fila de revisão, depois de uma pergunta cuja resposta padrão é Não. O progresso dos finais e as configurações continuam, e antes uma cópia do histórico antigo é salva ao lado do `tactic.db`. Apagar o `tactic.db` à mão apaga também as lições de finais, que ficam no mesmo arquivo. Sugestão de um usuário.
+- **Zerar progresso de táticas...** nas configurações: recomeça as táticas, apagando todas as tentativas de puzzle, o rating e a fila de revisão, depois de uma pergunta cuja resposta padrão é Não. O progresso dos finais e as configurações continuam, e antes uma cópia do histórico antigo é salva ao lado do `tactic.db`. Apagar o `tactic.db` à mão apaga também as lições de finais, que ficam no mesmo arquivo.
 
 - **A posição em texto**: D em qualquer tabuleiro abre a posição inteira numa janela lida linha por linha (de quem é a vez, o último lance, as peças de cada lado, roque, en passant, material, o tabuleiro fileira por fileira e o FEN), com um botão Copiar. O Control+C copia o FEN em todos os tabuleiros, não só no Editor de tabuleiro. Nos tabuleiros de puzzle, de finais e de análise também está na barra do Tab.
 
@@ -12,7 +12,7 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 - **Digitar o lance**, como no modo para cegos do Lichess: em SAN (Nf3, exd5, O-O, e8=Q) ou pelas duas casas (g1f3). No tabuleiro de partida, o Tab abre o campo; nos tabuleiros de puzzle, de finais e de análise, é a primeira ação da barra do Tab ("Digitar lance..."). Maiúscula ou minúscula tanto faz, 0-0 é roque, e um b minúsculo é o peão da coluna b quando esse lance é legal. As setas e o Enter continuam como antes. O manual, em "Digitar o lance", tem os detalhes.
 
-- Tabuleiro de análise: as respostas do motor (E, X, Shift+E e a revisão do F7) agora aparecem também na linha braille, e não só na fala, para ler as linhas no seu ritmo. A opção de braille do NVDA "Mostrar mensagens" decide quanto tempo ficam. Sugestão de Neil Graham.
+- Tabuleiro de análise: as respostas do motor (E, X, Shift+E e a revisão do F7) agora aparecem também na linha braille, e não só na fala, para ler as linhas no seu ritmo. A opção de braille do NVDA "Mostrar mensagens" decide quanto tempo ficam.
 
 - **O NVDA+Alt+X agora mostra o menu do Chess Study** de qualquer lugar, em vez de abrir as Táticas: todas as partes do add-on ficam a uma tecla. As Táticas continuam com atalho próprio, sem tecla de fábrica; para voltar ao jeito antigo, atribua o NVDA+Alt+X ou outra tecla a ele em Definir comandos, categoria Chess Study.
 
