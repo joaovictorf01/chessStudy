@@ -58,6 +58,7 @@ from ..i18n import _, ngettext
 from ..notation import render_san
 from ..openings import last_book_node, lookup, opening_of_line
 from ..paths import import_bundled
+from ..score_sheet import ScoreSheetMove
 from ..sounds import GameSound
 from ..signals import chessboard_closed_signal
 from ..speaking import speak_next
@@ -738,33 +739,39 @@ class AnalysisChessboard(ReviewActionsMixin, EngineActionsMixin, ActionsBarMixin
 		eventHandler.queueEvent("stateChange", self._chess_cells[self._focused_cell])
 
 	def _rebuild_score_sheet(self):
-		self.score_sheet_menu.clear()
 		node = self.tree.node
 		nodes = []
 		while node.parent is not None:
 			nodes.append(node)
 			node = node.parent
-		# The score sheet lists the latest move first (SimpleList.add_item inserts at the top).
+		moves = []
 		for child in reversed(nodes):
-			text = self._numbered_move(child)
+			board = child.parent.board()
+			text = self._marked_move(child)
 			comment = plain_comment(child.comment)
 			if comment:
 				text += " " + comment
-			self.score_sheet_menu.add_item(text)
+			moves.append(ScoreSheetMove(board.fullmove_number, board.turn == chess.WHITE, text))
+		self.score_sheet_menu.set_moves(moves)
 
 	def _san_text(self, board, move):
 		return render_san(board.san(move), move.uci(), get_move_notation())
 
 	def _numbered_move(self, node=None):
-		"""`12. Nf3` or `12... Nf6`, with the mark: how the move is written in the score sheet."""
+		"""`12. Nf3` or `12... Nf6`, with the mark: how the move is said after a jump."""
 		node = self.tree.node if node is None else node
 		assert node.parent is not None, "the start of the game has no move to write"
 		board = node.parent.board()
 		number = board.fullmove_number
 		prefix = f"{number}." if board.turn == chess.WHITE else f"{number}..."
+		return f"{prefix} {self._marked_move(node)}"
+
+	def _marked_move(self, node) -> str:
+		"""`Nf3!`: the move in the chosen notation with its mark, without the number."""
+		board = node.parent.board()
 		marks = node.nags & set(MOVE_MARK_SYMBOLS)
 		mark = MOVE_MARK_SYMBOLS[min(marks)] if marks else ""
-		return f"{prefix} {self._san_text(board, node.move)}{mark}"
+		return f"{self._san_text(board, node.move)}{mark}"
 
 	def _current_move_text(self) -> list:
 		"""Where the pointer is, said after a jump: the move just played there, its mark and comment."""

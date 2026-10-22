@@ -4,6 +4,8 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 
 ## Melhorias
 
+- **Planilha de lances (F4)** agrupada como no modo para cegos do Lichess: uma linha por número de lance, com o lance das Brancas e o das Pretas juntos ("1. e4, e5"), na ordem em que foram jogados; uma partida que começa com as Pretas na vez abre com "12... Nf6". Era uma linha por lance, o mais recente primeiro. Continua abrindo no lance mais recente, agora a última linha: a Seta acima volta pela partida. Em todos os tabuleiros.
+
 - **Zerar progresso de táticas...** nas configurações: recomeça as táticas, apagando todas as tentativas de puzzle, o rating e a fila de revisão, depois de uma pergunta cuja resposta padrão é Não. O progresso dos finais e as configurações continuam, e antes uma cópia do histórico antigo é salva ao lado do `tactic.db`. Apagar o `tactic.db` à mão apaga também as lições de finais, que ficam no mesmo arquivo.
 
 - **A posição em texto**: D em qualquer tabuleiro abre a posição inteira numa janela lida linha por linha (de quem é a vez, o último lance, as peças de cada lado, roque, en passant, material, o tabuleiro fileira por fileira e o FEN), com um botão Copiar. O Control+C copia o FEN em todos os tabuleiros, não só no Editor de tabuleiro. Nos tabuleiros de puzzle, de finais e de análise também está na barra do Tab.

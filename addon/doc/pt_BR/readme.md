@@ -187,7 +187,7 @@ Os comandos do tabuleiro de partida (veja "Comandos de teclado no tabuleiro") ta
 | F1 / Shift+F1 | Resumo das suas peças / das peças do adversário |
 | F2 / Shift+F2 | Tempo restante no relógio do lado que tem a vez / do outro lado |
 | F3 | A casa em foco e a peça, em notação IBCA |
-| F4 | Planilha de lances: os lances jogados até agora, como uma lista. Seta acima e Seta abaixo percorrem; F4 ou Escape fecha |
+| F4 | Planilha de lances: os lances jogados até agora, uma linha por número de lance, com o lance das Brancas e o das Pretas juntos ("1. e4, e5"), na ordem em que foram jogados, como no modo para cegos do Lichess. Abre no lance mais recente; Seta acima volta pela partida, Seta abaixo avança; F4 ou Escape fecha |
 | F6 / Shift+F6 | A sua reserva / a reserva do adversário (Crazyhouse) |
 | Control+D | Oferecer empate, ou retirar a oferta. Humano contra humano: depois do próximo lance o outro jogador aceita ou recusa. Contra o computador: ele responde na vez dele, "O computador aceita o empate." ou "O computador recusa o empate."; antes do lance 20 sempre recusa, e depois só aceita quando avalia a posição como igual ou pior para ele |
 | Control+S | Salvar a partida como arquivo PGN |

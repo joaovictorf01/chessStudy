@@ -587,8 +587,7 @@ class EndgameLessonChessboard(TablebaseJudgeMixin, UserEngineChessboard):
 		self.board.pop()
 		undone = self.board.pop()
 		for _unused in range(2):
-			if self.score_sheet_menu.items:
-				self.score_sheet_menu.items.pop(0)
+			self.score_sheet_menu.pop_move()
 		self.take_backs += 1
 		self.dialog.set_board_image()
 		eventHandler.queueEvent("stateChange", api.getFocusObject())

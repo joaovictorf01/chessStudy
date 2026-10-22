@@ -4,6 +4,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 
 ## Improvements
 
+- **Score sheet (F4)** grouped as in Lichess's blind mode: one line per move number, White's and Black's moves together ("1. e4, e5"), in the order played; a game that starts with Black to move opens with "12... Nf6". It was one line per move, the latest first. It still opens on the latest move, now the last line: Up Arrow goes back through the game. On every board.
+
 - **Reset tactics progress...** in the settings: starts the tactics over, erasing every puzzle attempt, the rating and the review queue, after a question whose default answer is No. Endgame progress and the settings stay, and a copy of the old history is saved first next to `tactic.db`. Deleting `tactic.db` by hand erases the endgame lessons too, since they live in the same file.
 
 - **The position as text**: D on any board opens the whole position in a window read line by line (whose move, the last move, each side's pieces, castling, en passant, material, the board rank by rank and the FEN), with a Copy button. Control+C copies the FEN on every board, not only in the Board Editor. On the puzzle, endgame and analysis boards it is also in the Tab bar.

@@ -14,6 +14,7 @@ import queueHandler
 import eventHandler
 from NVDAObjects import NVDAObject
 from scriptHandler import script
+from ..score_sheet import ScoreSheetMove, score_sheet_lines
 from ..sounds import GameSound
 
 
@@ -186,9 +187,13 @@ class SimpleList(MenuObject):
 		)
 
 	def event_gainFocus(self):
-		self.set_current(0)
+		self.set_current(self.opening_index())
 		super().event_gainFocus()
 		queueHandler.queueFunction(queueHandler.eventQueue, GameSound.score_list_open.play)
+
+	def opening_index(self) -> int:
+		"""The item focused when the list opens."""
+		return 0
 
 	def close_menu(self):
 		super().close_menu()
@@ -209,4 +214,42 @@ class SimpleList(MenuObject):
 			items=[],
 			on_top_edge=self.onEdge,
 			on_bottom_edge=self.onEdge,
+		)
+
+
+class ScoreSheetList(SimpleList):
+	"""The score sheet (F4): one line per move number, in the order played (see `score_sheet`).
+
+	Opens on the last line, the latest move; Up Arrow goes back through the game.
+	"""
+
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.moves: list[ScoreSheetMove] = []
+
+	def opening_index(self) -> int:
+		return len(self) - 1
+
+	def set_moves(self, moves: list[ScoreSheetMove]) -> None:
+		self.moves = list(moves)
+		self._rebuild()
+
+	def add_move(self, number: int, white: bool, text: str) -> None:
+		self.moves.append(ScoreSheetMove(number, white, text))
+		self._rebuild()
+
+	def pop_move(self) -> None:
+		if self.moves:
+			self.moves.pop()
+			self._rebuild()
+
+	def clear(self):
+		self.moves = []
+		super().clear()
+
+	def _rebuild(self) -> None:
+		super().clear()
+		self.items.extend(
+			SimpleListItem(parent=self, name=line, close_gesture=self.close_gesture)
+			for line in score_sheet_lines(self.moves)
 		)

@@ -187,7 +187,7 @@ Los comandos del tablero de partida (consulta "Comandos de teclado en el tablero
 | F1 / Shift+F1 | Resumen de tus piezas / de las piezas del rival |
 | F2 / Shift+F2 | Tiempo restante en el reloj del bando que mueve / del otro bando |
 | F3 | La casilla enfocada y su pieza en notación IBCA |
-| F4 | Planilla: las jugadas hechas hasta ahora, como una lista. Flecha arriba y Flecha abajo la recorren; F4 o Escape la cierran |
+| F4 | Planilla: las jugadas hechas hasta ahora, una línea por número de jugada, con la de las blancas y la de las negras juntas ("1. e4, e5"), en el orden en que se jugaron, como en el modo para ciegos de Lichess. Se abre en la última jugada; Flecha arriba retrocede por la partida, Flecha abajo avanza; F4 o Escape la cierran |
 | F6 / Shift+F6 | Tu reserva / la reserva del rival (Crazyhouse) |
 | Control+D | Ofrecer tablas, o retirar la oferta. Humano contra humano: después de la siguiente jugada el otro jugador acepta o rechaza. Contra la computadora: responde en su turno, "La computadora acepta las tablas." o "La computadora rechaza las tablas."; siempre rechaza antes de la jugada 20, y a partir de ahí solo acepta cuando juzga la posición igualada o peor para ella |
 | Control+S | Guardar la partida como archivo PGN |

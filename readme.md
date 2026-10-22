@@ -187,7 +187,7 @@ The commands of the game board (see "Keyboard commands on the board") work here 
 | F1 / Shift+F1 | Overview of your pieces / of the opponent's pieces |
 | F2 / Shift+F2 | Remaining time on the clock of the side to move / of the other side |
 | F3 | The focused square and piece in IBCA notation |
-| F4 | Score sheet: the moves played so far, as a list. Up and Down arrows move through it; F4 or Escape closes it |
+| F4 | Score sheet: the moves played so far, one line per move number with White's and Black's moves together ("1. e4, e5"), in the order played, as in Lichess's blind mode. It opens on the latest move; Up Arrow goes back through the game, Down Arrow forward; F4 or Escape closes it |
 | F6 / Shift+F6 | Your pocket / the opponent's pocket (Crazyhouse) |
 | Control+D | Offer a draw, or withdraw the offer. Human versus human: after the next move the other player accepts or declines. Against the computer: it answers on its turn, "The computer accepts the draw." or "The computer declines the draw."; it always declines before move 20, and after that accepts only when it judges the position level or worse for itself |
 | Control+S | Save the game as a PGN file |

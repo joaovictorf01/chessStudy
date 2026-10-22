@@ -24,7 +24,7 @@ from .ui_components import (
 	KeyboardNavigableNVDAObjectMixin,
 	MenuItemObject,
 	MenuObject,
-	SimpleList,
+	ScoreSheetList,
 )
 from ..time_control import NULL_TIME_CONTROL
 from ..spoken_messages import (
@@ -377,7 +377,7 @@ class BaseVirtualChessboard(
 		self._focused_cell = self.get_initial_focus_cell()
 		self.is_game_over = False
 		self._current_focused_object = None
-		self.score_sheet_menu = SimpleList(
+		self.score_sheet_menu = ScoreSheetList(
 			# Translators: Name of the list of moves played so far.
 			parent=self,
 			name=_("Score sheet"),
@@ -490,10 +490,15 @@ class BaseVirtualChessboard(
 			return
 		played = PlayedMove.capture(self.board, move)
 		move_maker = played.mover
+		move_number, white_moved = self.board.fullmove_number, self.board.turn == chess.WHITE
 		self.board.push(move)
 		self.time_control.time_move(not self.board.turn, total_moves=len(self.board.move_stack))
 		desc_generator = tuple(self._describe_move(played))
-		self.score_sheet_menu.add_item(" ".join(i for i in desc_generator if type(i) is str))
+		self.score_sheet_menu.add_move(
+			move_number,
+			white_moved,
+			" ".join(i for i in desc_generator if type(i) is str),
+		)
 		spoken_commands: list[Iterable] = [desc_generator]
 		spoken_commands.append(pre_speech)
 		if self.board.is_game_over():

@@ -75,8 +75,7 @@ class PGNPlayerChessboard(BaseVirtualChessboard):
 			return
 		undone = self.board.pop()
 		self.current_move -= 1
-		if self.score_sheet_menu.items:
-			self.score_sheet_menu.items.pop(0)
+		self.score_sheet_menu.pop_move()
 		if self.is_game_over:
 			# The last move of the game was taken back: the replay is open again.
 			# Nothing listens to `game_over_signal` on this board, so resetting the

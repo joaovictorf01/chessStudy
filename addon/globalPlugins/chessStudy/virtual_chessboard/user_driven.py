@@ -264,7 +264,7 @@ class UserDrivenChessboard(BaseVirtualChessboard):
 		if self.board.turn != self.prospective:
 			# Translators: Spoken when a move was typed while it is the other side's turn.
 			speak_next(
-				[speech.commands.WaveFileCommand(GameSound.invalid.filename), _("It is not your turn.")]
+				[speech.commands.WaveFileCommand(GameSound.invalid.filename), _("It is not your turn.")],
 			)
 			return
 		typed = read_typed_move(self.board, text)
