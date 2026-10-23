@@ -137,7 +137,7 @@ def _unreadable(text: str) -> TypedMove:
 	return TypedMove(
 		# Translators: Spoken when the typed text is not a move; {move} is what was typed.
 		problem=_(
-			"Could not read {move} as a move. Type it as Nf3, exd5, O-O, or the two squares, g1f3."
+			"Could not read {move} as a move. Type it as Nf3, exd5, O-O, or the two squares, g1f3.",
 		).format(
 			move=text.strip(),
 		),

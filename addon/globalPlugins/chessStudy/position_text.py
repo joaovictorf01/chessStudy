@@ -138,12 +138,16 @@ def _material(board: chess.Board) -> str:
 	if balance > 0:
 		# Translators: Line of the position as text, e.g. "Material: White is up 3 points." (pawn 1, knight and bishop 3, rook 5, queen 9).
 		text = ngettext(
-			"Material: White is up {points} point.", "Material: White is up {points} points.", points
+			"Material: White is up {points} point.",
+			"Material: White is up {points} points.",
+			points,
 		)
 	else:
 		# Translators: Line of the position as text, e.g. "Material: Black is up 3 points." (pawn 1, knight and bishop 3, rook 5, queen 9).
 		text = ngettext(
-			"Material: Black is up {points} point.", "Material: Black is up {points} points.", points
+			"Material: Black is up {points} point.",
+			"Material: Black is up {points} points.",
+			points,
 		)
 	return text.format(points=points)
 

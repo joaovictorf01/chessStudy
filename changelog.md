@@ -2,6 +2,12 @@
 
 Versioning follows [Semantic Versioning](https://semver.org/): a patch release (1.1.x) only fixes; a minor release (1.x.0) adds features; a major release changes what existing users rely on. The version is decided when the release is cut, from what this section holds.
 
+## To do
+
+- Puzzle download: accept a `.db.gz` downloaded by hand in the browser (for machines that cannot reach GitHub from the add-on). First report: 21-09-2026, "could not reach the download server".
+
+# Chess Study 2.1.0
+
 ## Improvements
 
 - **Score sheet (F4)** grouped as in Lichess's blind mode: one line per move number, White's and Black's moves together ("1. e4, e5"), in the order played; a game that starts with Black to move opens with "12... Nf6". It was one line per move, the latest first. It still opens on the latest move, now the last line: Up Arrow goes back through the game. On every board.
@@ -31,10 +37,6 @@ Versioning follows [Semantic Versioning](https://semver.org/): a patch release (
 - Tactics, Select Themes: NVDA now says whether each theme is checked or not checked. The list drew its checkboxes itself and never reported their state, so it was impossible to know by ear what was selected. With one theme, the Themes field now says "1 selected" in the singular in Portuguese and Spanish.
 
 - My Games: a game where your Lichess user played Black now opens from Black, as it does when imported; it always opened from White.
-
-## To do
-
-- Puzzle download: accept a `.db.gz` downloaded by hand in the browser (for machines that cannot reach GitHub from the add-on). First report: 21-09-2026, "could not reach the download server".
 
 # Chess Study 2.0.0
 

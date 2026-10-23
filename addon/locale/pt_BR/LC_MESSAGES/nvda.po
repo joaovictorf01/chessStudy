@@ -126,7 +126,7 @@ msgstr "Disponível: base do Lichess de {when}."
 
 #. Tab bar action that returns to the board. Action in the endgame toolbar.
 #. Button of the tactics actions bar.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:309
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:310
 #: addon/globalPlugins/chessStudy/virtual_chessboard/editor_board.py:135
 #: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:273
 #: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:470
@@ -221,7 +221,7 @@ msgstr "xeque"
 #. over. Spoken when a position on the analysis board is checkmate.
 #: addon/globalPlugins/chessStudy/notation.py:147
 #: addon/globalPlugins/chessStudy/spoken_messages.py:96
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:801
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:808
 msgid "checkmate"
 msgstr "mate"
 
@@ -343,7 +343,7 @@ msgstr "Não foi possível carregar os temas"
 
 #. Spoken when saving is refused because NVDA runs in secure mode. Spoken when
 #. saving the picture is refused because NVDA runs in secure mode.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:206
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:207
 #: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:263
 #: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:270
 msgid "Could not save game. NVDA running in secure mode."
@@ -441,7 +441,7 @@ msgid "dropped a {piece}"
 msgstr "colocaram {piece}"
 
 #. Spoken after an en passant capture.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:583
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:588
 msgid "en passant"
 msgstr "en passant"
 
@@ -573,7 +573,7 @@ msgid "Human versus human"
 msgstr "Humano contra humano"
 
 #. Spoken when the requested move is not legal.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:396
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:397
 #: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:487
 msgid "Illegal move"
 msgstr "Lance ilegal"
@@ -1545,8 +1545,8 @@ msgid "Your puzzle database is up to date (Lichess base of {when})."
 msgstr "Sua base de puzzles está atualizada (base do Lichess de {when})."
 
 #. Spoken when a king is in check, e.g. "white is in check".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:809
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:508
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:816
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:513
 msgid "{color} is in check"
 msgstr "{color} em xeque"
 
@@ -1558,7 +1558,7 @@ msgstr "{color} oferecem empate. Quer aceitar?"
 #. Spoken to name the winner, e.g. "white is the winner". Spoken at game over,
 #. e.g. "white is the winner".
 #: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:457
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:657
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:662
 msgid "{color} is the winner"
 msgstr "{color} venceram"
 
@@ -2602,7 +2602,7 @@ msgstr "{name}: {rating_range}"
 
 #. Spoken when jumping to a piece that is no longer on the board, e.g. "No
 #. white knight".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:621
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:626
 msgid "No {piece}"
 msgstr "Sem {piece}"
 
@@ -2876,7 +2876,7 @@ msgid "Clock for the mate drills (minutes+seconds, empty for none)"
 msgstr "Relógio dos treinos de mate (minutos+segundos; vazio é sem relógio)"
 
 #. Spoken at the end of a lesson position.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:623
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:622
 msgid "Control+N goes to the next position."
 msgstr "Control+N vai para a próxima posição."
 
@@ -3150,7 +3150,7 @@ msgstr "Philidor: a torre na terceira fileira"
 #. Label for the list of positions of the chosen lesson. Title of the window
 #. with the position as text.
 #: addon/globalPlugins/chessStudy/graphical_interface/endgame_dialog.py:61
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:604
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:609
 msgid "Position"
 msgstr "Posição"
 
@@ -3181,12 +3181,12 @@ msgstr "Posição sorteada"
 
 #. Spoken when a lesson position was played out keeping the theoretical
 #. result.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:608
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:607
 msgid "Result held, with no slip. This one is yours."
 msgstr "Resultado mantido, sem escorregar. Esta é sua."
 
 #. Spoken when the result was kept but with slips or take-backs along the way.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:611
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:610
 msgid ""
 "Result held, with {slips} slips and {takebacks} take-backs. Once more "
 "without them."
@@ -3415,7 +3415,7 @@ msgstr ""
 "rei, cuidado com o afogamento. Menos de 10 lances."
 
 #. Spoken when the lesson position was not held.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:619
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:618
 msgid "The result slipped. Control+R plays the same position again."
 msgstr "O resultado escapou. Control+R joga a mesma posição de novo."
 
@@ -3515,13 +3515,13 @@ msgstr ""
 "Esta está perdida com o melhor jogo; não há o que jogar. Control+N segue."
 
 #. Spoken when Control+N is pressed on the last position of a lesson.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:659
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:658
 msgid "This was the last position of the lesson."
 msgstr "Esta era a última posição da lição."
 
 #. Spoken after a move was taken back in a lesson, e.g. "Took back Kd6. Your
 #. move."
-#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:598
+#: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:597
 msgid "Took back {move}. Your move."
 msgstr "Desfeito {move}. Sua vez."
 
@@ -4186,8 +4186,8 @@ msgstr "Não foi possível ler o arquivo PGN. Detalhe: {error}"
 
 #. Spoken after Backspace removed a move, e.g. "took back e4". Spoken after
 #. Backspace took a move back in a PGN replay, e.g. "Took back Nf3".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:506
-#: addon/globalPlugins/chessStudy/virtual_chessboard/pgn_player.py:92
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:507
+#: addon/globalPlugins/chessStudy/virtual_chessboard/pgn_player.py:91
 msgid "Took back {move}"
 msgstr "Desfeito {move}"
 
@@ -4232,7 +4232,7 @@ msgstr "regra dos setenta e cinco lances"
 #. How a game ended, spoken at game over. Spoken when a position on the
 #. analysis board is stalemate.
 #: addon/globalPlugins/chessStudy/spoken_messages.py:98
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:804
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:811
 msgid "stalemate"
 msgstr "afogamento"
 
@@ -4304,7 +4304,7 @@ msgstr "Analisar arquivo &PGN..."
 
 #. Spoken after leaving a variation; followed by the move the position comes
 #. after.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:468
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:469
 msgid "back from the variation"
 msgstr "de volta da variante"
 
@@ -4330,42 +4330,42 @@ msgid "Choose the folder for your games"
 msgstr "Escolha a pasta das suas partidas"
 
 #. Title of the dialog that writes the comment of a move.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:525
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:526
 msgid "Comment"
 msgstr "Comentário"
 
 #. Prompt of the dialog that writes the comment of a move, e.g. "Comment on
 #. 12. Nf3".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:523
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:524
 msgid "Comment on {move}"
 msgstr "Comentário sobre {move}"
 
 #. Spoken after the comment dialog was confirmed.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:539
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:540
 msgid "Comment removed"
 msgstr "Comentário removido"
 
 #. Spoken after the comment dialog was confirmed.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:539
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:540
 msgid "Comment saved"
 msgstr "Comentário salvo"
 
 #. Spoken by Alt+Down: the only move recorded from this position.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:480
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:481
 msgid "Continues with {move}"
 msgstr "Continua com {move}"
 
 #. Spoken by Alt+Down: the main continuation, then the variations recorded
 #. here.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:484
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:485
 msgid "Continues with {move}; variations: {others}"
 msgstr "Continua com {move}; variantes: {others}"
 
 #. Shown when the imported game could not be written, followed by the error.
 #. Spoken when the game could not be written, followed by the error.
 #: addon/globalPlugins/chessStudy/__init__.py:569
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:618
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:653
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:619
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:654
 msgid "Could not save the game. Details: {error}"
 msgstr "Não foi possível salvar a partida. Detalhes: {error}"
 
@@ -4380,7 +4380,7 @@ msgid "dubious move"
 msgstr "lance duvidoso"
 
 #. Spoken when going forward at the last move of a line.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:436
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:437
 msgid "End of the line"
 msgstr "Fim da linha"
 
@@ -4414,14 +4414,14 @@ msgid "Invalid Date"
 msgstr "Data inválida"
 
 #. Asked when Escape is pressed on the analysis board with changes not saved.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:389
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:390
 msgid "Leave the analysis? The changes since the last save will be lost."
 msgstr ""
 "Sair da análise? O que mudou desde a última vez que você salvou será "
 "perdido."
 
 #. Spoken when Control+0 removed the mark of a move.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:561
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:562
 msgid "Mark removed"
 msgstr "Sinal removido"
 
@@ -4432,29 +4432,29 @@ msgid "mistake"
 msgstr "erro"
 
 #. Spoken before a move that starts a new variation.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:407
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:408
 msgid "new variation"
 msgstr "nova variante"
 
 #. Spoken by Shift+C when the current move has no comment.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:547
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:548
 msgid "No comment"
 msgstr "Sem comentário"
 
 #. Spoken by Alt+Down when no move was recorded from this position.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:474
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:475
 msgid "No moves recorded from here"
 msgstr "Nenhum lance registrado a partir daqui"
 
 #. Spoken when Alt+Up is pressed on the main line. Spoken by Control+P on the
 #. main line.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:464
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:569
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:465
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:570
 msgid "Not in a variation"
 msgstr "Você não está numa variante"
 
 #. Spoken when Backspace is pressed on a move that has moves after it.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:501
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:502
 msgid ""
 "Only the last move of a line can be taken back. Use Alt+Left to go back."
 msgstr ""
@@ -4476,18 +4476,18 @@ msgid "Open Game for Analysis"
 msgstr "Abrir partida para análise"
 
 #. Spoken when going back past the first move of a variation.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:428
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:429
 msgid "out of the variation"
 msgstr "fora da variante"
 
 #. Spoken when C is pressed before any move.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:516
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:517
 msgid "Play or go to a move first; the comment belongs to a move."
 msgstr "Jogue ou vá até um lance primeiro; o comentário pertence a um lance."
 
 #. Spoken when a mark is set before any move on the analysis board.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:321
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:555
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:322
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:556
 msgid "Play or go to a move first; the mark belongs to a move."
 msgstr "Jogue ou vá até um lance primeiro; o sinal pertence a um lance."
 
@@ -4504,22 +4504,22 @@ msgstr "Salvar partida"
 
 #. Spoken after saving, with the file name, e.g. "Saved: 2026-09-23_Joao-vs-
 #. Ana.pgn".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:621
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:661
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:622
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:662
 msgid "Saved: {name}"
 msgstr "Salvo: {name}"
 
 #. Spoken when going back at the start of the game. Spoken by Alt+Home: the
 #. start of the game. Where the pointer is, before any move.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:422
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:452
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:495
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:773
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:423
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:453
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:496
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:780
 msgid "Start of the game"
 msgstr "Início da partida"
 
 #. Spoken after Control+P made the current variation the main line.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:574
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:575
 msgid "This variation is now the main line"
 msgstr "Esta variante agora é a linha principal"
 
@@ -4534,8 +4534,8 @@ msgid "Unfinished or unknown (*)"
 msgstr "Não terminada ou desconhecido (*)"
 
 #. Spoken before a move that enters a variation already recorded.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:410
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:442
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:411
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:443
 msgid "variation"
 msgstr "variante"
 
@@ -4550,7 +4550,7 @@ msgid "Browse &folder..."
 msgstr "Procurar &pasta..."
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:264
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:265
 msgid "Add the engine's line as a variation, Control+E"
 msgstr "Pôr a linha do motor como variante, Control+E"
 
@@ -4561,7 +4561,7 @@ msgid "After {move}: {evaluation}."
 msgstr "Depois de {move}: {evaluation}."
 
 #. Name of the Tab bar on the analysis board.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:250
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:251
 msgid "Analysis actions"
 msgstr "Ações da análise"
 
@@ -4585,7 +4585,7 @@ msgid "equal, {pawns}"
 msgstr "igual, {pawns}"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:257
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:258
 msgid "Evaluate the position, E"
 msgstr "Avaliar a posição, E"
 
@@ -4599,7 +4599,7 @@ msgstr ""
 
 #. Tab bar action on the analysis board: turns the board around. Board editor
 #. action: turns the board around.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:300
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:301
 #: addon/globalPlugins/chessStudy/virtual_chessboard/editor_board.py:133
 msgid "Flip the board"
 msgstr "Virar o tabuleiro"
@@ -4615,22 +4615,22 @@ msgid "inaccuracy"
 msgstr "imprecisão"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:291
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:292
 msgid "Leave the variation, Alt+Up"
 msgstr "Sair da variante, Alt+Seta acima"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:294
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:295
 msgid "Make this variation the main line, Control+P"
 msgstr "Tornar esta variante a linha principal, Control+P"
 
 #. Tab bar action on the analysis board, with its keys.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:287
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:288
 msgid "Mark the move, Control+1 to 6"
 msgstr "Marcar o lance, Control+1 a 6"
 
 #. Name of the menu that marks the current move, e.g. "Mark 12. Nf3".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:326
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:327
 msgid "Mark {move}"
 msgstr "Marcar {move}"
 
@@ -4645,12 +4645,12 @@ msgid "minus {number}"
 msgstr "menos {number}"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:289
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:290
 msgid "Moves recorded from here, Alt+Down"
 msgstr "Lances registrados daqui, Alt+Seta abaixo"
 
 #. Last entry of the mark menu: removes the mark.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:105
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:106
 msgid "No mark, Control+0"
 msgstr "Sem sinal, Control+0"
 
@@ -4667,12 +4667,12 @@ msgid "plus {number}"
 msgstr "mais {number}"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:285
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:286
 msgid "Read the comment, Shift+C"
 msgstr "Ler o comentário, Shift+C"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:261
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:262
 msgid "Review the move played, Shift+E"
 msgstr "Avaliar o lance jogado, Shift+E"
 
@@ -4682,7 +4682,7 @@ msgid "Reviewing {move}"
 msgstr "Avaliando {move}"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:302
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:303
 msgid "Save, Control+S"
 msgstr "Salvar, Control+S"
 
@@ -4735,13 +4735,13 @@ msgid "Thinking longer, {seconds} seconds"
 msgstr "Pensando mais, {seconds} segundos"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:283
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:284
 msgid "Write a comment, C"
 msgstr "Escrever comentário, C"
 
 #. Spoken after flipping the analysis board, e.g. "black at the bottom".
 #. Spoken after flipping the board, e.g. "black at the bottom".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:361
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:362
 #: addon/globalPlugins/chessStudy/virtual_chessboard/editor_board.py:234
 msgid "{color} at the bottom"
 msgstr "{color} embaixo"
@@ -4770,7 +4770,7 @@ msgstr "{color} ganhando, {pawns}"
 
 #. Spoken when the position has variations recorded besides the main
 #. continuation.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:791
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:798
 msgid "{count} variation from here"
 msgid_plural "{count} variations from here"
 msgstr[0] "{count} variante daqui"
@@ -4787,7 +4787,7 @@ msgid "{move}: {verdict}."
 msgstr "{move}: {verdict}."
 
 #. One entry of the mark menu, e.g. "dubious move, ?!, Control+6".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:95
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:96
 msgid "{name}, {symbol}, Control+{key}"
 msgstr "{name}, {symbol}, Control+{key}"
 
@@ -4798,17 +4798,17 @@ msgid "{whole}.{tenth}"
 msgstr "{whole},{tenth}"
 
 #. Spoken by O when no position of the line has an opening name.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:705
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:706
 msgid "No named opening yet"
 msgstr "Nenhuma abertura com nome ainda"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:268
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:269
 msgid "Opening, O"
 msgstr "Abertura, O"
 
 #. Spoken after the first move that is not in the opening table.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:728
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:729
 msgid "out of theory"
 msgstr "fora da teoria"
 
@@ -4820,12 +4820,12 @@ msgstr "{move}: teoria, {name}, {eco}."
 
 #. Spoken by O after the game left theory, e.g. "Sicilian Defense, B20, out of
 #. theory".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:713
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:714
 msgid "{name}, {eco}, out of theory"
 msgstr "{name}, {eco}, fora da teoria"
 
 #. Spoken by O, e.g. "Sicilian Defense: Najdorf Variation, B90, still theory".
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:710
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:711
 msgid "{name}, {eco}, still theory"
 msgstr "{name}, {eco}, ainda teoria"
 
@@ -4859,7 +4859,7 @@ msgid "Already imported: opening your copy, with your notes."
 msgstr "Já importada: abrindo a sua cópia, com as suas anotações."
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:281
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:282
 msgid "Clock of the game, T"
 msgstr "Relógio da partida, T"
 
@@ -4939,7 +4939,7 @@ msgstr "Isso não é um link, código de partida ou usuário do Lichess."
 
 #. Spoken by T when the game carries no clock (entered by hand, or an old
 #. PGN).
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:689
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:690
 msgid "This game has no clock. Games imported from Lichess have one."
 msgstr "Esta partida não tem relógio. As partidas importadas do Lichess têm."
 
@@ -5060,7 +5060,7 @@ msgid "Editor actions"
 msgstr "Ações do editor"
 
 #. Spoken after the position was copied as FEN.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:613
+#: addon/globalPlugins/chessStudy/virtual_chessboard/base.py:618
 #: addon/globalPlugins/chessStudy/virtual_chessboard/editor_board.py:272
 msgid "FEN copied: {fen}"
 msgstr "FEN copiado: {fen}"
@@ -5345,7 +5345,7 @@ msgid "move {move}, {verdict}"
 msgstr "lance {move}, {verdict}"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:272
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:273
 msgid "Next critical moment, Alt+Page Down"
 msgstr "Próximo momento crítico, Alt+Page Down"
 
@@ -5396,7 +5396,7 @@ msgid "Review stopped."
 msgstr "Revisão interrompida."
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:270
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:271
 msgid "Review the game, F7"
 msgstr "Revisar a partida, F7"
 
@@ -5433,7 +5433,7 @@ msgid "Game Review Options"
 msgstr "Opções da revisão da partida"
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:275
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:276
 msgid "Previous critical moment, Alt+Page Up"
 msgstr "Momento crítico anterior, Alt+Page Up"
 
@@ -5443,7 +5443,7 @@ msgid "Review options saved. F7 reviews with them."
 msgstr "Opções da revisão salvas. O F7 revisa com elas."
 
 #. Tab bar action on the analysis board: opens the game review options.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:279
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:280
 msgid "Review options..."
 msgstr "Opções da revisão..."
 
@@ -5463,7 +5463,7 @@ msgid "No threat found."
 msgstr "Nenhuma ameaça encontrada."
 
 #. Tab bar action on the analysis board, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:259
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:260
 msgid "Threat: what the other side would play, X"
 msgstr "Ameaça: o que o outro lado jogaria, X"
 
@@ -5484,12 +5484,12 @@ msgstr "Tablebase:"
 
 #. Tab bar action on the analysis board: plays the current position against
 #. the engine.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:298
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:299
 msgid "Play from here against the computer..."
 msgstr "Jogar daqui contra o computador..."
 
 #. Spoken by "Play from here" on a checkmate or stalemate.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:352
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:353
 msgid "The game is over in this position: there is nothing to play."
 msgstr "A partida terminou nesta posição: não há o que jogar."
 
@@ -5656,13 +5656,13 @@ msgid "That was the last review."
 msgstr "Essa foi a última revisão."
 
 #. Spoken once when the automatic save fails, followed by the error.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:600
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:601
 msgid "Could not save automatically. Details: {error}"
 msgstr "Não foi possível salvar automaticamente. Detalhes: {error}"
 
 #. Tab bar action on the analysis board: edit players, event, date and result,
 #. then save.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:305
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:306
 msgid "Game details and save, Control+Alt+S"
 msgstr "Detalhes da partida e salvar, Control+Alt+S"
 
@@ -5879,76 +5879,94 @@ msgstr "Exemplo do livro"
 #. what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:35
 msgid ""
-"2.0.0: Chessmart is now Chess Study, with a new add-on ID, at the request of"
-" the original author: remove Chessmart and install Chess Study; your rating,"
-" history, missed puzzles, puzzle database, tablebases, settings and games "
-"come along on the first start. The interface and the manual are complete in "
-"Spanish. 1.2.0: Analysis board: record a game with variations, comments and "
-"marks, or open a PGN; Stockfish 16 evaluation (E), the threat (X), move "
-"review (Shift+E), opening names, and the Syzygy tablebases with five pieces "
-"or fewer; game review (F7) with the critical moments and each player's "
-"accuracy as Lichess computes it; saves by itself. Import Lichess Game with "
-"the clock of every move; My Games; Board Editor; play from any position "
-"against the computer, which now answers draw offers. Tactics: the puzzles "
-"you missed come back for review until firm. Endgames: lesson 3b, promote and"
-" mate with king and pawn. Stockfish 16 replaces Stockfish 14. The manual is "
-"complete and has a Brazilian Portuguese version. 1.1.0: Endgames: mate "
-"drills (queen, rook, two rooks, two bishops, and bishop and knight) against "
-"the engine at full strength, and nine lessons that follow the endgame course"
-" order (opposition, king and pawn, piece against pawn, pawns on both sides, "
-"rook and pawn against rook, queen against pawn, bishop and rook pawn, and "
-"the practical rook endings: short side, Vancura, back rank, rule of five, "
-"rook behind the passed pawn): each position asks win, draw or loss, tells "
-"the rule and is played out with the Syzygy tablebase as judge; tablebases up"
-" to 5 pieces downloaded from the Lichess mirror; a log of every attempt. "
-"1.0.2: Escape asks before leaving a game in progress and really closes the "
-"board (engine, clock and online game included); an untouched puzzle no "
-"longer counts as a failure; online board fixes (start, server clock, draw "
-"offers, resignation, refused moves, reconnect); challenge levels and puzzle "
-"themes with real names and descriptions. 1.0.1: the complete puzzle database"
-" is downloaded in parts, with each part verified as it arrives and retried "
-"on its own if the connection drops. 1.0.0: first public release of the "
-"tactics trainer: Lichess puzzle database downloaded on demand (light or "
-"complete) and updated monthly, Glicko-2 tactics rating with adaptive "
-"difficulty, training plans by theme, configurable move notation "
-"(descriptive, SAN, UCI, literate, NATO, anna) and Brazilian Portuguese "
-"translation."
+"2.1.0: Type a move in SAN or as its two squares, as in Lichess's blind mode."
+" D on any board reads the whole position as text, and Control+C copies the "
+"FEN on every board. The score sheet (F4) has one line per move number, as in"
+" Lichess. Reset tactics progress in the settings, with a backup and the "
+"endgames kept. NVDA+Alt+X opens the Chess Study menu. Game review (F7) also "
+"tells your engine moves and your only moves; the analysis board's engine "
+"answers go to the braille display. Copy details when a download fails. The "
+"theme picker says whether each theme is checked, and My Games opens a game "
+"you played as Black from Black. 2.0.0: Chessmart is now Chess Study, with a "
+"new add-on ID, at the request of the original author: remove Chessmart and "
+"install Chess Study; your rating, history, missed puzzles, puzzle database, "
+"tablebases, settings and games come along on the first start. The interface "
+"and the manual are complete in Spanish. 1.2.0: Analysis board: record a game"
+" with variations, comments and marks, or open a PGN; Stockfish 16 evaluation"
+" (E), the threat (X), move review (Shift+E), opening names, and the Syzygy "
+"tablebases with five pieces or fewer; game review (F7) with the critical "
+"moments and each player's accuracy as Lichess computes it; saves by itself. "
+"Import Lichess Game with the clock of every move; My Games; Board Editor; "
+"play from any position against the computer, which now answers draw offers. "
+"Tactics: the puzzles you missed come back for review until firm. Endgames: "
+"lesson 3b, promote and mate with king and pawn. Stockfish 16 replaces "
+"Stockfish 14. The manual is complete and has a Brazilian Portuguese version."
+" 1.1.0: Endgames: mate drills (queen, rook, two rooks, two bishops, and "
+"bishop and knight) against the engine at full strength, and nine lessons "
+"that follow the endgame course order (opposition, king and pawn, piece "
+"against pawn, pawns on both sides, rook and pawn against rook, queen against"
+" pawn, bishop and rook pawn, and the practical rook endings: short side, "
+"Vancura, back rank, rule of five, rook behind the passed pawn): each "
+"position asks win, draw or loss, tells the rule and is played out with the "
+"Syzygy tablebase as judge; tablebases up to 5 pieces downloaded from the "
+"Lichess mirror; a log of every attempt. 1.0.2: Escape asks before leaving a "
+"game in progress and really closes the board (engine, clock and online game "
+"included); an untouched puzzle no longer counts as a failure; online board "
+"fixes (start, server clock, draw offers, resignation, refused moves, "
+"reconnect); challenge levels and puzzle themes with real names and "
+"descriptions. 1.0.1: the complete puzzle database is downloaded in parts, "
+"with each part verified as it arrives and retried on its own if the "
+"connection drops. 1.0.0: first public release of the tactics trainer: "
+"Lichess puzzle database downloaded on demand (light or complete) and updated"
+" monthly, Glicko-2 tactics rating with adaptive difficulty, training plans "
+"by theme, configurable move notation (descriptive, SAN, UCI, literate, NATO,"
+" anna) and Brazilian Portuguese translation."
 msgstr ""
-"2.0.0: o Chessmart agora é o Chess Study, com novo identificador, a pedido "
-"do autor original: remova o Chessmart e instale o Chess Study; o seu rating,"
-" histórico, puzzles errados, base de puzzles, tablebases, configurações e "
-"partidas vêm junto na primeira vez que ele abre. A interface e o manual "
-"estão completos em espanhol. 1.2.0: Tabuleiro de análise: grave uma partida "
-"com variantes, comentários e marcas, ou abra um PGN; avaliação do Stockfish "
-"16 (E), a ameaça (X), avaliação do lance (Shift+E), nomes de abertura e as "
-"tablebases Syzygy com cinco peças ou menos; revisão da partida (F7) com os "
-"momentos críticos e a precisão de cada jogador calculada como no Lichess; "
-"salva sozinho. Importar partida do Lichess com o relógio de cada lance; "
-"Minhas partidas; Editor de tabuleiro; jogue de qualquer posição contra o "
-"computador, que agora responde à oferta de empate. Táticas: os puzzles que "
-"você errou voltam para revisão até ficarem firmes. Finais: lição 3b, "
-"promover e dar mate com rei e peão. O Stockfish 16 substitui o Stockfish 14."
-" O manual está completo e tem versão em português do Brasil. 1.1.0: Finais: "
-"treinos de mate (dama, torre, duas torres, dois bispos, e bispo e cavalo) "
-"contra o motor em força total, e nove lições na ordem dos cursos de finais "
-"(oposição, rei e peão, peça contra peão, peões dos dois lados, torre e peão "
-"contra torre, dama contra peão, bispo e peão de torre, e os finais de torre "
-"práticos: lado curto, Vancura, última fila, regra dos cinco, torre atrás do "
-"peão passado): cada posição pergunta ganha, empata ou perde, diz a regra e é"
-" jogada até o fim com a tablebase Syzygy como juiz; tablebases até 5 peças "
-"baixadas do espelho do Lichess; registro de cada tentativa. 1.0.2: Escape "
-"pergunta antes de sair de uma partida em andamento e fecha o tabuleiro de "
-"verdade (motor, relógio e partida online inclusos); puzzle sem toque não "
-"conta mais como derrota; correções do tabuleiro online (início, relógio do "
-"servidor, ofertas de empate, desistência, lances recusados, reconexão); "
-"níveis de desafio e temas de puzzle com nomes e descrições reais. 1.0.1: a "
-"base completa de puzzles é baixada em partes, cada parte conferida ao chegar"
-" e refeita sozinha se a conexão cair. 1.0.0: primeira versão pública do "
-"treinador de táticas: base de puzzles do Lichess baixada sob demanda (leve "
-"ou completa) e atualizada mensalmente, rating de táticas Glicko-2 com "
-"dificuldade adaptativa, planos de treino por tema, notação de lances "
-"configurável (descritiva, SAN, UCI, por extenso, NATO, anna) e tradução para"
-" o português do Brasil."
+"2.1.0: digitar o lance em SAN ou pelas duas casas, como no modo para cegos "
+"do Lichess. D em qualquer tabuleiro lê a posição inteira em texto, e o "
+"Control+C copia o FEN em todos os tabuleiros. A planilha de lances (F4) tem "
+"uma linha por número de lance, como no Lichess. Zerar o progresso de táticas"
+" nas configurações, com cópia de segurança e mantendo os finais. O "
+"NVDA+Alt+X abre o menu do Chess Study. A revisão da partida (F7) também diz "
+"os seus lances iguais aos do motor e os seus lances únicos; as respostas do "
+"motor no tabuleiro de análise vão para a linha braille. Copiar detalhes "
+"quando um download falha. A escolha de temas diz se cada tema está marcado, "
+"e Minhas partidas abre do lado das Pretas a partida que você jogou de "
+"Pretas. 2.0.0: o Chessmart agora é o Chess Study, com novo identificador, a "
+"pedido do autor original: remova o Chessmart e instale o Chess Study; o seu "
+"rating, histórico, puzzles errados, base de puzzles, tablebases, "
+"configurações e partidas vêm junto na primeira vez que ele abre. A interface"
+" e o manual estão completos em espanhol. 1.2.0: Tabuleiro de análise: grave "
+"uma partida com variantes, comentários e marcas, ou abra um PGN; avaliação "
+"do Stockfish 16 (E), a ameaça (X), avaliação do lance (Shift+E), nomes de "
+"abertura e as tablebases Syzygy com cinco peças ou menos; revisão da partida"
+" (F7) com os momentos críticos e a precisão de cada jogador calculada como "
+"no Lichess; salva sozinho. Importar partida do Lichess com o relógio de cada"
+" lance; Minhas partidas; Editor de tabuleiro; jogue de qualquer posição "
+"contra o computador, que agora responde à oferta de empate. Táticas: os "
+"puzzles que você errou voltam para revisão até ficarem firmes. Finais: lição"
+" 3b, promover e dar mate com rei e peão. O Stockfish 16 substitui o "
+"Stockfish 14. O manual está completo e tem versão em português do Brasil. "
+"1.1.0: Finais: treinos de mate (dama, torre, duas torres, dois bispos, e "
+"bispo e cavalo) contra o motor em força total, e nove lições na ordem dos "
+"cursos de finais (oposição, rei e peão, peça contra peão, peões dos dois "
+"lados, torre e peão contra torre, dama contra peão, bispo e peão de torre, e"
+" os finais de torre práticos: lado curto, Vancura, última fila, regra dos "
+"cinco, torre atrás do peão passado): cada posição pergunta ganha, empata ou "
+"perde, diz a regra e é jogada até o fim com a tablebase Syzygy como juiz; "
+"tablebases até 5 peças baixadas do espelho do Lichess; registro de cada "
+"tentativa. 1.0.2: Escape pergunta antes de sair de uma partida em andamento "
+"e fecha o tabuleiro de verdade (motor, relógio e partida online inclusos); "
+"puzzle sem toque não conta mais como derrota; correções do tabuleiro online "
+"(início, relógio do servidor, ofertas de empate, desistência, lances "
+"recusados, reconexão); níveis de desafio e temas de puzzle com nomes e "
+"descrições reais. 1.0.1: a base completa de puzzles é baixada em partes, "
+"cada parte conferida ao chegar e refeita sozinha se a conexão cair. 1.0.0: "
+"primeira versão pública do treinador de táticas: base de puzzles do Lichess "
+"baixada sob demanda (leve ou completa) e atualizada mensalmente, rating de "
+"táticas Glicko-2 com dificuldade adaptativa, planos de treino por tema, "
+"notação de lances configurável (descritiva, SAN, UCI, por extenso, NATO, "
+"anna) e tradução para o português do Brasil."
 
 #: addon/globalPlugins/chessStudy/analysis_words.py:175
 msgid "The engine's move in {best} of your {total} move."
@@ -6001,7 +6019,7 @@ msgstr "Digitar lance"
 
 #. Button of the actions bars: opens the field that takes a move typed as
 #. text.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:253
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:254
 #: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:90
 #: addon/globalPlugins/chessStudy/virtual_chessboard/puzzle_board.py:142
 msgid "Type a move..."
@@ -6085,7 +6103,7 @@ msgid "Neither side can castle."
 msgstr "Nenhum lado pode mais rocar."
 
 #. Button of the actions bars: opens the position as text, with its key.
-#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:255
+#: addon/globalPlugins/chessStudy/virtual_chessboard/analysis_board.py:256
 #: addon/globalPlugins/chessStudy/virtual_chessboard/endgame_board.py:92
 #: addon/globalPlugins/chessStudy/virtual_chessboard/puzzle_board.py:144
 msgid "Position as text, D"
@@ -6098,13 +6116,13 @@ msgstr "Fileira por fileira:"
 
 #. A rank with no pieces in the rank by rank description; {rank} is its
 #. number.
-#: addon/globalPlugins/chessStudy/position_text.py:168
+#: addon/globalPlugins/chessStudy/position_text.py:172
 msgid "Rank {rank}: empty."
 msgstr "Fileira {rank}: vazia."
 
 #. A rank in the rank by rank description, e.g. "Rank 8: a8 black rook, e8
 #. black king."
-#: addon/globalPlugins/chessStudy/position_text.py:170
+#: addon/globalPlugins/chessStudy/position_text.py:174
 msgid "Rank {rank}: {pieces}."
 msgstr "Fileira {rank}: {pieces}."
 
@@ -6155,7 +6173,7 @@ msgstr "As pretas ainda podem rocar curto."
 
 #. Line of the position as text, e.g. "Material: Black is up 3 points." (pawn
 #. 1, knight and bishop 3, rook 5, queen 9).
-#: addon/globalPlugins/chessStudy/position_text.py:145
+#: addon/globalPlugins/chessStudy/position_text.py:147
 msgid "Material: Black is up {points} point."
 msgid_plural "Material: Black is up {points} points."
 msgstr[0] "Material: as pretas têm {points} ponto a mais."
@@ -6185,12 +6203,12 @@ msgid "White can still castle short."
 msgstr "As brancas ainda podem rocar curto."
 
 #. One black piece in the rank by rank description, e.g. "a8 black rook".
-#: addon/globalPlugins/chessStudy/position_text.py:162
+#: addon/globalPlugins/chessStudy/position_text.py:166
 msgid "{square} black {piece}"
 msgstr "{square} {piece} das pretas"
 
 #. One white piece in the rank by rank description, e.g. "a1 white rook".
-#: addon/globalPlugins/chessStudy/position_text.py:159
+#: addon/globalPlugins/chessStudy/position_text.py:163
 msgid "{square} white {piece}"
 msgstr "{square} {piece} das brancas"
 

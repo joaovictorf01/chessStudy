@@ -2,6 +2,12 @@
 
 O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): versão de correção (1.1.x) só corrige; versão menor (1.x.0) acrescenta recurso; versão maior muda o que quem já usa depende. O número é decidido na hora de lançar, pelo que esta seção contém.
 
+## A fazer
+
+- Download de puzzles: aceitar um `.db.gz` baixado à mão no navegador (pra máquina que não alcança o GitHub pelo add-on). Primeiro relato: 21-09-2026, "não foi possível alcançar o servidor de download".
+
+# Chess Study 2.1.0
+
 ## Melhorias
 
 - **Planilha de lances (F4)** agrupada como no modo para cegos do Lichess: uma linha por número de lance, com o lance das Brancas e o das Pretas juntos ("1. e4, e5"), na ordem em que foram jogados; uma partida que começa com as Pretas na vez abre com "12... Nf6". Era uma linha por lance, o mais recente primeiro. Continua abrindo no lance mais recente, agora a última linha: a Seta acima volta pela partida. Em todos os tabuleiros.
@@ -31,10 +37,6 @@ O versionamento segue o [Semantic Versioning](https://semver.org/lang/pt-BR/): v
 - Táticas, Selecionar temas: o NVDA agora diz se cada tema está marcado ou não marcado. A lista desenhava as próprias caixas de seleção e nunca informava o estado delas, então era impossível saber de ouvido o que estava selecionado. Com um tema só, o campo Temas agora diz "1 selecionado", no singular.
 
 - Minhas partidas: a partida em que o seu usuário do Lichess jogou de Pretas agora abre do lado das Pretas, como já abria ao importar; abria sempre do lado das Brancas.
-
-## A fazer
-
-- Download de puzzles: aceitar um `.db.gz` baixado à mão no navegador (pra máquina que não alcança o GitHub pelo add-on). Primeiro relato: 21-09-2026, "não foi possível alcançar o servidor de download".
 
 # Chess Study 2.0.0
 
