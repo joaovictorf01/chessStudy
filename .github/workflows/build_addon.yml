@@ -70,10 +70,22 @@ jobs:
         merge-multiple: true
     - name: Display structure of downloaded files
       run: ls -R
-    - name: Calculate sha256
+    # Release notes: only this version's section of changelog.md ("# Chess Study 2.1.0"
+    # up to the next "# " heading), without the heading, plus the package's SHA256.
+    - name: Release notes
       run: |
-        echo -e "\nSHA256: " >> changelog.md
-        sha256sum *.nvda-addon >> changelog.md
+        version="${GITHUB_REF_NAME#v}"
+        awk -v heading="# Chess Study $version" '
+          $0 == heading { found = 1; next }
+          found && /^# / { exit }
+          found { print }
+        ' changelog.md > release_notes.md
+        if ! grep -q '[^[:space:]]' release_notes.md; then
+          echo "changelog.md has no section '# Chess Study $version'" >&2
+          exit 1
+        fi
+        echo -e "\nSHA256: " >> release_notes.md
+        sha256sum *.nvda-addon >> release_notes.md
 
     - name: Release
       uses: softprops/action-gh-release@v3
@@ -81,6 +93,6 @@ jobs:
         files: |
           *.nvda-addon
           *.pot
-        body_path: changelog.md
+        body_path: release_notes.md
         fail_on_unmatched_files: true
         prerelease: ${{ contains(github.ref, '-') }}
